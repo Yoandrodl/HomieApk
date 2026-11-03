@@ -31,20 +31,20 @@
     }
     /* Metro Live Tile press feedback */
     .metro-tile {
-      transition: transform 0.12s cubic-bezier(0.2, 0, 1), background 0.15s ease, box-shadow 0.15s ease;
+      transition: transform 0.1s cubic-bezier(0.2, 0, 1), background 0.15s ease;
       user-select: none;
     }
     .metro-tile:active {
-      transform: scale(0.96);
+      transform: scale(0.97);
     }
   </style>
 </head>
 <body class="bg-black text-white">
 
-  <!-- Mobile View Container: full width on mobile devices, max 414px on desktop -->
+  <!-- Mobile View Container: full 100% width on phones, max 414px centered on desktop -->
   <main class="w-full max-w-[414px] mx-auto min-h-screen flex flex-col bg-black relative overflow-x-hidden pb-8">
 
-    <!-- 1. FULL-WIDTH HERO BANNER (Flush at the very top, NO fake status bar) -->
+    <!-- 1. FULL-WIDTH HERO BANNER (Top Edge, No fake status bar, 0 Margin) -->
     <section class="w-full relative overflow-hidden select-none bg-[#0060C0]">
       
       <!-- Canvas Image: Flush edge-to-edge -->
@@ -97,15 +97,15 @@
 
     </section>
 
-    <!-- 2. SECTION 2: 3x2 METRO TILES GRID (2 Jam, 3 Jam, 5 Jam, Same Day, 1x24 Jam, Bulanan) -->
-    <section class="w-full px-2 pt-2 pb-2 bg-black select-none">
-      <div class="grid grid-cols-3 gap-1.5">
+    <!-- 2. SECTION 2: 3x2 METRO TILES GRID (FULL WIDTH, ZERO MARGIN KIRI KANAN) -->
+    <section class="w-full px-0 pt-[3px] pb-[3px] bg-black select-none">
+      <div class="grid grid-cols-3 gap-[3px]">
 
-        <!-- Tile 1: 2 Jam Express -->
-        <div onclick="selectTile(0)" id="tile-0" class="metro-tile bg-[#0070D2] hover:bg-[#007AE6] rounded-[2px] p-2 flex flex-col items-center justify-between aspect-square cursor-pointer relative shadow">
+        <!-- Tile 1: 2 Jam Express (FLUSH KIRI) -->
+        <div onclick="selectTile(0)" id="tile-0" class="metro-tile bg-[#0070D2] hover:bg-[#007AE6] rounded-none py-3 px-1.5 flex flex-col items-center justify-between aspect-[1.38/1] cursor-pointer relative shadow">
           <!-- Stopwatch Icon -->
-          <div class="pt-1">
-            <svg class="w-8 h-8 text-white drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <div class="pt-0.5">
+            <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="13" r="7.5" />
               <polyline points="12 9 12 13 14 13" />
               <line x1="12" y1="5.5" x2="12" y2="2" />
@@ -114,17 +114,17 @@
             </svg>
           </div>
           <!-- Texts -->
-          <div class="text-center pb-0.5">
-            <h4 class="text-[13px] font-black text-white leading-tight">2 Jam</h4>
-            <p class="text-[11px] font-medium text-white/90 leading-tight">Express</p>
+          <div class="text-center">
+            <h4 class="text-[13px] sm:text-sm font-black text-white leading-tight">2 Jam</h4>
+            <p class="text-[10.5px] sm:text-[11px] font-medium text-white/90 leading-tight">Express</p>
           </div>
         </div>
 
-        <!-- Tile 2: 3 Jam Regular -->
-        <div onclick="selectTile(1)" id="tile-1" class="metro-tile bg-[#0070D2] hover:bg-[#007AE6] rounded-[2px] p-2 flex flex-col items-center justify-between aspect-square cursor-pointer relative shadow">
+        <!-- Tile 2: 3 Jam Regular (TENGAH) -->
+        <div onclick="selectTile(1)" id="tile-1" class="metro-tile bg-[#0070D2] hover:bg-[#007AE6] rounded-none py-3 px-1.5 flex flex-col items-center justify-between aspect-[1.38/1] cursor-pointer relative shadow">
           <!-- Stopwatch Icon -->
-          <div class="pt-1">
-            <svg class="w-8 h-8 text-white drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <div class="pt-0.5">
+            <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="13" r="7.5" />
               <polyline points="12 9 12 13 14 13" />
               <line x1="12" y1="5.5" x2="12" y2="2" />
@@ -133,17 +133,17 @@
             </svg>
           </div>
           <!-- Texts -->
-          <div class="text-center pb-0.5">
-            <h4 class="text-[13px] font-black text-white leading-tight">3 Jam</h4>
-            <p class="text-[11px] font-medium text-white/90 leading-tight">Regular</p>
+          <div class="text-center">
+            <h4 class="text-[13px] sm:text-sm font-black text-white leading-tight">3 Jam</h4>
+            <p class="text-[10.5px] sm:text-[11px] font-medium text-white/90 leading-tight">Regular</p>
           </div>
         </div>
 
-        <!-- Tile 3: 5 Jam Express (ACTIVE / SELECTED BY DEFAULT) -->
-        <div onclick="selectTile(2)" id="tile-2" class="metro-tile bg-gradient-to-b from-[#00C2FF] to-[#00A3E0] rounded-[2px] p-2 flex flex-col items-center justify-between aspect-square cursor-pointer relative shadow-lg ring-2 ring-[#00F0FF]">
+        <!-- Tile 3: 5 Jam Express (FLUSH KANAN, ACTIVE SELECTED) -->
+        <div onclick="selectTile(2)" id="tile-2" class="metro-tile bg-gradient-to-b from-[#00C2FF] to-[#00A3E0] rounded-none py-3 px-1.5 flex flex-col items-center justify-between aspect-[1.38/1] cursor-pointer relative shadow-lg">
           <!-- Stopwatch Icon -->
-          <div class="pt-1">
-            <svg class="w-8 h-8 text-white drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <div class="pt-0.5">
+            <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="13" r="7.5" />
               <polyline points="12 9 12 13 14 13" />
               <line x1="12" y1="5.5" x2="12" y2="2" />
@@ -152,9 +152,9 @@
             </svg>
           </div>
           <!-- Texts -->
-          <div class="text-center pb-0.5">
-            <h4 class="text-[13px] font-black text-white leading-tight">5 Jam</h4>
-            <p class="text-[11px] font-medium text-white/95 leading-tight">Express</p>
+          <div class="text-center">
+            <h4 class="text-[13px] sm:text-sm font-black text-white leading-tight">5 Jam</h4>
+            <p class="text-[10.5px] sm:text-[11px] font-medium text-white/95 leading-tight">Express</p>
           </div>
           <!-- Active Chevron Arrow Indicator (Bottom Right Circle) -->
           <div id="tile-chevron" class="absolute bottom-1.5 right-1.5 w-4 h-4 rounded-full bg-white flex items-center justify-center shadow">
@@ -164,11 +164,11 @@
           </div>
         </div>
 
-        <!-- Tile 4: Same Day Hari Ini -->
-        <div onclick="selectTile(3)" id="tile-3" class="metro-tile bg-[#0070D2] hover:bg-[#007AE6] rounded-[2px] p-2 flex flex-col items-center justify-between aspect-square cursor-pointer relative shadow">
+        <!-- Tile 4: Same Day Hari Ini (FLUSH KIRI) -->
+        <div onclick="selectTile(3)" id="tile-3" class="metro-tile bg-[#0070D2] hover:bg-[#007AE6] rounded-none py-3 px-1.5 flex flex-col items-center justify-between aspect-[1.38/1] cursor-pointer relative shadow">
           <!-- Calendar with Dots Icon -->
-          <div class="pt-1">
-            <svg class="w-8 h-8 text-white drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <div class="pt-0.5">
+            <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="3" y="4" width="18" height="17" rx="2" />
               <line x1="16" y1="2" x2="16" y2="6" />
               <line x1="8" y1="2" x2="8" y2="6" />
@@ -182,34 +182,34 @@
             </svg>
           </div>
           <!-- Texts -->
-          <div class="text-center pb-0.5">
-            <h4 class="text-[13px] font-black text-white leading-tight">Same Day</h4>
-            <p class="text-[11px] font-medium text-white/90 leading-tight">Hari Ini</p>
+          <div class="text-center">
+            <h4 class="text-[13px] sm:text-sm font-black text-white leading-tight">Same Day</h4>
+            <p class="text-[10.5px] sm:text-[11px] font-medium text-white/90 leading-tight">Hari Ini</p>
           </div>
         </div>
 
-        <!-- Tile 5: 1x24 Jam Layanan -->
-        <div onclick="selectTile(4)" id="tile-4" class="metro-tile bg-[#0070D2] hover:bg-[#007AE6] rounded-[2px] p-2 flex flex-col items-center justify-between aspect-square cursor-pointer relative shadow">
+        <!-- Tile 5: 1x24 Jam Layanan (TENGAH) -->
+        <div onclick="selectTile(4)" id="tile-4" class="metro-tile bg-[#0070D2] hover:bg-[#007AE6] rounded-none py-3 px-1.5 flex flex-col items-center justify-between aspect-[1.38/1] cursor-pointer relative shadow">
           <!-- 1x24 Circular Arrow Icon -->
-          <div class="pt-1 flex flex-col items-center justify-center relative w-8 h-8">
-            <svg class="w-8 h-8 text-white drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <div class="pt-0.5 flex flex-col items-center justify-center relative w-7 h-7 sm:w-8 sm:h-8">
+            <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 12a9 9 0 1 1-6.2-8.6l1.2-1.4" />
               <polyline points="21 3 21 8 16 8" />
             </svg>
             <span class="absolute text-[8px] font-black text-white tracking-tighter">1x24</span>
           </div>
           <!-- Texts -->
-          <div class="text-center pb-0.5">
-            <h4 class="text-[13px] font-black text-white leading-tight">1x24 Jam</h4>
-            <p class="text-[11px] font-medium text-white/90 leading-tight">Layanan</p>
+          <div class="text-center">
+            <h4 class="text-[13px] sm:text-sm font-black text-white leading-tight">1x24 Jam</h4>
+            <p class="text-[10.5px] sm:text-[11px] font-medium text-white/90 leading-tight">Layanan</p>
           </div>
         </div>
 
-        <!-- Tile 6: Bulanan Paket -->
-        <div onclick="selectTile(5)" id="tile-5" class="metro-tile bg-[#0070D2] hover:bg-[#007AE6] rounded-[2px] p-2 flex flex-col items-center justify-between aspect-square cursor-pointer relative shadow">
+        <!-- Tile 6: Bulanan Paket (FLUSH KANAN) -->
+        <div onclick="selectTile(5)" id="tile-5" class="metro-tile bg-[#0070D2] hover:bg-[#007AE6] rounded-none py-3 px-1.5 flex flex-col items-center justify-between aspect-[1.38/1] cursor-pointer relative shadow">
           <!-- Calendar with Clock Icon -->
-          <div class="pt-1 relative w-8 h-8">
-            <svg class="w-7 h-7 text-white drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <div class="pt-0.5 relative w-7 h-7 sm:w-8 sm:h-8">
+            <svg class="w-6 h-6 sm:w-7 sm:h-7 text-white drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="3" y="4" width="16" height="15" rx="2" />
               <line x1="14" y1="2" x2="14" y2="6" />
               <line x1="7" y1="2" x2="7" y2="6" />
@@ -217,29 +217,29 @@
               <path d="M7 13h2" />
             </svg>
             <!-- Overlapping clock -->
-            <div class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-[#0070D2] p-[1px] flex items-center justify-center">
-              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <div class="absolute -bottom-0.5 -right-0.5 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#0070D2] p-[1px] flex items-center justify-center">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="9" />
                 <polyline points="12 7 12 12 15 14" />
               </svg>
             </div>
           </div>
           <!-- Texts -->
-          <div class="text-center pb-0.5">
-            <h4 class="text-[13px] font-black text-white leading-tight">Bulanan</h4>
-            <p class="text-[11px] font-medium text-white/90 leading-tight">Paket</p>
+          <div class="text-center">
+            <h4 class="text-[13px] sm:text-sm font-black text-white leading-tight">Bulanan</h4>
+            <p class="text-[10.5px] sm:text-[11px] font-medium text-white/90 leading-tight">Paket</p>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- 3. SECTION 3: SPESIALIS & TREATMENT TILES (Next Section) -->
-    <section class="w-full px-2 pt-1 pb-2 bg-black select-none">
-      <div class="grid grid-cols-2 gap-1.5">
+    <!-- 3. SECTION 3: SPESIALIS & TREATMENT TILES (Edge-to-Edge) -->
+    <section class="w-full px-0 pt-[1px] pb-[3px] bg-black select-none">
+      <div class="grid grid-cols-2 gap-[3px]">
         
         <!-- Spesialis Ambal & Sajadah Tile -->
-        <div class="bg-gradient-to-br from-[#D96B00] to-[#B35200] rounded-[2px] p-3 flex flex-col justify-between h-28 relative shadow cursor-pointer">
+        <div class="bg-gradient-to-br from-[#D96B00] to-[#B35200] rounded-none p-3.5 flex flex-col justify-between h-28 relative shadow cursor-pointer">
           <div>
             <span class="text-[10px] uppercase font-bold tracking-wider text-amber-200">Spesialis</span>
             <h3 class="text-sm font-extrabold text-white leading-tight mt-0.5">Ambal & Sajadah</h3>
@@ -251,7 +251,7 @@
         </div>
 
         <!-- Treatment Sepatu & Tas Tile -->
-        <div class="bg-gradient-to-br from-[#68217A] to-[#4F135C] rounded-[2px] p-3 flex flex-col justify-between h-28 relative shadow cursor-pointer">
+        <div class="bg-gradient-to-br from-[#68217A] to-[#4F135C] rounded-none p-3.5 flex flex-col justify-between h-28 relative shadow cursor-pointer">
           <div>
             <span class="text-[10px] uppercase font-bold tracking-wider text-purple-200">Treatment</span>
             <h3 class="text-sm font-extrabold text-white leading-tight mt-0.5">Sepatu & Tas</h3>
@@ -265,9 +265,9 @@
       </div>
     </section>
 
-    <!-- 4. SECTION 4: WHATSAPP ORDER BUTTON (Antar Jemput) -->
-    <section class="w-full px-2 pt-1 pb-2 bg-black select-none">
-      <a href="https://wa.me/6281141020169" target="_blank" class="w-full bg-[#008A00] hover:bg-[#009E00] rounded-[2px] p-3 flex items-center justify-between shadow cursor-pointer transition-all active:scale-[0.98] no-underline">
+    <!-- 4. SECTION 4: WHATSAPP ORDER BUTTON (Edge-to-Edge) -->
+    <section class="w-full px-0 pt-[1px] pb-[3px] bg-black select-none">
+      <a href="https://wa.me/6281141020169" target="_blank" class="w-full bg-[#008A00] hover:bg-[#009E00] rounded-none p-3.5 flex items-center justify-between shadow cursor-pointer transition-all active:scale-[0.99] no-underline">
         <div class="flex items-center gap-3">
           <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-lg flex-shrink-0">
             💬
@@ -277,13 +277,13 @@
             <p class="text-[11px] text-emerald-100 mt-0.5">Respon Cepat Samarinda • 0811-4102-0169</p>
           </div>
         </div>
-        <span class="text-base text-white font-bold pr-1">➔</span>
+        <span class="text-base text-white font-bold pr-2">➔</span>
       </a>
     </section>
 
-    <!-- 5. GOOGLE SHEETS LIVE PROMO BANNER (Synced Status) -->
-    <section class="w-full px-2 pt-1 pb-2 bg-black select-none">
-      <div class="w-full bg-[#111827] border border-cyan-500/30 rounded-[2px] p-2.5 flex items-center justify-between text-xs">
+    <!-- 5. GOOGLE SHEETS LIVE PROMO BANNER (Edge-to-Edge) -->
+    <section class="w-full px-0 pt-[1px] pb-[3px] bg-black select-none">
+      <div class="w-full bg-[#111827] border-y border-cyan-500/30 rounded-none p-2.5 flex items-center justify-between text-xs px-3">
         <div class="flex items-center gap-2">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
           <span class="text-slate-300 font-medium">Promo Aktif: <b class="text-cyan-300 font-bold">Diskon Kilat 10%</b></span>
@@ -318,8 +318,8 @@
       for (let i = 0; i < 6; i++) {
         const el = document.getElementById('tile-' + i);
         if (i === index) {
-          // Active tile: cyan gradient with glow ring
-          el.className = "metro-tile bg-gradient-to-b from-[#00C2FF] to-[#00A3E0] rounded-[2px] p-2 flex flex-col items-center justify-between aspect-square cursor-pointer relative shadow-lg ring-2 ring-[#00F0FF]";
+          // Active tile: cyan gradient
+          el.className = "metro-tile bg-gradient-to-b from-[#00C2FF] to-[#00A3E0] rounded-none py-3 px-1.5 flex flex-col items-center justify-between aspect-[1.38/1] cursor-pointer relative shadow-lg";
           // Move chevron arrow
           let chevron = document.getElementById('tile-chevron');
           if (!chevron) {
@@ -331,7 +331,7 @@
           el.appendChild(chevron);
         } else {
           // Inactive tile: Royal Blue Metro tile
-          el.className = "metro-tile bg-[#0070D2] hover:bg-[#007AE6] rounded-[2px] p-2 flex flex-col items-center justify-between aspect-square cursor-pointer relative shadow";
+          el.className = "metro-tile bg-[#0070D2] hover:bg-[#007AE6] rounded-none py-3 px-1.5 flex flex-col items-center justify-between aspect-[1.38/1] cursor-pointer relative shadow";
         }
       }
     }
