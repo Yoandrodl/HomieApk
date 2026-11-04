@@ -37,6 +37,16 @@
     .metro-tile:active {
       transform: scale(0.97);
     }
+    /* Fix input & textarea text color inside light theme containers */
+    #checkout-view input,
+    #checkout-view textarea,
+    #checkout-view select,
+    #address-modal input,
+    #address-modal textarea,
+    #voucher-modal input {
+      color: #0f172a !important;
+      background-color: #ffffff;
+    }
   </style>
 </head>
 <body class="bg-black text-white">
@@ -339,10 +349,10 @@
     <div class="bg-white p-4 mb-2.5 shadow-sm">
       <div class="flex items-center justify-between mb-2">
         <div class="flex items-center gap-1.5">
-          <span class="text-rose-500 text-sm">📍</span>
+          <span class="text-[#0070D2] text-sm">📍</span>
           <span class="font-bold text-[11px] uppercase tracking-wider text-slate-500">Alamat Penjemputan (Samarinda)</span>
         </div>
-        <button id="btn-edit-addr" onclick="openAddressModal()" class="text-xs text-rose-500 font-bold hover:underline">Ubah ></button>
+        <button id="btn-edit-addr" onclick="openAddressModal()" class="text-xs text-[#0070D2] font-bold hover:underline">Ubah ></button>
       </div>
       
       <!-- Display box when address exists -->
@@ -357,7 +367,7 @@
 
       <!-- Input box if first time / empty -->
       <div id="address-empty-box" class="hidden pl-5 py-1">
-        <button onclick="openAddressModal()" class="w-full py-2.5 px-3 border border-dashed border-rose-300 bg-rose-50/50 rounded text-xs font-bold text-rose-600 flex items-center justify-center gap-2">
+        <button onclick="openAddressModal()" class="w-full py-2.5 px-3 border border-dashed border-sky-300 bg-sky-50/60 rounded text-xs font-bold text-[#0070D2] flex items-center justify-center gap-2">
           <span>+</span>
           <span>Isi Nama, No. WhatsApp & Alamat Jemput</span>
         </button>
@@ -367,7 +377,7 @@
     <!-- 2. Layanan Laundry yang Dipilih (Card Produk) -->
     <div class="bg-white p-4 mb-2.5 shadow-sm">
       <div class="flex items-center gap-2 pb-2.5 mb-3 border-b border-slate-100">
-        <span class="bg-[#EE4D2D] text-white text-[10px] font-black px-1.5 py-0.5 rounded">Homie</span>
+        <span class="bg-[#0070D2] text-white text-[10px] font-black px-1.5 py-0.5 rounded">Homie</span>
         <span class="font-black text-slate-800 text-xs">Homie Laundry Samarinda</span>
       </div>
 
@@ -378,7 +388,7 @@
           <p id="co-service-duration" class="text-[11px] text-slate-500 font-medium mt-0.5">Selesai dalam 2 Jam</p>
           
           <div class="flex items-center justify-between mt-2.5">
-            <span id="co-service-price" class="font-black text-sm text-[#EE4D2D]">Rp 15.000 <span class="text-[10px] font-normal text-slate-500">/Kg</span></span>
+            <span id="co-service-price" class="font-black text-sm text-[#0070D2]">Rp 15.000 <span class="text-[10px] font-normal text-slate-500">/Kg</span></span>
             
             <!-- Quantity Counter -->
             <div class="flex items-center border border-slate-300 rounded overflow-hidden">
@@ -401,12 +411,12 @@
       <div>
         <label class="block text-xs font-bold text-slate-800 mb-2">Opsi Pengiriman / Penanganan</label>
         <div class="grid grid-cols-2 gap-2 text-xs">
-          <label class="flex items-center gap-2 p-2.5 border rounded cursor-pointer border-rose-500 bg-rose-50/40 text-slate-800 font-semibold">
-            <input type="radio" name="delivery_opt" value="Antar-Jemput (Kurir ke Rumah)" checked class="accent-rose-500" />
+          <label class="delivery-opt-label flex items-center gap-2 p-2.5 border rounded cursor-pointer border-[#0070D2] bg-sky-50/60 text-slate-900 font-bold transition">
+            <input type="radio" name="delivery_opt" value="Antar-Jemput (Kurir ke Rumah)" checked class="accent-[#0070D2]" onchange="toggleDeliveryOpt(this)" />
             <span>🛵 Antar-Jemput</span>
           </label>
-          <label class="flex items-center gap-2 p-2.5 border rounded cursor-pointer border-slate-200 bg-white text-slate-700 font-medium">
-            <input type="radio" name="delivery_opt" value="Antar Sendiri ke Outlet" class="accent-rose-500" />
+          <label class="delivery-opt-label flex items-center gap-2 p-2.5 border rounded cursor-pointer border-slate-200 bg-white text-slate-700 font-medium transition">
+            <input type="radio" name="delivery_opt" value="Antar Sendiri ke Outlet" class="accent-[#0070D2]" onchange="toggleDeliveryOpt(this)" />
             <span>🏬 Drop ke Outlet</span>
           </label>
         </div>
@@ -414,7 +424,7 @@
 
       <div>
         <label class="block text-xs font-bold text-slate-800 mb-1.5">Cabang Homie Samarinda</label>
-        <select id="co-branch" class="w-full text-xs p-2.5 bg-slate-50 border border-slate-300 rounded font-medium text-slate-800 focus:outline-none focus:border-rose-500">
+        <select id="co-branch" class="w-full text-xs p-2.5 bg-slate-50 border border-slate-300 rounded font-medium text-slate-800 focus:outline-none focus:border-[#0070D2]">
           <option value="Cabang Aminah Syukur No. 13 (Samarinda Kota)">Cabang Aminah Syukur No. 13 (Samarinda Kota)</option>
           <option value="Cabang KH M Khalid 38A (Pasar Pagi)">Cabang KH M Khalid 38A (Pasar Pagi)</option>
         </select>
@@ -424,7 +434,7 @@
     <!-- 4. Pesan untuk Kasir / Driver -->
     <div class="bg-white px-4 py-3 mb-2.5 shadow-sm flex items-center justify-between">
       <span class="text-xs font-bold text-slate-800 flex-shrink-0 mr-3">Catatan Khusus:</span>
-      <input type="text" id="co-notes" placeholder="Tinggalkan pesan (misal: baju putih dipisah)..." class="text-xs text-right text-slate-700 placeholder-slate-400 focus:outline-none flex-1 bg-transparent" />
+      <input type="text" id="co-notes" placeholder="Tinggalkan pesan (misal: baju putih dipisah)..." class="text-xs text-right text-slate-900 placeholder-slate-400 focus:outline-none flex-1 bg-transparent font-medium" />
     </div>
 
     <!-- 5. Voucher Homie (Fitur Cerdas Kategori Validasi) -->
@@ -454,17 +464,17 @@
     <div class="bg-white p-4 mb-2.5 shadow-sm">
       <h4 class="text-xs font-bold text-slate-800 mb-2.5">Metode Pembayaran</h4>
       <div class="space-y-2 text-xs">
-        <label class="flex items-center justify-between p-2.5 border rounded cursor-pointer border-slate-200 hover:border-slate-300">
+        <label class="payment-opt-label flex items-center justify-between p-2.5 border rounded cursor-pointer border-[#0070D2] bg-sky-50/40">
           <div class="flex items-center gap-2.5">
             <span class="text-base">💵</span>
             <div>
-              <span class="font-bold text-slate-800 block">COD (Bayar Tunai)</span>
+              <span class="font-bold text-slate-900 block">COD (Bayar Tunai)</span>
               <span class="text-[10.5px] text-slate-500">Bayar saat kurir jemput atau antar cucian</span>
             </div>
           </div>
-          <input type="radio" name="payment_method" value="COD (Bayar Tunai)" checked class="accent-[#EE4D2D]" />
+          <input type="radio" name="payment_method" value="COD (Bayar Tunai)" checked class="accent-[#0070D2]" onchange="togglePaymentOpt(this)" />
         </label>
-        <label class="flex items-center justify-between p-2.5 border rounded cursor-pointer border-slate-200 hover:border-slate-300">
+        <label class="payment-opt-label flex items-center justify-between p-2.5 border rounded cursor-pointer border-slate-200 hover:border-slate-300 bg-white">
           <div class="flex items-center gap-2.5">
             <span class="text-base">📱</span>
             <div>
@@ -472,7 +482,7 @@
               <span class="text-[10.5px] text-slate-500">BCA / Mandiri / ShopeePay / GoPay</span>
             </div>
           </div>
-          <input type="radio" name="payment_method" value="Transfer Bank / QRIS" class="accent-[#EE4D2D]" />
+          <input type="radio" name="payment_method" value="Transfer Bank / QRIS" class="accent-[#0070D2]" onchange="togglePaymentOpt(this)" />
         </label>
       </div>
     </div>
@@ -493,7 +503,7 @@
       </div>
       <div class="pt-2 border-t border-slate-100 flex justify-between text-sm">
         <span class="font-black text-slate-900">Total Pembayaran</span>
-        <span id="total-breakdown-display" class="font-black text-[#EE4D2D]">Rp 40.500</span>
+        <span id="total-breakdown-display" class="font-black text-[#0070D2]">Rp 40.500</span>
       </div>
     </div>
 
@@ -501,10 +511,10 @@
     <div class="fixed bottom-0 left-0 right-0 max-w-[414px] mx-auto z-40 bg-white border-t border-slate-200 px-4 py-2.5 flex items-center justify-between shadow-2xl">
       <div>
         <span class="text-[10.5px] text-slate-500 block leading-tight">Total Pembayaran</span>
-        <span id="sticky-total-display" class="text-base font-black text-[#EE4D2D] leading-tight block">Rp 40.500</span>
+        <span id="sticky-total-display" class="text-base font-black text-[#0070D2] leading-tight block">Rp 40.500</span>
         <span id="sticky-savings-display" class="hidden text-[10px] text-emerald-600 font-bold block">Hemat Rp 4.500</span>
       </div>
-      <button onclick="submitOrderToWhatsApp()" class="bg-[#EE4D2D] hover:bg-[#D73211] active:scale-[0.98] text-white px-5 py-2.5 rounded font-black text-xs sm:text-sm flex items-center gap-1.5 shadow-md transition">
+      <button onclick="submitOrderToWhatsApp()" class="bg-[#0070D2] hover:bg-[#005BB5] active:scale-[0.98] text-white px-5 py-2.5 rounded font-black text-xs sm:text-sm flex items-center gap-1.5 shadow-md transition">
         <span>Buat Pesanan</span>
         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 2C6.496 2 2 6.494 2 12.029c0 1.768.462 3.497 1.34 5.02L2 22l5.105-1.339a9.98 9.98 0 0 0 4.926 1.368h.005c5.534 0 10.029-4.495 10.029-10.03 0-2.68-1.043-5.199-2.938-7.094A9.957 9.957 0 0 0 12.031 2zm5.834 14.184c-.244.685-1.42 1.309-1.956 1.393-.518.08-1.192.115-3.447-.819-2.884-1.194-4.737-4.14-4.88-4.331-.144-.192-1.168-1.554-1.168-2.964 0-1.41.738-2.105 1.002-2.392.264-.287.576-.359.768-.359.192 0 .384.002.551.011.178.009.416-.067.65.495.244.588.834 2.034.906 2.182.072.148.12.321.024.513-.096.192-.144.312-.288.48-.144.168-.303.376-.433.504-.144.144-.294.3-.126.588.168.288.747 1.233 1.604 1.996 1.102.981 2.032 1.285 2.32 1.429.288.144.456.12.624-.072.168-.192.72-1.043.912-1.403.192-.36.384-.3.648-.204.264.096 1.68.792 1.968.936.288.144.48.216.552.336.072.12.072.7-.172 1.385z"/></svg>
       </button>
@@ -524,7 +534,7 @@
 
       <!-- Input Manual Voucher -->
       <div class="flex items-center gap-2 my-3">
-        <input type="text" id="manual-voucher-code" placeholder="Punya kode promo? Masukkan di sini" class="flex-1 text-xs px-3 py-2 bg-slate-50 border border-slate-300 rounded uppercase font-bold text-slate-800 placeholder-slate-400 focus:outline-none focus:border-rose-500" />
+        <input type="text" id="manual-voucher-code" placeholder="Punya kode promo? Masukkan di sini" class="flex-1 text-xs px-3 py-2 bg-slate-50 border border-slate-300 rounded uppercase font-bold text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#0070D2]" />
         <button onclick="applyManualVoucher()" class="bg-slate-900 text-white text-xs font-bold px-4 py-2 rounded active:scale-95">Terapkan</button>
       </div>
 
@@ -545,18 +555,18 @@
         <button onclick="closeAddressModal()" class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 font-bold text-sm">✕</button>
       </div>
       <div>
-        <label class="block text-[11px] font-bold text-slate-600 mb-1">Nama Lengkap</label>
-        <input type="text" id="modal-name" placeholder="Nama Anda" class="w-full text-xs px-3 py-2 border border-slate-300 rounded focus:outline-none focus:border-rose-500" />
+        <label class="block text-[11px] font-bold text-slate-700 mb-1">Nama Lengkap</label>
+        <input type="text" id="modal-name" placeholder="Nama Anda" class="w-full text-xs px-3 py-2 border border-slate-300 rounded text-slate-900 bg-white font-medium focus:outline-none focus:border-[#0070D2]" />
       </div>
       <div>
-        <label class="block text-[11px] font-bold text-slate-600 mb-1">Nomor WhatsApp Aktif</label>
-        <input type="tel" id="modal-phone" placeholder="08xxxxxxxxxx" class="w-full text-xs px-3 py-2 border border-slate-300 rounded focus:outline-none focus:border-rose-500" />
+        <label class="block text-[11px] font-bold text-slate-700 mb-1">Nomor WhatsApp Aktif</label>
+        <input type="tel" id="modal-phone" placeholder="08xxxxxxxxxx" class="w-full text-xs px-3 py-2 border border-slate-300 rounded text-slate-900 bg-white font-medium focus:outline-none focus:border-[#0070D2]" />
       </div>
       <div>
-        <label class="block text-[11px] font-bold text-slate-600 mb-1">Alamat Lengkap & Patokan Rumah</label>
-        <textarea id="modal-address" rows="3" placeholder="Jalan, No. Rumah, RT/RW, Patokan (misal dekat Masjid / Indomaret)..." class="w-full text-xs px-3 py-2 border border-slate-300 rounded focus:outline-none focus:border-rose-500"></textarea>
+        <label class="block text-[11px] font-bold text-slate-700 mb-1">Alamat Lengkap & Patokan Rumah</label>
+        <textarea id="modal-address" rows="3" placeholder="Jalan, No. Rumah, RT/RW, Patokan (misal dekat Masjid / Indomaret)..." class="w-full text-xs px-3 py-2 border border-slate-300 rounded text-slate-900 bg-white font-medium focus:outline-none focus:border-[#0070D2]"></textarea>
       </div>
-      <button onclick="saveModalAddress()" class="w-full bg-[#EE4D2D] hover:bg-[#D73211] text-white text-xs font-black py-2.5 rounded shadow active:scale-[0.99] transition">Simpan Alamat di HP</button>
+      <button onclick="saveModalAddress()" class="w-full bg-[#0070D2] hover:bg-[#005BB5] text-white text-xs font-black py-2.5 rounded shadow active:scale-[0.99] transition">Simpan Alamat di HP</button>
     </div>
   </div>
 
@@ -807,6 +817,24 @@
       window.scrollTo(0, 0);
     }
 
+    function toggleDeliveryOpt(radio) {
+      document.querySelectorAll('.delivery-opt-label').forEach(lbl => {
+        lbl.className = 'delivery-opt-label flex items-center gap-2 p-2.5 border rounded cursor-pointer border-slate-200 bg-white text-slate-700 font-medium transition';
+      });
+      if (radio.checked) {
+        radio.parentElement.className = 'delivery-opt-label flex items-center gap-2 p-2.5 border rounded cursor-pointer border-[#0070D2] bg-sky-50/60 text-slate-900 font-bold transition';
+      }
+    }
+
+    function togglePaymentOpt(radio) {
+      document.querySelectorAll('.payment-opt-label').forEach(lbl => {
+        lbl.className = 'payment-opt-label flex items-center justify-between p-2.5 border rounded cursor-pointer border-slate-200 hover:border-slate-300 bg-white';
+      });
+      if (radio.checked) {
+        radio.parentElement.className = 'payment-opt-label flex items-center justify-between p-2.5 border rounded cursor-pointer border-[#0070D2] bg-sky-50/40';
+      }
+    }
+
     function closeCheckout() {
       document.getElementById('checkout-view').classList.add('hidden');
       document.getElementById('home-view').classList.remove('hidden');
@@ -998,7 +1026,7 @@
                 isEligible
                   ? isCurrentActive
                     ? `<button onclick="removeVoucher()" class="text-xs bg-slate-200 text-slate-700 px-3 py-1 rounded font-bold">Lepas</button>`
-                    : `<button onclick="selectVoucher('${v.code}')" class="text-xs bg-[#EE4D2D] hover:bg-[#D73211] text-white px-3.5 py-1 rounded font-bold shadow-sm active:scale-95">Pakai</button>`
+                    : `<button onclick="selectVoucher('${v.code}')" class="text-xs bg-[#0070D2] hover:bg-[#005BB5] text-white px-3.5 py-1 rounded font-bold shadow-sm active:scale-95">Pakai</button>`
                   : `<button disabled class="text-xs bg-slate-200 text-slate-400 px-3 py-1 rounded font-bold cursor-not-allowed">Pakai</button>`
               }
             </div>
