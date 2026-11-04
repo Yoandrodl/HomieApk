@@ -388,22 +388,27 @@
       </div>
     </div>
 
-    <!-- PROMO WEEKEND CARD (Jumat, Sabtu, Minggu) -->
-    <div class="m-3 p-3.5 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 rounded-xl text-white shadow-md relative overflow-hidden border border-amber-300/40 text-left">
-      <div class="flex items-start gap-2.5">
-        <span class="text-2xl flex-shrink-0">😍</span>
-        <div>
-          <div class="flex items-center gap-1.5 flex-wrap">
-            <span class="bg-black/30 text-white font-black text-[9.5px] px-2 py-0.5 rounded tracking-wider uppercase">Promo Weekend</span>
-            <span class="text-[11px] font-bold text-amber-100">Jumat, Sabtu & Minggu</span>
+    <!-- PROMO WEEKEND CARD (Jumat, Sabtu, Minggu) - 1-CLICK SELECT -->
+    <div onclick="selectSepatuSpecificItem('sepatu-promo-weekend')" class="m-3 p-3.5 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 rounded-xl text-white shadow-md relative overflow-hidden border border-amber-300/40 text-left cursor-pointer hover:brightness-105 active:scale-[0.98] transition group">
+      <div class="flex items-center justify-between gap-2.5">
+        <div class="flex items-start gap-2.5">
+          <span class="text-2xl flex-shrink-0">😍</span>
+          <div>
+            <div class="flex items-center gap-1.5 flex-wrap">
+              <span class="bg-black/30 text-white font-black text-[9.5px] px-2 py-0.5 rounded tracking-wider uppercase">Promo Weekend</span>
+              <span class="text-[11px] font-bold text-amber-100">Jumat, Sabtu & Minggu</span>
+            </div>
+            <h3 class="text-sm font-black mt-1 leading-tight text-white drop-shadow-sm">
+              3 Pasang Sepatu HANYA Rp 100.000!
+            </h3>
+            <p class="text-[11px] text-amber-50 mt-0.5 leading-snug">
+              Khusus cuci sepatu reguler tiap akhir pekan. Klik untuk ambil paket promo ini!
+            </p>
           </div>
-          <h3 class="text-sm font-black mt-1 leading-tight text-white drop-shadow-sm">
-            3 Pasang Sepatu HANYA Rp 100.000!
-          </h3>
-          <p class="text-[11px] text-amber-50 mt-0.5 leading-snug">
-            Khusus cuci sepatu reguler tiap akhir pekan (Jumat - Minggu). Bikin sepatu kinclong sekeluarga lebih hemat!
-          </p>
         </div>
+        <button type="button" class="bg-white text-amber-900 group-hover:bg-amber-100 text-[11px] font-black px-3 py-1.5 rounded-lg shadow pointer-events-none flex-shrink-0 transition">
+          + Pilih
+        </button>
       </div>
     </div>
 
@@ -411,110 +416,146 @@
 
       <!-- 1. SEPATU DEWASA -->
       <div class="bg-white rounded-xl p-3.5 shadow-sm border border-slate-200/80 text-left">
-        <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-100">
+        <div class="flex items-center justify-between pb-2 mb-1.5 border-b border-slate-100">
           <div class="flex items-center gap-2">
             <span class="w-6 h-6 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center text-xs font-black">👟</span>
             <h3 class="font-black text-xs text-slate-900">Cuci Sepatu Dewasa</h3>
           </div>
-          <span class="text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded">Pilihan Durasi</span>
+          <span class="text-[10px] font-bold text-[#0070D2] bg-sky-50 border border-sky-200 px-2 py-0.5 rounded">Klik untuk Pilih</span>
         </div>
 
         <div class="divide-y divide-slate-100 text-xs">
-          <div class="py-2 flex items-center justify-between">
+          <div onclick="selectSepatuSpecificItem('sepatu-dewasa-reguler')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between cursor-pointer hover:bg-sky-50 active:bg-sky-100 active:scale-[0.99] transition group">
             <div>
-              <span class="font-bold text-slate-800">Reguler (3-4 Hari)</span>
+              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Reguler (3-4 Hari)</span>
               <span class="text-[10px] text-emerald-600 font-semibold block">Paling Favorit & Bersih Maksimal</span>
             </div>
-            <span class="font-black text-slate-900 text-sm">Rp 50.000 <span class="text-[10px] font-normal text-slate-400">/psg</span></span>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900 text-sm">Rp 50.000 <span class="text-[10px] font-normal text-slate-400">/psg</span></span>
+              <span class="bg-[#0070D2] group-hover:bg-[#005BB5] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
+            </div>
           </div>
 
-          <div class="py-2 flex items-center justify-between">
+          <div onclick="selectSepatuSpecificItem('sepatu-dewasa-2x24')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between cursor-pointer hover:bg-sky-50 active:bg-sky-100 active:scale-[0.99] transition group">
             <div>
-              <span class="font-bold text-slate-800">Kilat 2x24 Jam</span>
+              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Kilat 2x24 Jam</span>
               <span class="text-[10px] text-slate-500 block">Selesai dalam 2 hari</span>
             </div>
-            <span class="font-black text-slate-900 text-sm">Rp 60.000 <span class="text-[10px] font-normal text-slate-400">/psg</span></span>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900 text-sm">Rp 60.000 <span class="text-[10px] font-normal text-slate-400">/psg</span></span>
+              <span class="bg-[#0070D2] group-hover:bg-[#005BB5] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
+            </div>
           </div>
 
-          <div class="py-2 flex items-center justify-between">
+          <div onclick="selectSepatuSpecificItem('sepatu-dewasa-1x24')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between cursor-pointer hover:bg-sky-50 active:bg-sky-100 active:scale-[0.99] transition group">
             <div>
-              <span class="font-bold text-slate-800">Express 1x24 Jam</span>
+              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Express 1x24 Jam</span>
               <span class="text-[10px] text-amber-600 font-semibold block">Besok Selesai</span>
             </div>
-            <span class="font-black text-slate-900 text-sm">Rp 70.000 <span class="text-[10px] font-normal text-slate-400">/psg</span></span>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900 text-sm">Rp 70.000 <span class="text-[10px] font-normal text-slate-400">/psg</span></span>
+              <span class="bg-[#0070D2] group-hover:bg-[#005BB5] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
+            </div>
           </div>
 
-          <div class="py-2 flex items-center justify-between">
+          <div onclick="selectSepatuSpecificItem('sepatu-dewasa-sameday')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between cursor-pointer hover:bg-sky-50 active:bg-sky-100 active:scale-[0.99] transition group">
             <div>
-              <span class="font-bold text-slate-800">Same Day</span>
+              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Same Day</span>
               <span class="text-[10px] text-amber-600 font-semibold block">Hari Ini Selesai</span>
             </div>
-            <span class="font-black text-slate-900 text-sm">Rp 80.000 <span class="text-[10px] font-normal text-slate-400">/psg</span></span>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900 text-sm">Rp 80.000 <span class="text-[10px] font-normal text-slate-400">/psg</span></span>
+              <span class="bg-[#0070D2] group-hover:bg-[#005BB5] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
+            </div>
           </div>
 
-          <div class="py-2 flex items-center justify-between">
+          <div onclick="selectSepatuSpecificItem('sepatu-dewasa-5jam')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between cursor-pointer hover:bg-sky-50 active:bg-sky-100 active:scale-[0.99] transition group">
             <div>
-              <span class="font-bold text-slate-800">Super Express 5 Jam</span>
+              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Super Express 5 Jam</span>
               <span class="text-[10px] text-indigo-600 font-semibold block">Selesai 5 Jam</span>
             </div>
-            <span class="font-black text-slate-900 text-sm">Rp 100.000 <span class="text-[10px] font-normal text-slate-400">/psg</span></span>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900 text-sm">Rp 100.000 <span class="text-[10px] font-normal text-slate-400">/psg</span></span>
+              <span class="bg-[#0070D2] group-hover:bg-[#005BB5] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
+            </div>
           </div>
 
-          <div class="py-2 flex items-center justify-between">
+          <div onclick="selectSepatuSpecificItem('sepatu-dewasa-3jam')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between cursor-pointer hover:bg-sky-50 active:bg-sky-100 active:scale-[0.99] transition group">
             <div>
-              <span class="font-bold text-slate-800">Super Express 3 Jam</span>
+              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Super Express 3 Jam</span>
               <span class="text-[10px] text-indigo-600 font-semibold block">Selesai 3 Jam</span>
             </div>
-            <span class="font-black text-slate-900 text-sm">Rp 125.000 <span class="text-[10px] font-normal text-slate-400">/psg</span></span>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900 text-sm">Rp 125.000 <span class="text-[10px] font-normal text-slate-400">/psg</span></span>
+              <span class="bg-[#0070D2] group-hover:bg-[#005BB5] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
+            </div>
           </div>
 
-          <div class="py-2 flex items-center justify-between">
+          <div onclick="selectSepatuSpecificItem('sepatu-dewasa-2jam')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between cursor-pointer hover:bg-rose-50 active:bg-rose-100 active:scale-[0.99] transition group">
             <div>
-              <span class="font-bold text-slate-800">Super Express 2 Jam</span>
+              <span class="font-bold text-slate-800 text-xs group-hover:text-rose-600">Super Express 2 Jam</span>
               <span class="text-[10px] text-rose-600 font-black block">Tercepat (Prioritas Mesin Dryer)</span>
             </div>
-            <span class="font-black text-rose-600 text-sm">Rp 150.000 <span class="text-[10px] font-normal text-slate-400">/psg</span></span>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-rose-600 text-sm">Rp 150.000 <span class="text-[10px] font-normal text-slate-400">/psg</span></span>
+              <span class="bg-rose-600 group-hover:bg-rose-700 text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- 2. SEPATU ANAK-ANAK -->
       <div class="bg-white rounded-xl p-3.5 shadow-sm border border-slate-200/80 text-left">
-        <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-100">
+        <div class="flex items-center justify-between pb-2 mb-1.5 border-b border-slate-100">
           <div class="flex items-center gap-2">
             <span class="w-6 h-6 rounded-lg bg-sky-100 text-[#0070D2] flex items-center justify-center text-xs font-black">👦</span>
             <h3 class="font-black text-xs text-slate-900">Cuci Sepatu Anak-anak</h3>
           </div>
-          <span class="text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded">Kids Shoes</span>
+          <span class="text-[10px] font-bold text-[#0070D2] bg-sky-50 border border-sky-200 px-2 py-0.5 rounded">Kids Shoes</span>
         </div>
 
         <div class="divide-y divide-slate-100 text-xs">
-          <div class="py-1.5 flex items-center justify-between">
-            <span class="font-bold text-slate-800">Reguler (3-4 Hari)</span>
-            <span class="font-black text-slate-900">Rp 35.000 <span class="text-[10px] font-normal text-slate-400">/psg</span></span>
+          <div onclick="selectSepatuSpecificItem('sepatu-anak-reguler')" class="py-2 px-2 -mx-2 rounded-lg flex items-center justify-between cursor-pointer hover:bg-sky-50 active:bg-sky-100 active:scale-[0.99] transition group">
+            <span class="font-bold text-slate-800 group-hover:text-[#0070D2]">Reguler (3-4 Hari)</span>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900">Rp 35.000 <span class="text-[10px] font-normal text-slate-400">/psg</span></span>
+              <span class="bg-[#0070D2] group-hover:bg-[#005BB5] text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">+ Pilih</span>
+            </div>
           </div>
-          <div class="py-1.5 flex items-center justify-between">
-            <span class="font-bold text-slate-800">Kilat 2x24 Jam</span>
-            <span class="font-black text-slate-900">Rp 40.000 <span class="text-[10px] font-normal text-slate-400">/psg</span></span>
+          <div onclick="selectSepatuSpecificItem('sepatu-anak-2x24')" class="py-2 px-2 -mx-2 rounded-lg flex items-center justify-between cursor-pointer hover:bg-sky-50 active:bg-sky-100 active:scale-[0.99] transition group">
+            <span class="font-bold text-slate-800 group-hover:text-[#0070D2]">Kilat 2x24 Jam</span>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900">Rp 40.000 <span class="text-[10px] font-normal text-slate-400">/psg</span></span>
+              <span class="bg-[#0070D2] group-hover:bg-[#005BB5] text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">+ Pilih</span>
+            </div>
           </div>
-          <div class="py-1.5 flex items-center justify-between">
-            <span class="font-bold text-slate-800">Express 1x24 Jam</span>
-            <span class="font-black text-slate-900">Rp 45.000 <span class="text-[10px] font-normal text-slate-400">/psg</span></span>
+          <div onclick="selectSepatuSpecificItem('sepatu-anak-1x24')" class="py-2 px-2 -mx-2 rounded-lg flex items-center justify-between cursor-pointer hover:bg-sky-50 active:bg-sky-100 active:scale-[0.99] transition group">
+            <span class="font-bold text-slate-800 group-hover:text-[#0070D2]">Express 1x24 Jam</span>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900">Rp 45.000 <span class="text-[10px] font-normal text-slate-400">/psg</span></span>
+              <span class="bg-[#0070D2] group-hover:bg-[#005BB5] text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">+ Pilih</span>
+            </div>
           </div>
-          <div class="py-1.5 flex items-center justify-between">
-            <span class="font-bold text-slate-800">Same Day (Hari Ini)</span>
-            <span class="font-black text-slate-900">Rp 50.000 <span class="text-[10px] font-normal text-slate-400">/psg</span></span>
+          <div onclick="selectSepatuSpecificItem('sepatu-anak-sameday')" class="py-2 px-2 -mx-2 rounded-lg flex items-center justify-between cursor-pointer hover:bg-sky-50 active:bg-sky-100 active:scale-[0.99] transition group">
+            <span class="font-bold text-slate-800 group-hover:text-[#0070D2]">Same Day (Hari Ini)</span>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900">Rp 50.000 <span class="text-[10px] font-normal text-slate-400">/psg</span></span>
+              <span class="bg-[#0070D2] group-hover:bg-[#005BB5] text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">+ Pilih</span>
+            </div>
           </div>
-          <div class="py-1.5 flex items-center justify-between">
-            <span class="font-bold text-slate-800">Super Express 5 Jam</span>
-            <span class="font-black text-slate-900">Rp 100.000 <span class="text-[10px] font-normal text-slate-400">/psg</span></span>
+          <div onclick="selectSepatuSpecificItem('sepatu-anak-5jam')" class="py-2 px-2 -mx-2 rounded-lg flex items-center justify-between cursor-pointer hover:bg-sky-50 active:bg-sky-100 active:scale-[0.99] transition group">
+            <span class="font-bold text-slate-800 group-hover:text-[#0070D2]">Super Express 5 Jam</span>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900">Rp 100.000 <span class="text-[10px] font-normal text-slate-400">/psg</span></span>
+              <span class="bg-[#0070D2] group-hover:bg-[#005BB5] text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">+ Pilih</span>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- 3. SPECIAL TREATMENT & REPAIR -->
       <div class="bg-white rounded-xl p-3.5 shadow-sm border border-slate-200/80 text-left">
-        <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-100">
+        <div class="flex items-center justify-between pb-2 mb-1.5 border-b border-slate-100">
           <div class="flex items-center gap-2">
             <span class="w-6 h-6 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center text-xs font-black">✨</span>
             <h3 class="font-black text-xs text-slate-900">Treatment Khusus & Perbaikan</h3>
@@ -523,51 +564,66 @@
         </div>
 
         <div class="divide-y divide-slate-100 text-xs">
-          <div class="py-2 flex items-center justify-between">
+          <div onclick="selectSepatuSpecificItem('sepatu-semir')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between cursor-pointer hover:bg-amber-50 active:bg-amber-100 active:scale-[0.99] transition group">
             <div>
-              <span class="font-bold text-slate-800">Semir Sepatu</span>
+              <span class="font-bold text-slate-800 group-hover:text-amber-800">Semir Sepatu</span>
               <span class="text-[10px] text-slate-500 block">Mengilapkan & proteksi bahan kulit</span>
             </div>
-            <span class="font-black text-slate-900">Rp 20.000 - 60.000</span>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900">Rp 20.000 - 60.000</span>
+              <span class="bg-amber-600 group-hover:bg-amber-700 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">+ Pilih</span>
+            </div>
           </div>
 
-          <div class="py-2 flex items-center justify-between">
+          <div onclick="selectSepatuSpecificItem('sepatu-unyellowing')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between cursor-pointer hover:bg-amber-50 active:bg-amber-100 active:scale-[0.99] transition group">
             <div>
-              <span class="font-bold text-slate-800">Unyellowing Sol</span>
+              <span class="font-bold text-slate-800 group-hover:text-amber-800">Unyellowing Sol</span>
               <span class="text-[10px] text-slate-500 block">Hilangkan warna kuning pada sol sepatu</span>
             </div>
-            <span class="font-black text-slate-900">Rp 45.000 - 120.000</span>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900">Rp 45.000 - 120.000</span>
+              <span class="bg-amber-600 group-hover:bg-amber-700 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">+ Pilih</span>
+            </div>
           </div>
 
-          <div class="py-2 flex items-center justify-between">
+          <div onclick="selectSepatuSpecificItem('sepatu-jamur')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between cursor-pointer hover:bg-amber-50 active:bg-amber-100 active:scale-[0.99] transition group">
             <div>
-              <span class="font-bold text-slate-800">Pembersihan Jamur</span>
+              <span class="font-bold text-slate-800 group-hover:text-amber-800">Pembersihan Jamur</span>
               <span class="text-[10px] text-slate-500 block">Anti-fungal treatment basmi jamur</span>
             </div>
-            <span class="font-black text-slate-900">Rp 50.000 - 150.000</span>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900">Rp 50.000 - 150.000</span>
+              <span class="bg-amber-600 group-hover:bg-amber-700 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">+ Pilih</span>
+            </div>
           </div>
 
-          <div class="py-2 flex items-center justify-between">
+          <div onclick="selectSepatuSpecificItem('sepatu-repaint')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between cursor-pointer hover:bg-amber-50 active:bg-amber-100 active:scale-[0.99] transition group">
             <div>
-              <span class="font-bold text-slate-800">Repaint Sepatu</span>
+              <span class="font-bold text-slate-800 group-hover:text-amber-800">Repaint Sepatu</span>
               <span class="text-[10px] text-slate-500 block">Cat ulang warna pudar kembali pekat</span>
             </div>
-            <span class="font-black text-slate-900">Rp 50.000 - 150.000</span>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900">Rp 50.000 - 150.000</span>
+              <span class="bg-amber-600 group-hover:bg-amber-700 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">+ Pilih</span>
+            </div>
           </div>
 
-          <div class="py-2 flex items-center justify-between">
+          <div onclick="selectSepatuSpecificItem('sepatu-repair')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between cursor-pointer hover:bg-amber-50 active:bg-amber-100 active:scale-[0.99] transition group">
             <div>
-              <span class="font-bold text-slate-800">Repair (Lem / Jahit Sol)</span>
+              <span class="font-bold text-slate-800 group-hover:text-amber-800">Repair (Lem / Jahit Sol)</span>
               <span class="text-[10px] text-slate-500 block">Sol lepas, regluing lem kuat & jahit</span>
             </div>
-            <span class="font-black text-slate-900">Rp 25.000 - 150.000</span>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900">Rp 25.000 - 150.000</span>
+              <span class="bg-amber-600 group-hover:bg-amber-700 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">+ Pilih</span>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- 4. LEATHER TREATMENT PREMIUM -->
-      <div class="bg-white rounded-xl p-3.5 shadow-sm border border-slate-200/80 text-left">
-        <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-100">
+      <div onclick="selectSepatuSpecificItem('sepatu-leather')" class="bg-white rounded-xl p-3.5 shadow-sm border border-slate-200/80 text-left cursor-pointer hover:bg-orange-50/60 active:bg-orange-100 active:scale-[0.99] transition group">
+        <div class="flex items-center justify-between pb-2 mb-1.5 border-b border-slate-100">
           <div class="flex items-center gap-2">
             <span class="w-6 h-6 rounded-lg bg-orange-100 text-orange-700 flex items-center justify-center text-xs font-black">🧥</span>
             <h3 class="font-black text-xs text-slate-900">Treatment Leather / Kulit</h3>
@@ -577,10 +633,13 @@
 
         <div class="flex items-center justify-between text-xs py-1">
           <div>
-            <span class="font-bold text-slate-800 block">Perawatan Kulit Lengkap</span>
+            <span class="font-bold text-slate-800 block group-hover:text-orange-800">Perawatan Kulit Lengkap</span>
             <span class="text-[10.5px] text-slate-500 leading-snug">Fiebings, renoval / waterproof & semir premium</span>
           </div>
-          <span class="font-black text-slate-900 text-sm flex-shrink-0 ml-2">Rp 50.000 - 150.000</span>
+          <div class="flex items-center gap-2 flex-shrink-0 ml-2">
+            <span class="font-black text-slate-900 text-sm">Rp 50.000 - 150.000</span>
+            <span class="bg-orange-600 group-hover:bg-orange-700 text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
+          </div>
         </div>
       </div>
 
@@ -1067,14 +1126,218 @@
         unit: 'Pasang',
         defaultQty: 1,
         isKiloan: false,
-        hasSpeedOption: true,
-        defaultSpeed: 'reguler',
-        speeds: {
-          'reguler': { label: 'Reguler', duration: '3-4 Hari Kerja' },
-          'express': { label: 'Express', duration: '1-2 Hari Kerja' }
-        },
         duration: '3-4 Hari Kerja',
-        img: 'assets/images/card_sepatu_final.jpg'
+        priceLabel: 'Mulai Rp 50.000',
+        img: 'assets/images/sneakers_clean.png'
+      },
+      'sepatu-promo-weekend': {
+        id: 'sepatu-promo-weekend',
+        category: 'SEPATU',
+        name: 'Promo Weekend: 3 Pasang Sepatu Dewasa',
+        unit: 'Paket (3 Psg)',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: 'Reguler Weekend (3-4 Hari)',
+        priceLabel: 'Rp 100.000 / paket',
+        img: 'assets/images/sneakers_clean.png'
+      },
+      'sepatu-dewasa-reguler': {
+        id: 'sepatu-dewasa-reguler',
+        category: 'SEPATU',
+        name: 'Sepatu Dewasa - Reguler',
+        unit: 'Pasang',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '3-4 Hari Kerja',
+        priceLabel: 'Rp 50.000 / psg',
+        img: 'assets/images/sneakers_clean.png'
+      },
+      'sepatu-dewasa-2x24': {
+        id: 'sepatu-dewasa-2x24',
+        category: 'SEPATU',
+        name: 'Sepatu Dewasa - Kilat 2x24 Jam',
+        unit: 'Pasang',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '2x24 Jam (2 Hari)',
+        priceLabel: 'Rp 60.000 / psg',
+        img: 'assets/images/sneakers_clean.png'
+      },
+      'sepatu-dewasa-1x24': {
+        id: 'sepatu-dewasa-1x24',
+        category: 'SEPATU',
+        name: 'Sepatu Dewasa - Express 1x24 Jam',
+        unit: 'Pasang',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '1x24 Jam (1 Hari)',
+        priceLabel: 'Rp 70.000 / psg',
+        img: 'assets/images/sneakers_clean.png'
+      },
+      'sepatu-dewasa-sameday': {
+        id: 'sepatu-dewasa-sameday',
+        category: 'SEPATU',
+        name: 'Sepatu Dewasa - Same Day',
+        unit: 'Pasang',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: 'Same Day (Hari Ini Selesai)',
+        priceLabel: 'Rp 80.000 / psg',
+        img: 'assets/images/sneakers_clean.png'
+      },
+      'sepatu-dewasa-5jam': {
+        id: 'sepatu-dewasa-5jam',
+        category: 'SEPATU',
+        name: 'Sepatu Dewasa - Super Express 5 Jam',
+        unit: 'Pasang',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: 'Selesai 5 Jam',
+        priceLabel: 'Rp 100.000 / psg',
+        img: 'assets/images/sneakers_clean.png'
+      },
+      'sepatu-dewasa-3jam': {
+        id: 'sepatu-dewasa-3jam',
+        category: 'SEPATU',
+        name: 'Sepatu Dewasa - Super Express 3 Jam',
+        unit: 'Pasang',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: 'Selesai 3 Jam',
+        priceLabel: 'Rp 125.000 / psg',
+        img: 'assets/images/sneakers_clean.png'
+      },
+      'sepatu-dewasa-2jam': {
+        id: 'sepatu-dewasa-2jam',
+        category: 'SEPATU',
+        name: 'Sepatu Dewasa - Super Express 2 Jam (Prioritas)',
+        unit: 'Pasang',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: 'Selesai 2 Jam (Prioritas Dryer)',
+        priceLabel: 'Rp 150.000 / psg',
+        img: 'assets/images/sneakers_clean.png'
+      },
+      'sepatu-anak-reguler': {
+        id: 'sepatu-anak-reguler',
+        category: 'SEPATU',
+        name: 'Sepatu Anak - Reguler',
+        unit: 'Pasang',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '3-4 Hari Kerja',
+        priceLabel: 'Rp 35.000 / psg',
+        img: 'assets/images/sneakers_clean.png'
+      },
+      'sepatu-anak-2x24': {
+        id: 'sepatu-anak-2x24',
+        category: 'SEPATU',
+        name: 'Sepatu Anak - Kilat 2x24 Jam',
+        unit: 'Pasang',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '2x24 Jam (2 Hari)',
+        priceLabel: 'Rp 40.000 / psg',
+        img: 'assets/images/sneakers_clean.png'
+      },
+      'sepatu-anak-1x24': {
+        id: 'sepatu-anak-1x24',
+        category: 'SEPATU',
+        name: 'Sepatu Anak - Express 1x24 Jam',
+        unit: 'Pasang',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '1x24 Jam (1 Hari)',
+        priceLabel: 'Rp 45.000 / psg',
+        img: 'assets/images/sneakers_clean.png'
+      },
+      'sepatu-anak-sameday': {
+        id: 'sepatu-anak-sameday',
+        category: 'SEPATU',
+        name: 'Sepatu Anak - Same Day',
+        unit: 'Pasang',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: 'Same Day (Hari Ini Selesai)',
+        priceLabel: 'Rp 50.000 / psg',
+        img: 'assets/images/sneakers_clean.png'
+      },
+      'sepatu-anak-5jam': {
+        id: 'sepatu-anak-5jam',
+        category: 'SEPATU',
+        name: 'Sepatu Anak - Super Express 5 Jam',
+        unit: 'Pasang',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: 'Selesai 5 Jam',
+        priceLabel: 'Rp 100.000 / psg',
+        img: 'assets/images/sneakers_clean.png'
+      },
+      'sepatu-semir': {
+        id: 'sepatu-semir',
+        category: 'SEPATU',
+        name: 'Treatment Sepatu - Semir Kulit',
+        unit: 'Pasang',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '1-2 Hari Kerja',
+        priceLabel: 'Rp 20.000 - 60.000',
+        img: 'assets/images/sneakers_clean.png'
+      },
+      'sepatu-unyellowing': {
+        id: 'sepatu-unyellowing',
+        category: 'SEPATU',
+        name: 'Treatment Sepatu - Unyellowing Sol',
+        unit: 'Pasang',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '2-3 Hari Kerja',
+        priceLabel: 'Rp 45.000 - 120.000',
+        img: 'assets/images/sneakers_clean.png'
+      },
+      'sepatu-jamur': {
+        id: 'sepatu-jamur',
+        category: 'SEPATU',
+        name: 'Treatment Sepatu - Pembersihan Jamur',
+        unit: 'Pasang',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '2-3 Hari Kerja',
+        priceLabel: 'Rp 50.000 - 150.000',
+        img: 'assets/images/sneakers_clean.png'
+      },
+      'sepatu-repaint': {
+        id: 'sepatu-repaint',
+        category: 'SEPATU',
+        name: 'Treatment Sepatu - Repaint Warna',
+        unit: 'Pasang',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '3-5 Hari Kerja',
+        priceLabel: 'Rp 50.000 - 150.000',
+        img: 'assets/images/sneakers_clean.png'
+      },
+      'sepatu-repair': {
+        id: 'sepatu-repair',
+        category: 'SEPATU',
+        name: 'Treatment Sepatu - Repair Lem / Jahit Sol',
+        unit: 'Pasang',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '2-4 Hari Kerja',
+        priceLabel: 'Rp 25.000 - 150.000',
+        img: 'assets/images/sneakers_clean.png'
+      },
+      'sepatu-leather': {
+        id: 'sepatu-leather',
+        category: 'SEPATU',
+        name: 'Treatment Leather Kulit Premium (Fiebings USA)',
+        unit: 'Pasang',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '3-4 Hari Kerja',
+        priceLabel: 'Rp 50.000 - 150.000',
+        img: 'assets/images/sneakers_clean.png'
       },
       'ambal': {
         id: 'ambal',
@@ -1182,24 +1445,28 @@
       window.scrollTo(0, 0);
     }
 
-    function proceedServiceToOrder(serviceId) {
-      const s = services[serviceId];
+    function selectSepatuSpecificItem(itemId) {
+      const s = services[itemId] || services['sepatu-dewasa-reguler'];
       if (!s) return;
 
-      if (!orderItems.some(it => it.id === s.id)) {
-        const defaultSpeed = s.defaultSpeed || 'reguler';
+      const existingItem = orderItems.find(it => it.id === s.id);
+      if (existingItem) {
+        existingItem.qty += 1;
+        showToast(`Jumlah ${s.name} ditambah jadi ${existingItem.qty} ${s.unit}`, '✓');
+      } else {
         orderItems.push({
           id: s.id,
           category: s.category,
           name: s.name,
           unit: s.unit,
-          qty: s.defaultQty,
-          isKiloan: s.isKiloan,
-          hasSpeedOption: !!s.hasSpeedOption,
-          speed: defaultSpeed,
-          duration: s.hasSpeedOption ? s.speeds[defaultSpeed].duration : s.duration,
+          qty: s.defaultQty || 1,
+          isKiloan: false,
+          hasSpeedOption: false,
+          duration: s.duration,
+          priceLabel: s.priceLabel || '',
           img: s.img
         });
+        showToast(`${s.name} berhasil ditambahkan! 🎉`, '✓');
       }
 
       document.getElementById('sepatu-detail-view').classList.add('hidden');
@@ -1207,7 +1474,10 @@
       loadSavedAddress();
       document.getElementById('checkout-view').classList.remove('hidden');
       window.scrollTo(0, 0);
-      showToast(`${s.name} berhasil ditambahkan! 🎉`, '✓');
+    }
+
+    function proceedServiceToOrder(serviceId) {
+      selectSepatuSpecificItem('sepatu-dewasa-reguler');
     }
 
     // Go back to home to add more services (Order is preserved!)
@@ -1354,7 +1624,10 @@
                 <span>Hapus</span>
               </button>
             </div>
-            <p class="text-[10.5px] text-slate-500 font-medium mt-0.5">${item.duration}</p>
+            <div class="flex items-center gap-1.5 flex-wrap mt-0.5">
+              <span class="text-[10.5px] text-slate-500 font-medium">${item.duration}</span>
+              ${item.priceLabel ? `<span class="text-[10px] font-bold text-[#0070D2] bg-sky-50 border border-sky-200 px-1.5 py-0.2 rounded">${item.priceLabel}</span>` : ''}
+            </div>
             
             ${item.hasSpeedOption ? `
               <div class="mt-2 pt-1.5 border-t border-slate-200/60">
@@ -1762,8 +2035,11 @@
           let speedDetail = '';
           if (it.hasSpeedOption) {
             speedDetail = it.speed === 'express' ? ` [⚡ Express - ${it.duration}]` : ` [🕐 Reguler - ${it.duration}]`;
+          } else if (it.duration) {
+            speedDetail = ` [${it.duration}]`;
           }
-          msg += `${idx + 1}. *${it.name}* (${it.qty} ${it.unit})${speedDetail}\n`;
+          const pricePart = it.priceLabel ? ` - ${it.priceLabel}` : '';
+          msg += `${idx + 1}. *${it.name}* (${it.qty} ${it.unit})${speedDetail}${pricePart}\n`;
         }
       });
       msg += `\n`;
