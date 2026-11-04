@@ -494,7 +494,7 @@
     </div>
 
     <!-- 7. Rincian & Ketentuan Pesanan -->
-    <div class="bg-white p-4 mb-28 shadow-sm text-xs space-y-2.5">
+    <div class="bg-white p-4 mb-3 shadow-sm text-xs space-y-2.5">
       <h4 class="text-xs font-bold text-slate-800 pb-1 border-b border-slate-100">Rincian & Ketentuan Biaya</h4>
       
       <div class="flex justify-between text-slate-600">
@@ -526,6 +526,18 @@
           Dihitung saat Penjemputan
         </span>
       </div>
+    </div>
+
+    <!-- Tombol Batalkan Pesanan (Klo ga jadi pesan) -->
+    <div class="px-4 pb-28 text-center">
+      <button type="button" onclick="cancelEntireOrder()" class="text-xs font-semibold text-slate-500 hover:text-rose-600 active:scale-95 py-2 px-4 rounded-full border border-slate-300 hover:border-rose-300 bg-white inline-flex items-center gap-1.5 transition shadow-sm">
+        <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="15" y1="9" x2="9" y2="15"></line>
+          <line x1="9" y1="9" x2="15" y2="15"></line>
+        </svg>
+        <span>Batalkan Pesanan (Kembali ke Beranda)</span>
+      </button>
     </div>
 
     <!-- 8. Sticky Floating Bottom Bar (Shopee Style Clean Blue) -->
@@ -615,6 +627,30 @@
         <textarea id="modal-address" rows="3" placeholder="Jalan, No. Rumah, RT/RW, Patokan (misal dekat Masjid / Indomaret)..." class="w-full text-xs px-3 py-2 border border-slate-300 rounded text-slate-900 bg-white font-medium focus:outline-none focus:border-[#0070D2]"></textarea>
       </div>
       <button onclick="saveModalAddress()" class="w-full bg-[#0070D2] hover:bg-[#005BB5] text-white text-xs font-black py-2.5 rounded shadow active:scale-[0.99] transition">Simpan Alamat di HP</button>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- ========================================== -->
+  <!-- MODAL KONFIRMASI BATAL PESANAN              -->
+  <!-- ========================================== -->
+  <div id="cancel-confirm-modal" class="hidden fixed inset-0 z-[70] bg-black/60 flex items-center justify-center p-4 backdrop-blur-[2px]">
+    <div class="bg-white rounded-2xl p-5 max-w-[320px] w-full text-center shadow-2xl space-y-3">
+      <div class="w-12 h-12 rounded-full bg-rose-100 text-rose-500 flex items-center justify-center mx-auto text-xl font-bold">
+        🗑️
+      </div>
+      <h3 class="font-black text-slate-900 text-sm">Batalkan Pesanan?</h3>
+      <p id="cancel-confirm-msg" class="text-xs text-slate-600 leading-relaxed">
+        Apakah Anda yakin ingin membatalkan pesanan ini dan kembali ke menu utama?
+      </p>
+      <div class="grid grid-cols-2 gap-2 pt-2">
+        <button onclick="closeCancelConfirmModal()" class="py-2.5 px-3 border border-slate-300 rounded-lg text-xs font-bold text-slate-700 bg-slate-50 hover:bg-slate-100 active:scale-95 transition">
+          Lanjut Pesan
+        </button>
+        <button onclick="executeCancelOrder()" class="py-2.5 px-3 bg-rose-500 hover:bg-rose-600 rounded-lg text-xs font-bold text-white shadow active:scale-95 transition">
+          Ya, Batalkan
+        </button>
+      </div>
     </div>
   </div>
 
@@ -895,9 +931,13 @@
           <div class="flex-1 min-w-0">
             <div class="flex items-start justify-between gap-1">
               <h3 class="font-bold text-slate-900 text-xs leading-tight">${item.name}</h3>
-              ${orderItems.length > 1 ? `
-                <button onclick="removeOrderItem('${item.id}')" class="text-slate-400 hover:text-rose-500 active:scale-90 p-0.5 font-black text-xs leading-none" title="Hapus layanan">✕</button>
-              ` : ''}
+              <button onclick="confirmRemoveOrderItem('${item.id}')" class="text-rose-500 hover:text-rose-600 active:scale-95 text-[10.5px] font-bold flex items-center gap-1 bg-rose-50 hover:bg-rose-100 px-2 py-0.5 rounded transition" title="Hapus layanan ini">
+                <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="3 6 5 6 21 6"></polyline>
+                  <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                </svg>
+                <span>Hapus</span>
+              </button>
             </div>
             <p class="text-[10.5px] text-slate-500 font-medium mt-0.5">${item.duration}</p>
             
@@ -942,22 +982,44 @@
       renderOrderItems();
     }
 
-    function removeOrderItem(serviceId) {
-      if (orderItems.length <= 1) {
-        showToast('Minimal harus ada 1 layanan dalam pesanan', '⚠️');
-        return;
-      }
-      const removed = orderItems.find(it => it.id === serviceId);
-      orderItems = orderItems.filter(it => it.id !== serviceId);
-      
-      // Re-check voucher validity
-      if (appliedVoucher && !isVoucherEligible(appliedVoucher)) {
-        appliedVoucher = null;
-        showToast('Voucher dilepas karena layanan terkait dihapus', 'ℹ️');
-      }
+    function confirmRemoveOrderItem(serviceId) {
+      const item = orderItems.find(it => it.id === serviceId);
+      if (!item) return;
 
-      renderOrderItems();
-      showToast(`${removed ? removed.name : 'Layanan'} dihapus`, '🗑️');
+      // If more than 1 item, delete immediately
+      if (orderItems.length > 1) {
+        orderItems = orderItems.filter(it => it.id !== serviceId);
+        
+        // Re-check voucher validity
+        if (appliedVoucher && !isVoucherEligible(appliedVoucher)) {
+          appliedVoucher = null;
+          showToast('Voucher dilepas karena layanan terkait dihapus', 'ℹ️');
+        }
+
+        renderOrderItems();
+        showToast(`${item.name} dihapus dari pesanan`, '🗑️');
+      } else {
+        // Only 1 item remaining: prompt user if they want to cancel order and return to home
+        document.getElementById('cancel-confirm-msg').innerText = `Layanan "${item.name}" adalah satu-satunya layanan dalam pesanan. Hapus dan batalkan pesanan ini?`;
+        document.getElementById('cancel-confirm-modal').classList.remove('hidden');
+      }
+    }
+
+    function cancelEntireOrder() {
+      document.getElementById('cancel-confirm-msg').innerText = 'Apakah Anda ingin membatalkan pesanan ini dan kembali ke menu utama?';
+      document.getElementById('cancel-confirm-modal').classList.remove('hidden');
+    }
+
+    function closeCancelConfirmModal() {
+      document.getElementById('cancel-confirm-modal').classList.add('hidden');
+    }
+
+    function executeCancelOrder() {
+      closeCancelConfirmModal();
+      orderItems = [];
+      appliedVoucher = null;
+      closeCheckout();
+      showToast('Pesanan dibatalkan', 'ℹ️');
     }
 
     function updateOrderSummary() {
