@@ -374,35 +374,41 @@
       </div>
     </div>
 
-    <!-- 2. Layanan Laundry yang Dipilih (Card Produk) -->
+    <!-- 2. Layanan Laundry yang Dipilih (Multi-Item List & No Fixed Price Dispute) -->
     <div class="bg-white p-4 mb-2.5 shadow-sm">
-      <div class="flex items-center gap-2 pb-2.5 mb-3 border-b border-slate-100">
-        <span class="bg-[#0070D2] text-white text-[10px] font-black px-1.5 py-0.5 rounded">Homie</span>
-        <span class="font-black text-slate-800 text-xs">Homie Laundry Samarinda</span>
-      </div>
-
-      <div class="flex items-start gap-3">
-        <img id="co-service-img" src="assets/images/cat_mascot.png" class="w-16 h-16 rounded object-cover flex-shrink-0 bg-slate-100 border border-slate-200" alt="Layanan" />
-        <div class="flex-1 min-w-0">
-          <h3 id="co-service-name" class="font-bold text-slate-900 text-sm leading-tight truncate">Cuci Kiloan 2 Jam Express</h3>
-          <p id="co-service-duration" class="text-[11px] text-slate-500 font-medium mt-0.5">Selesai dalam 2 Jam</p>
-          
-          <div class="flex items-center justify-between mt-2.5">
-            <span id="co-service-price" class="font-black text-sm text-[#0070D2]">Rp 15.000 <span class="text-[10px] font-normal text-slate-500">/Kg</span></span>
-            
-            <!-- Quantity Counter -->
-            <div class="flex items-center border border-slate-300 rounded overflow-hidden">
-              <button onclick="changeQty(-1)" class="w-7 h-7 bg-slate-50 hover:bg-slate-100 flex items-center justify-center text-slate-600 font-bold active:bg-slate-200">−</button>
-              <span id="co-qty-display" class="w-8 h-7 flex items-center justify-center text-xs font-bold text-slate-800 bg-white">3</span>
-              <button onclick="changeQty(1)" class="w-7 h-7 bg-slate-50 hover:bg-slate-100 flex items-center justify-center text-slate-600 font-bold active:bg-slate-200">+</button>
-            </div>
-          </div>
+      <div class="flex items-center justify-between pb-2.5 mb-3 border-b border-slate-100">
+        <div class="flex items-center gap-2">
+          <span class="bg-[#0070D2] text-white text-[10px] font-black px-1.5 py-0.5 rounded">Homie</span>
+          <span class="font-black text-slate-800 text-xs">Layanan yang Dipilih</span>
         </div>
+        <span id="co-items-count-badge" class="text-[11px] font-bold text-[#0070D2] bg-sky-50 px-2 py-0.5 rounded border border-sky-200">1 Layanan</span>
       </div>
 
-      <div id="co-kiloan-note" class="mt-2.5 bg-amber-50 border border-amber-200/80 text-amber-900 text-[11px] rounded p-2 flex items-start gap-1.5 leading-snug">
-        <span class="text-xs">⚖️</span>
-        <span>Estimasi berat. Total pasti akan ditimbang kembali oleh tim Homie dengan timbangan digital saat penjemputan.</span>
+      <!-- Dynamic Item List -->
+      <div id="co-items-list" class="space-y-2.5">
+        <!-- Rendered via JS -->
+      </div>
+
+      <!-- Button: Tambah Layanan Lain (Sepatu, Ambal, Satuan, dll) -->
+      <button type="button" onclick="openAddServiceModal()" class="w-full mt-3 py-2.5 px-3 border border-dashed border-[#0070D2] bg-sky-50/50 hover:bg-sky-50 rounded-lg text-xs font-bold text-[#0070D2] flex items-center justify-center gap-1.5 active:scale-[0.99] transition">
+        <span class="text-sm font-black">+</span>
+        <span>Tambah Layanan Lain (Sepatu, Ambal, Satuan, dll)</span>
+      </button>
+
+      <!-- Hygiene & 3 Kg Notice for Kiloan -->
+      <div id="co-kiloan-note" class="mt-3 bg-sky-50/70 border border-sky-200 text-slate-700 text-[11px] rounded-lg p-3 space-y-1.5 leading-snug">
+        <div class="flex items-center gap-1.5 font-bold text-[#0070D2]">
+          <span>🧺</span>
+          <span>Ketentuan & Standar Cuci Baju Kiloan:</span>
+        </div>
+        <div class="flex items-start gap-1.5 text-slate-700">
+          <span class="text-emerald-600 font-bold">✓</span>
+          <span><b>Dicuci Terpisah (1 Mesin 1 Pelanggan):</b> Baju Anda dijamin higienis, tidak pernah dicampur dengan pakaian orang lain.</span>
+        </div>
+        <div class="flex items-start gap-1.5 text-slate-700">
+          <span class="text-[#0070D2] font-bold">⚖️</span>
+          <span><b>Minimal Order 3 Kg:</b> Jika cucian di bawah 3 kg, tetap dihitung 3 kg. Berat riil ditimbang langsung di depan Anda dengan timbangan digital saat penjemputan.</span>
+        </div>
       </div>
     </div>
 
@@ -487,32 +493,47 @@
       </div>
     </div>
 
-    <!-- 7. Rincian Pembayaran (Invoice Breakdown) -->
-    <div class="bg-white p-4 mb-28 shadow-sm text-xs space-y-2">
+    <!-- 7. Rincian & Ketentuan Pesanan -->
+    <div class="bg-white p-4 mb-28 shadow-sm text-xs space-y-2.5">
+      <h4 class="text-xs font-bold text-slate-800 pb-1 border-b border-slate-100">Rincian & Ketentuan Biaya</h4>
+      
       <div class="flex justify-between text-slate-600">
-        <span>Subtotal Layanan</span>
-        <span id="subtotal-display" class="font-bold text-slate-800">Rp 45.000</span>
+        <span>Layanan Dipilih</span>
+        <span id="summary-items-list" class="font-bold text-slate-800 text-right">1 Layanan</span>
       </div>
+      
       <div class="flex justify-between text-slate-600">
         <span>Ongkir Antar-Jemput</span>
-        <span class="text-emerald-600 font-bold">GRATIS</span>
+        <span class="text-emerald-600 font-bold">GRATIS (Area Samarinda)</span>
       </div>
-      <div id="voucher-discount-row" class="hidden flex justify-between text-emerald-600">
-        <span id="voucher-discount-label">Diskon Voucher</span>
-        <span id="voucher-discount-val" class="font-bold">-Rp 4.500</span>
+
+      <div class="flex justify-between text-slate-600">
+        <span>Standar Pencucian</span>
+        <span class="text-slate-800 font-semibold">1 Mesin 1 Pelanggan (Higienis)</span>
       </div>
-      <div class="pt-2 border-t border-slate-100 flex justify-between text-sm">
-        <span class="font-black text-slate-900">Total Pembayaran</span>
-        <span id="total-breakdown-display" class="font-black text-[#0070D2]">Rp 40.500</span>
+      
+      <div id="voucher-discount-row" class="hidden flex justify-between text-[#0070D2] bg-sky-50 p-2 rounded border border-sky-100">
+        <span id="voucher-discount-label" class="font-semibold">Voucher Promo</span>
+        <span id="voucher-discount-val" class="font-black">Dipotong saat Timbang</span>
+      </div>
+      
+      <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+        <div>
+          <span class="font-black text-slate-900 block">Total Pembayaran</span>
+          <span class="text-[10px] text-slate-500">Timbangan digital di tempat</span>
+        </div>
+        <span class="font-bold text-xs text-[#0070D2] bg-sky-50 px-2.5 py-1 rounded border border-sky-200">
+          Dihitung saat Penjemputan
+        </span>
       </div>
     </div>
 
-    <!-- 8. Sticky Floating Bottom Bar (Shopee Style) -->
+    <!-- 8. Sticky Floating Bottom Bar (Shopee Style Clean Blue) -->
     <div class="fixed bottom-0 left-0 right-0 max-w-[414px] mx-auto z-40 bg-white border-t border-slate-200 px-4 py-2.5 flex items-center justify-between shadow-2xl">
       <div>
-        <span class="text-[10.5px] text-slate-500 block leading-tight">Total Pembayaran</span>
-        <span id="sticky-total-display" class="text-base font-black text-[#0070D2] leading-tight block">Rp 40.500</span>
-        <span id="sticky-savings-display" class="hidden text-[10px] text-emerald-600 font-bold block">Hemat Rp 4.500</span>
+        <span class="text-[10px] text-slate-500 block leading-tight">Total Layanan</span>
+        <span id="sticky-total-display" class="text-sm font-black text-[#0070D2] leading-tight block">1 Layanan Dipilih</span>
+        <span class="text-[10px] text-emerald-600 font-bold block">Biaya dihitung saat timbang</span>
       </div>
       <button onclick="submitOrderToWhatsApp()" class="bg-[#0070D2] hover:bg-[#005BB5] active:scale-[0.98] text-white px-5 py-2.5 rounded font-black text-xs sm:text-sm flex items-center gap-1.5 shadow-md transition">
         <span>Buat Pesanan</span>
@@ -541,6 +562,33 @@
       <!-- List of Vouchers with Smart Category Validation -->
       <div class="overflow-y-auto flex-1 space-y-2.5 pr-1 py-1" id="voucher-list-container">
         <!-- Generated dynamically via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- ========================================== -->
+  <!-- MODAL TAMBAH LAYANAN (Slide Up Drawer)     -->
+  <!-- ========================================== -->
+  <div id="add-service-modal" class="hidden fixed inset-0 z-[60] bg-black/60 flex items-end justify-center backdrop-blur-[2px]">
+    <div class="bg-white w-full max-w-[414px] rounded-t-2xl p-4 max-h-[85vh] flex flex-col shadow-2xl">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <div>
+          <h3 class="font-black text-slate-900 text-sm">Tambah Layanan ke Pesanan</h3>
+          <p class="text-[10.5px] text-slate-500 mt-0.5">Gabungkan cuci baju, sepatu, ambal, dll dalam 1 jemputan</p>
+        </div>
+        <button onclick="closeAddServiceModal()" class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 font-bold text-sm">✕</button>
+      </div>
+
+      <!-- List of Services that can be added -->
+      <div class="overflow-y-auto flex-1 space-y-2.5 pr-1 py-3" id="add-service-list">
+        <!-- Generated dynamically via JS -->
+      </div>
+      
+      <div class="pt-2 border-t border-slate-100">
+        <button onclick="closeAddServiceModal()" class="w-full bg-[#0070D2] hover:bg-[#005BB5] text-white text-xs font-bold py-2.5 rounded shadow active:scale-[0.99] transition">
+          Selesai & Kembali ke Checkout
+        </button>
       </div>
     </div>
   </div>
@@ -628,7 +676,6 @@
         id: 'kiloan-2',
         category: 'KILOAN',
         name: 'Cuci Kiloan 2 Jam Express',
-        price: 15000,
         unit: 'Kg',
         defaultQty: 3,
         isKiloan: true,
@@ -639,7 +686,6 @@
         id: 'kiloan-3',
         category: 'KILOAN',
         name: 'Cuci Kiloan 3 Jam Regular',
-        price: 12000,
         unit: 'Kg',
         defaultQty: 3,
         isKiloan: true,
@@ -650,7 +696,6 @@
         id: 'kiloan-5',
         category: 'KILOAN',
         name: 'Cuci Kiloan 5 Jam Express',
-        price: 10000,
         unit: 'Kg',
         defaultQty: 3,
         isKiloan: true,
@@ -661,7 +706,6 @@
         id: 'kiloan-sameday',
         category: 'KILOAN',
         name: 'Cuci Kiloan Same Day (Hari Ini)',
-        price: 9000,
         unit: 'Kg',
         defaultQty: 3,
         isKiloan: true,
@@ -672,9 +716,8 @@
         id: 'kiloan-1x24',
         category: 'KILOAN',
         name: 'Cuci Kiloan 1x24 Jam Reguler',
-        price: 8000,
         unit: 'Kg',
-        defaultQty: 4,
+        defaultQty: 3,
         isKiloan: true,
         duration: 'Selesai 1x24 Jam',
         img: 'assets/images/cat_mascot.png'
@@ -682,42 +725,38 @@
       'kiloan-bulanan': {
         id: 'kiloan-bulanan',
         category: 'KILOAN',
-        name: 'Paket Langganan Laundry Bulanan (30 Kg)',
-        price: 240000,
+        name: 'Paket Langganan Bulanan (30 Kg)',
         unit: 'Paket',
         defaultQty: 1,
         isKiloan: false,
         duration: 'Aktif 30 Hari',
         img: 'assets/images/cat_mascot.png'
       },
-      'ambal': {
-        id: 'ambal',
-        category: 'AMBAL',
-        name: 'Ambal & Sajadah Deep Clean',
-        price: 35000,
-        unit: 'Pcs / Lembar',
-        defaultQty: 1,
-        isKiloan: false,
-        duration: '1-2 Hari Kerja',
-        img: 'assets/images/card_ambal_final.jpg'
-      },
       'sepatu': {
         id: 'sepatu',
         category: 'SEPATU',
         name: 'Sepatu & Tas Deep Clean Treatment',
-        price: 35000,
-        unit: 'Pasang / Item',
+        unit: 'Pasang',
         defaultQty: 1,
         isKiloan: false,
         duration: '1-2 Hari Kerja',
         img: 'assets/images/card_sepatu_final.jpg'
       },
+      'ambal': {
+        id: 'ambal',
+        category: 'AMBAL',
+        name: 'Ambal & Sajadah Deep Clean',
+        unit: 'Lembar',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '1-2 Hari Kerja',
+        img: 'assets/images/card_ambal_final.jpg'
+      },
       'satuan': {
         id: 'satuan',
         category: 'SATUAN',
         name: 'Cuci Satuan & Khusus (Jas, Bedcover, Boneka)',
-        price: 25000,
-        unit: 'Pcs / Item',
+        unit: 'Pcs',
         defaultQty: 1,
         isKiloan: false,
         duration: '1-2 Hari Kerja',
@@ -726,64 +765,44 @@
     };
 
     // ==========================================
-    // VOUCHERS CATALOG (Google Sheets Ready)
+    // VOUCHERS CATALOG
     // ==========================================
     const vouchers = [
       {
         code: 'DISKONKILAT',
         category: 'SEMUA',
-        type: 'PERCENT',
-        value: 10,
-        minOrder: 20000,
         title: 'Diskon Kilat 10%',
-        desc: 'Semua Layanan Homie Laundry (Min. Rp 20rb)'
+        desc: 'Semua Layanan Homie Laundry'
       },
       {
         code: 'SNEAKER10K',
         category: 'SEPATU',
-        type: 'FIXED',
-        value: 10000,
-        minOrder: 30000,
         title: 'Potongan Rp 10.000 Sepatu',
         desc: 'Khusus Deep Clean Sepatu & Tas'
       },
       {
         code: 'AMBAL15',
         category: 'AMBAL',
-        type: 'PERCENT',
-        value: 15,
-        minOrder: 35000,
         title: 'Diskon 15% Ambal & Sajadah',
         desc: 'Khusus Sedot Debu, Anti Tungau & Deep Clean Ambal'
       },
       {
         code: 'BEDCOVER8K',
         category: 'SATUAN',
-        type: 'FIXED',
-        value: 8000,
-        minOrder: 25000,
         title: 'Potongan Rp 8.000 Cuci Satuan',
         desc: 'Khusus Jas, Bedcover, Boneka, dll'
       },
       {
         code: 'EXPRESSHEMAT',
         category: 'KILOAN',
-        type: 'FIXED',
-        value: 5000,
-        minOrder: 25000,
         title: 'Potongan Rp 5.000 Kiloan Express',
         desc: 'Khusus Cuci Kiloan & Express'
       }
     ];
 
-    let currentService = services['kiloan-2'];
-    let currentQty = 3;
+    // Current Cart Items (Array of services in checkout)
+    let orderItems = [];
     let appliedVoucher = null;
-
-    // Format IDR currency
-    function formatRp(num) {
-      return 'Rp ' + Number(num).toLocaleString('id-ID');
-    }
 
     // Toast helper
     let toastTimer = null;
@@ -798,19 +817,29 @@
       }, 3000);
     }
 
-    // Open Checkout View
+    // Open Checkout View with initial service
     function openCheckout(serviceKey) {
-      currentService = services[serviceKey] || services['kiloan-2'];
-      currentQty = currentService.defaultQty;
+      const s = services[serviceKey] || services['kiloan-2'];
       
-      // Auto-check if applied voucher matches category, otherwise reset
-      if (appliedVoucher && appliedVoucher.category !== 'SEMUA' && appliedVoucher.category !== currentService.category) {
+      // Start order with selected service
+      orderItems = [{
+        id: s.id,
+        category: s.category,
+        name: s.name,
+        unit: s.unit,
+        qty: s.defaultQty,
+        isKiloan: s.isKiloan,
+        duration: s.duration,
+        img: s.img
+      }];
+
+      // Check if active voucher is compatible
+      if (appliedVoucher && !isVoucherEligible(appliedVoucher)) {
         appliedVoucher = null;
       }
 
-      renderCheckoutDetails();
+      renderOrderItems();
       loadSavedAddress();
-      calculateTotals();
 
       document.getElementById('home-view').classList.add('hidden');
       document.getElementById('checkout-view').classList.remove('hidden');
@@ -846,70 +875,193 @@
       openCheckout(activeMap[activeIndex] || 'kiloan-5');
     }
 
-    function changeQty(delta) {
-      currentQty = Math.max(1, currentQty + delta);
-      document.getElementById('co-qty-display').innerText = currentQty;
-      calculateTotals();
-    }
+    // ==========================================
+    // MULTI-ITEM ORDER MANAGEMENT
+    // ==========================================
+    function renderOrderItems() {
+      const container = document.getElementById('co-items-list');
+      container.innerHTML = '';
 
-    function renderCheckoutDetails() {
-      document.getElementById('co-service-img').src = currentService.img;
-      document.getElementById('co-service-name').innerText = currentService.name;
-      document.getElementById('co-service-duration').innerText = currentService.duration;
-      document.getElementById('co-service-price').innerHTML = `${formatRp(currentService.price)} <span class="text-[10px] font-normal text-slate-500">/${currentService.unit}</span>`;
-      document.getElementById('co-qty-display').innerText = currentQty;
+      let hasKiloan = false;
 
-      // Note for kiloan vs fixed
+      orderItems.forEach(item => {
+        if (item.isKiloan) hasKiloan = true;
+
+        const el = document.createElement('div');
+        el.className = 'flex items-start gap-3 p-3 bg-slate-50 border border-slate-200 rounded-lg relative';
+        
+        el.innerHTML = `
+          <img src="${item.img}" class="w-14 h-14 rounded object-cover flex-shrink-0 bg-white border border-slate-200" alt="${item.name}" />
+          <div class="flex-1 min-w-0">
+            <div class="flex items-start justify-between gap-1">
+              <h3 class="font-bold text-slate-900 text-xs leading-tight">${item.name}</h3>
+              ${orderItems.length > 1 ? `
+                <button onclick="removeOrderItem('${item.id}')" class="text-slate-400 hover:text-rose-500 active:scale-90 p-0.5 font-black text-xs leading-none" title="Hapus layanan">✕</button>
+              ` : ''}
+            </div>
+            <p class="text-[10.5px] text-slate-500 font-medium mt-0.5">${item.duration}</p>
+            
+            <div class="flex items-center justify-between mt-2 pt-1.5 border-t border-slate-200/60">
+              <span class="text-[10px] font-bold text-[#0070D2] bg-sky-50 px-2 py-0.5 rounded border border-sky-200">
+                ${item.isKiloan ? '🏷️ Dihitung saat Timbang' : '🏷️ Konfirmasi saat Jemput'}
+              </span>
+              
+              <!-- Quantity Stepper -->
+              <div class="flex items-center border border-slate-300 rounded overflow-hidden bg-white shadow-sm">
+                <button onclick="changeOrderItemQty('${item.id}', -1)" class="w-6 h-6 bg-slate-50 hover:bg-slate-100 flex items-center justify-center text-slate-700 font-bold active:bg-slate-200 text-xs">−</button>
+                <span class="px-2 h-6 flex items-center justify-center text-[11px] font-bold text-slate-800">${item.qty} ${item.unit}</span>
+                <button onclick="changeOrderItemQty('${item.id}', 1)" class="w-6 h-6 bg-slate-50 hover:bg-slate-100 flex items-center justify-center text-slate-700 font-bold active:bg-slate-200 text-xs">+</button>
+              </div>
+            </div>
+          </div>
+        `;
+        container.appendChild(el);
+      });
+
+      // Badge count
+      document.getElementById('co-items-count-badge').innerText = `${orderItems.length} Layanan`;
+
+      // Note visibility
       const noteEl = document.getElementById('co-kiloan-note');
-      if (currentService.isKiloan) {
+      if (hasKiloan) {
         noteEl.classList.remove('hidden');
       } else {
         noteEl.classList.add('hidden');
       }
+
+      // Update summary breakdown & bottom bar
+      updateOrderSummary();
     }
 
-    function calculateTotals() {
-      const subtotal = currentService.price * currentQty;
-      let discount = 0;
+    function changeOrderItemQty(serviceId, delta) {
+      const item = orderItems.find(it => it.id === serviceId);
+      if (!item) return;
 
-      if (appliedVoucher) {
-        if (appliedVoucher.type === 'PERCENT') {
-          discount = Math.round((subtotal * appliedVoucher.value) / 100);
-        } else {
-          discount = appliedVoucher.value;
-        }
-        discount = Math.min(discount, subtotal);
+      const minQty = item.isKiloan ? 3 : 1; // 3 kg minimum for kiloan!
+      item.qty = Math.max(minQty, item.qty + delta);
+      renderOrderItems();
+    }
+
+    function removeOrderItem(serviceId) {
+      if (orderItems.length <= 1) {
+        showToast('Minimal harus ada 1 layanan dalam pesanan', '⚠️');
+        return;
+      }
+      const removed = orderItems.find(it => it.id === serviceId);
+      orderItems = orderItems.filter(it => it.id !== serviceId);
+      
+      // Re-check voucher validity
+      if (appliedVoucher && !isVoucherEligible(appliedVoucher)) {
+        appliedVoucher = null;
+        showToast('Voucher dilepas karena layanan terkait dihapus', 'ℹ️');
       }
 
-      const total = Math.max(0, subtotal - discount);
+      renderOrderItems();
+      showToast(`${removed ? removed.name : 'Layanan'} dihapus`, '🗑️');
+    }
 
-      document.getElementById('subtotal-display').innerText = formatRp(subtotal);
-      
+    function updateOrderSummary() {
+      const names = orderItems.map(it => it.name.split(' ')[0]).join(' + ');
+      document.getElementById('summary-items-list').innerText = `${orderItems.length} Layanan (${names})`;
+      document.getElementById('sticky-total-display').innerText = `${orderItems.length} Layanan Dipilih`;
+
       const vRow = document.getElementById('voucher-discount-row');
       const vBadge = document.getElementById('voucher-status-badge');
       const vPill = document.getElementById('active-voucher-pill');
-      const stickySavings = document.getElementById('sticky-savings-display');
 
-      if (appliedVoucher && discount > 0) {
+      if (appliedVoucher) {
         vRow.classList.remove('hidden');
-        document.getElementById('voucher-discount-label').innerText = `Diskon (${appliedVoucher.code})`;
-        document.getElementById('voucher-discount-val').innerText = '-' + formatRp(discount);
-        
+        document.getElementById('voucher-discount-label').innerText = `Voucher (${appliedVoucher.code})`;
+        document.getElementById('voucher-discount-val').innerText = `${appliedVoucher.title} (Dipotong saat Timbang)`;
+
         vBadge.innerHTML = `<span class="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded font-bold text-[11px]">${appliedVoucher.code}</span>`;
         vPill.classList.remove('hidden');
-        document.getElementById('active-voucher-desc').innerText = `Kupon ${appliedVoucher.code}: Hemat ${formatRp(discount)} terpasang`;
-
-        stickySavings.classList.remove('hidden');
-        stickySavings.innerText = `Hemat ${formatRp(discount)}`;
+        document.getElementById('active-voucher-desc').innerText = `Kupon ${appliedVoucher.code}: ${appliedVoucher.title} terpasang`;
       } else {
         vRow.classList.add('hidden');
         vBadge.innerHTML = `<span>Gunakan / masukkan kode</span><span class="text-slate-400">›</span>`;
         vPill.classList.add('hidden');
-        stickySavings.classList.add('hidden');
+      }
+    }
+
+    // ==========================================
+    // MODAL TAMBAH LAYANAN LAIN
+    // ==========================================
+    function openAddServiceModal() {
+      renderAddServiceList();
+      document.getElementById('add-service-modal').classList.remove('hidden');
+    }
+
+    function closeAddServiceModal() {
+      document.getElementById('add-service-modal').classList.add('hidden');
+    }
+
+    function renderAddServiceList() {
+      const container = document.getElementById('add-service-list');
+      container.innerHTML = '';
+
+      // Order priority: Sepatu, Ambal, Satuan first, then kiloan variants
+      const serviceKeys = ['sepatu', 'ambal', 'satuan', 'kiloan-2', 'kiloan-3', 'kiloan-5', 'kiloan-sameday', 'kiloan-1x24', 'kiloan-bulanan'];
+
+      serviceKeys.forEach(key => {
+        const s = services[key];
+        if (!s) return;
+
+        const isAlreadyIn = orderItems.some(it => it.id === s.id);
+
+        const card = document.createElement('div');
+        card.className = `flex items-center justify-between p-3 rounded-lg border transition ${
+          isAlreadyIn ? 'border-emerald-200 bg-emerald-50/40' : 'border-slate-200 bg-white hover:border-[#0070D2]'
+        }`;
+
+        card.innerHTML = `
+          <div class="flex items-center gap-2.5 min-w-0 flex-1 pr-2">
+            <img src="${s.img}" class="w-11 h-11 rounded object-cover flex-shrink-0 bg-slate-100 border border-slate-200" alt="${s.name}" />
+            <div class="min-w-0 flex-1">
+              <h4 class="font-bold text-slate-900 text-xs truncate leading-tight">${s.name}</h4>
+              <p class="text-[10px] text-slate-500 mt-0.5">${s.duration}</p>
+              <span class="text-[9.5px] font-semibold text-[#0070D2] block mt-0.5">
+                ${s.isKiloan ? 'Min. 3 Kg (Timbang di Lokasi)' : 'Konfirmasi saat Penjemputan'}
+              </span>
+            </div>
+          </div>
+          <div>
+            ${isAlreadyIn ? `
+              <span class="text-[11px] font-bold text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded inline-block">✓ Terpasang</span>
+            ` : `
+              <button onclick="addServiceToOrder('${s.id}')" class="text-xs bg-[#0070D2] hover:bg-[#005BB5] active:scale-95 text-white font-bold px-3 py-1.5 rounded shadow-sm transition">
+                + Tambah
+              </button>
+            `}
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function addServiceToOrder(serviceId) {
+      const s = services[serviceId];
+      if (!s) return;
+
+      if (orderItems.some(it => it.id === s.id)) {
+        showToast(`${s.name} sudah ada di pesanan`, 'ℹ️');
+        return;
       }
 
-      document.getElementById('total-breakdown-display').innerText = formatRp(total);
-      document.getElementById('sticky-total-display').innerText = formatRp(total);
+      orderItems.push({
+        id: s.id,
+        category: s.category,
+        name: s.name,
+        unit: s.unit,
+        qty: s.defaultQty,
+        isKiloan: s.isKiloan,
+        duration: s.duration,
+        img: s.img
+      });
+
+      renderOrderItems();
+      renderAddServiceList();
+      showToast(`${s.name} berhasil ditambahkan! 🎉`, '✓');
     }
 
     // ==========================================
@@ -968,6 +1120,11 @@
     // ==========================================
     // VOUCHER MODAL & CATEGORY VALIDATION
     // ==========================================
+    function isVoucherEligible(v) {
+      if (v.category === 'SEMUA') return true;
+      return orderItems.some(it => it.category === v.category);
+    }
+
     function openVoucherModal() {
       renderVoucherList();
       document.getElementById('voucher-modal').classList.remove('hidden');
@@ -982,24 +1139,18 @@
       container.innerHTML = '';
 
       vouchers.forEach(v => {
-        // Eligibility check
-        const isCategoryMatch = (v.category === 'SEMUA' || v.category === currentService.category);
-        const subtotal = currentService.price * currentQty;
-        const isMinOrderMatch = subtotal >= v.minOrder;
-        const isEligible = isCategoryMatch && isMinOrderMatch;
+        const isEligible = isVoucherEligible(v);
         const isCurrentActive = (appliedVoucher && appliedVoucher.code === v.code);
 
         let categoryNotice = '';
-        if (!isCategoryMatch) {
+        if (!isEligible) {
           const catNameMap = {
             'KILOAN': 'Cuci Kiloan & Express',
             'SEPATU': 'Sepatu & Tas',
             'AMBAL': 'Ambal & Sajadah',
             'SATUAN': 'Cuci Satuan & Khusus'
           };
-          categoryNotice = `⚠️ Khusus layanan ${catNameMap[v.category] || v.category} (Tidak berlaku untuk layanan ini)`;
-        } else if (!isMinOrderMatch) {
-          categoryNotice = `⚠️ Minimal order ${formatRp(v.minOrder)} (Subtotal saat ini ${formatRp(subtotal)})`;
+          categoryNotice = `⚠️ Tambahkan layanan ${catNameMap[v.category] || v.category} untuk memakai voucher ini`;
         }
 
         const card = document.createElement('div');
@@ -1041,13 +1192,13 @@
       const v = vouchers.find(x => x.code === code);
       if (!v) return;
 
-      if (v.category !== 'SEMUA' && v.category !== currentService.category) {
-        showToast(`Kode ${v.code} hanya berlaku untuk layanan khusus ya kak!`, '⚠️');
+      if (!isVoucherEligible(v)) {
+        showToast(`Voucher ${v.code} butuh layanan terkait dalam pesanan ya kak!`, '⚠️');
         return;
       }
 
       appliedVoucher = v;
-      calculateTotals();
+      updateOrderSummary();
       closeVoucherModal();
       showToast(`Voucher ${v.code} berhasil terpasang!`, '🎉');
     }
@@ -1065,19 +1216,13 @@
         return;
       }
 
-      if (v.category !== 'SEMUA' && v.category !== currentService.category) {
-        showToast(`Oops! Voucher ${code} hanya berlaku untuk layanan ${v.category} ya kak 😊`, '⚠️');
-        return;
-      }
-
-      const subtotal = currentService.price * currentQty;
-      if (subtotal < v.minOrder) {
-        showToast(`Minimal transaksi untuk kupon ini adalah ${formatRp(v.minOrder)}`, '⚠️');
+      if (!isVoucherEligible(v)) {
+        showToast(`Oops! Voucher ${code} butuh layanan ${v.category} di pesanan ya kak 😊`, '⚠️');
         return;
       }
 
       appliedVoucher = v;
-      calculateTotals();
+      updateOrderSummary();
       closeVoucherModal();
       document.getElementById('manual-voucher-code').value = '';
       showToast(`Voucher ${v.code} berhasil dipasang!`, '🎉');
@@ -1086,7 +1231,7 @@
     function removeVoucher(e) {
       if (e) e.stopPropagation();
       appliedVoucher = null;
-      calculateTotals();
+      updateOrderSummary();
       renderVoucherList();
       showToast('Voucher dilepas', 'ℹ️');
     }
@@ -1105,42 +1250,42 @@
         return;
       }
 
-      const deliveryOpt = document.querySelector('input[name="delivery_opt"]:checked')?.value || 'Antar-Jemput';
+      const deliveryOpt = document.querySelector('input[name="delivery_opt"]:checked')?.value || 'Antar-Jemput (Kurir ke Rumah)';
       const branch = document.getElementById('co-branch')?.value || 'Cabang Aminah Syukur No. 13';
       const notes = document.getElementById('co-notes')?.value.trim() || 'Tidak ada catatan khusus';
       const payment = document.querySelector('input[name="payment_method"]:checked')?.value || 'COD (Bayar Tunai)';
 
-      const subtotal = currentService.price * currentQty;
-      let discount = 0;
-      if (appliedVoucher) {
-        discount = appliedVoucher.type === 'PERCENT' ? Math.round((subtotal * appliedVoucher.value) / 100) : appliedVoucher.value;
-        discount = Math.min(discount, subtotal);
-      }
-      const total = Math.max(0, subtotal - discount);
-
-      // Construct professional order message
+      // Construct professional order message with no hardcoded price disputes
       let msg = `Halo Homie Laundry Samarinda, saya mau order via Aplikasi:\n\n`;
-      msg += `🧺 *Layanan:* ${currentService.name}\n`;
-      msg += `📦 *Jumlah/Estimasi:* ${currentQty} ${currentService.unit}\n`;
-      msg += `🏢 *Cabang:* ${branch}\n`;
-      msg += `🛵 *Opsi:* ${deliveryOpt}\n\n`;
-
+      msg += `🧺 *DAFTAR LAYANAN:*\n`;
+      orderItems.forEach((it, idx) => {
+        msg += `${idx + 1}. *${it.name}* (${it.qty} ${it.unit})\n`;
+        if (it.isKiloan) {
+          msg += `   _• Dicuci 1 mesin 1 pelanggan (terpisah)_\n`;
+        }
+      });
+      msg += `\n`;
       msg += `👤 *Nama:* ${name}\n`;
       msg += `📱 *No. WA:* ${phone}\n`;
       msg += `📍 *Alamat Jemput:* ${address}\n`;
+      msg += `🛵 *Opsi:* ${deliveryOpt}\n`;
+      msg += `🏢 *Cabang:* ${branch}\n`;
+      msg += `💳 *Pembayaran:* ${payment}\n`;
       msg += `📝 *Catatan:* ${notes}\n\n`;
 
-      if (appliedVoucher && discount > 0) {
-        msg += `🎟️ *Voucher:* ${appliedVoucher.code} (-${formatRp(discount)})\n`;
+      if (appliedVoucher) {
+        msg += `🎟️ *Voucher Promo:* ${appliedVoucher.code} (${appliedVoucher.title})\n`;
+        msg += `   _• Mohon dipotong saat penimbangan nota di lokasi_\n\n`;
       }
-      msg += `💳 *Pembayaran:* ${payment}\n`;
-      msg += `💰 *Estimasi Total:* ${formatRp(total)}\n\n`;
-      msg += `Mohon segera diproses ya min, terima kasih! 🙏`;
+
+      msg += `⚖️ *Keterangan Biaya:*\n`;
+      msg += `- Baju kiloan dicuci terpisah (min. 3 kg).\n`;
+      msg += `- Total biaya pasti dihitung dan dikonfirmasi saat penjemputan dengan timbangan digital oleh kurir Homie.\n\n`;
+      msg += `Mohon segera dijadwalkan ya min, terima kasih! 🙏`;
 
       const waUrl = `https://wa.me/6281141020169?text=${encodeURIComponent(msg.replace(/\\n/g, '\n'))}`;
       window.open(waUrl, '_blank');
     }
-
     // Auto-init local profile on load
     window.addEventListener('DOMContentLoaded', () => {
       loadSavedAddress();
