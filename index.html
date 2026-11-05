@@ -190,7 +190,7 @@
       </div>
 
       <!-- Tile 6: Bulanan Paket -->
-      <div onclick="selectTile(5); openCheckout('kiloan-bulanan');" id="tile-5" class="metro-tile bg-[#0070D2] hover:bg-[#007AE6] rounded-none p-1.5 flex flex-col items-center justify-center gap-0.5 sm:gap-1 h-full cursor-pointer relative shadow">
+      <div onclick="selectTile(5); openServiceDetail('bulanan');" id="tile-5" class="metro-tile bg-[#0070D2] hover:bg-[#007AE6] rounded-none p-1.5 flex flex-col items-center justify-center gap-0.5 sm:gap-1 h-full cursor-pointer relative shadow">
         <div class="relative w-7 h-7 flex items-center justify-center">
           <svg class="w-6 h-6 text-white drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="4" width="16" height="15" rx="2" />
@@ -1453,6 +1453,398 @@
 
   </div>
 
+    <!-- ================================================= -->
+  <!-- 6E. PAKET BULANAN DETAIL & PRICELIST VIEW         -->
+  <!-- ================================================= -->
+  <div id="bulanan-detail-view" class="hidden fixed inset-0 z-50 bg-[#F4F6F9] text-slate-800 overflow-y-auto w-full max-w-[414px] mx-auto min-h-screen pb-24 select-none">
+    
+    <!-- Top Bar Sticky -->
+    <div class="bg-white border-b border-slate-200 sticky top-0 z-40 px-4 py-3 flex items-center justify-between shadow-sm">
+      <div class="flex items-center gap-3">
+        <button type="button" onclick="closeServiceDetail()" class="w-8 h-8 -ml-1 rounded-full flex items-center justify-center hover:bg-slate-100 active:scale-95 transition" title="Kembali ke Beranda">
+          <svg class="w-5 h-5 text-slate-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <div class="text-left">
+          <h2 class="font-black text-slate-900 text-sm leading-tight">Daftar Tarif Paket Bulanan</h2>
+          <p class="text-[10.5px] text-slate-500 font-medium">Langganan Kiloan Hemat Homie</p>
+        </div>
+      </div>
+      <span class="text-[10px] font-bold text-sky-800 bg-sky-50 border border-sky-200 px-2 py-0.5 rounded-full">
+        Pricelist Resmi
+      </span>
+    </div>
+
+    <!-- Hero Banner Card (Royal Blue) -->
+    <div class="p-4 bg-gradient-to-r from-[#0052CC] via-[#0065FF] to-[#2684FF] text-white relative overflow-hidden shadow-sm">
+      <div class="relative z-10 flex items-center justify-between gap-3">
+        <div class="flex-1 text-left">
+          <span class="inline-block bg-amber-300 text-slate-900 font-black text-[9.5px] px-2 py-0.5 rounded tracking-wider uppercase shadow-sm">
+            Hemat &amp; Praktis
+          </span>
+          <h1 class="text-base font-black leading-tight mt-1">Paket Langganan Bulanan</h1>
+          <p class="text-xs text-blue-100 mt-1 leading-snug">
+            Solusi hemat cuci harian keluarga, kos &amp; kantor. Kuota berlaku 30 hari dengan fasilitas jemput antar.
+          </p>
+        </div>
+        <div class="w-16 h-16 rounded-xl bg-white/15 p-1 flex-shrink-0 flex items-center justify-center backdrop-blur-sm shadow-inner">
+          <img src="assets/images/cat_mascot.png" alt="Mascot Homie" class="w-full h-full object-contain" />
+        </div>
+      </div>
+    </div>
+
+    <!-- KETENTUAN PAKET BULANAN ALERT BOX -->
+    <div class="m-3 p-3 bg-sky-50 border border-sky-200/90 rounded-xl text-left shadow-sm">
+      <div class="flex items-start gap-2.5">
+        <div class="w-6 h-6 rounded-full bg-[#0070D2] text-white flex-shrink-0 flex items-center justify-center font-black text-xs">
+          i
+        </div>
+        <div class="text-xs">
+          <h4 class="font-black text-sky-950 leading-tight">Ketentuan Paket Langganan (30 Hari)</h4>
+          <p class="text-[11px] text-sky-900 mt-1 leading-relaxed">
+            *Masa aktif paket adalah <strong>30 hari</strong> sejak pembelian. Kuota kiloan dapat digunakan bertahap dan sudah termasuk layanan antar-jemput.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAFTAR KATEGORI BULANAN ACCORDION -->
+    <div class="px-3 space-y-3">
+
+      <!-- 1. PAKET LENGKAP ACCORDION -->
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200/80 overflow-hidden text-left transition">
+        <!-- Accordion Header -->
+        <button type="button" onclick="toggleBulananAccordion('lengkap')" class="w-full px-3.5 py-3 flex items-center justify-between text-left hover:bg-slate-50 active:bg-slate-100 transition select-none gap-2">
+          <div class="flex items-center gap-2.5 min-w-0 flex-1 pr-2">
+            <span class="w-8 h-8 rounded-lg bg-sky-100 text-[#0070D2] flex items-center justify-center text-sm font-black flex-shrink-0 shadow-xs">🧺</span>
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <h3 class="font-black text-[13px] text-slate-900 leading-tight">Paket Lengkap</h3>
+                <span class="text-[9px] font-bold text-sky-800 bg-sky-50 border border-sky-200 px-1.5 py-0.5 rounded-full uppercase tracking-wider">Cuci + Kering + Setrika</span>
+              </div>
+              <p class="text-[10.5px] text-slate-500 font-medium mt-0.5 leading-tight truncate">30kg, 50kg, 70kg, 100kg &bull; Mulai Rp 285.000</p>
+            </div>
+          </div>
+          <div id="acc-arrow-bulanan-lengkap" class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 flex-shrink-0 transition-transform duration-200 rotate-180 shadow-xs">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+          </div>
+        </button>
+
+        <!-- Accordion Content (Open by default) -->
+        <div id="acc-content-bulanan-lengkap" class="px-3.5 pb-2 border-t border-slate-100 divide-y divide-slate-100 text-xs">
+          
+          <!-- Paket Lengkap 30 kg -->
+          <div class="py-2.5">
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-1.5">
+                <span class="font-black text-slate-900 text-xs sm:text-sm">Paket 30 kg</span>
+                <span class="text-[9.5px] font-bold text-sky-700 bg-sky-50 border border-sky-200 px-1.5 py-0.2 rounded">1-2 Orang</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-medium">Aktif 30 Hari</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2 mt-1">
+              <div onclick="selectBulananSpecificItem('bulanan-lengkap-30-reguler')" class="p-2.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-sky-50 active:scale-[0.98] cursor-pointer transition text-left flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10.5px] font-bold text-slate-700">Regular</span>
+                  <span class="text-[9px] text-emerald-600 font-semibold">Hemat</span>
+                </div>
+                <div class="mt-1 flex items-baseline justify-between">
+                  <span class="font-black text-xs sm:text-[13px] text-slate-900">Rp 285.000</span>
+                  <span class="text-[9.5px] font-bold text-[#0070D2] bg-white px-1.5 py-0.5 rounded shadow-xs">+ Pilih</span>
+                </div>
+              </div>
+              <div onclick="selectBulananSpecificItem('bulanan-lengkap-30-express')" class="p-2.5 rounded-lg border border-amber-200 bg-amber-50/40 hover:bg-amber-50 active:scale-[0.98] cursor-pointer transition text-left flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10.5px] font-bold text-amber-900">Express</span>
+                  <span class="text-[9px] text-amber-700 font-semibold">⚡ Cepat</span>
+                </div>
+                <div class="mt-1 flex items-baseline justify-between">
+                  <span class="font-black text-xs sm:text-[13px] text-slate-900">Rp 420.000</span>
+                  <span class="text-[9.5px] font-bold text-amber-800 bg-white px-1.5 py-0.5 rounded shadow-xs">+ Pilih</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paket Lengkap 50 kg -->
+          <div class="py-2.5">
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-1.5">
+                <span class="font-black text-slate-900 text-xs sm:text-sm">Paket 50 kg</span>
+                <span class="text-[9.5px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-1.5 py-0.2 rounded">Keluarga Kecil</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-medium">Aktif 30 Hari</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2 mt-1">
+              <div onclick="selectBulananSpecificItem('bulanan-lengkap-50-reguler')" class="p-2.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-sky-50 active:scale-[0.98] cursor-pointer transition text-left flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10.5px] font-bold text-slate-700">Regular</span>
+                  <span class="text-[9px] text-emerald-600 font-semibold">Hemat</span>
+                </div>
+                <div class="mt-1 flex items-baseline justify-between">
+                  <span class="font-black text-xs sm:text-[13px] text-slate-900">Rp 475.000</span>
+                  <span class="text-[9.5px] font-bold text-[#0070D2] bg-white px-1.5 py-0.5 rounded shadow-xs">+ Pilih</span>
+                </div>
+              </div>
+              <div onclick="selectBulananSpecificItem('bulanan-lengkap-50-express')" class="p-2.5 rounded-lg border border-amber-200 bg-amber-50/40 hover:bg-amber-50 active:scale-[0.98] cursor-pointer transition text-left flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10.5px] font-bold text-amber-900">Express</span>
+                  <span class="text-[9px] text-amber-700 font-semibold">⚡ Cepat</span>
+                </div>
+                <div class="mt-1 flex items-baseline justify-between">
+                  <span class="font-black text-xs sm:text-[13px] text-slate-900">Rp 700.000</span>
+                  <span class="text-[9.5px] font-bold text-amber-800 bg-white px-1.5 py-0.5 rounded shadow-xs">+ Pilih</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paket Lengkap 70 kg -->
+          <div class="py-2.5">
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-1.5">
+                <span class="font-black text-slate-900 text-xs sm:text-sm">Paket 70 kg</span>
+                <span class="text-[9.5px] font-bold text-purple-700 bg-purple-50 border border-purple-200 px-1.5 py-0.2 rounded">Keluarga Sedang</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-medium">Aktif 30 Hari</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2 mt-1">
+              <div onclick="selectBulananSpecificItem('bulanan-lengkap-70-reguler')" class="p-2.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-sky-50 active:scale-[0.98] cursor-pointer transition text-left flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10.5px] font-bold text-slate-700">Regular</span>
+                  <span class="text-[9px] text-emerald-600 font-semibold">Hemat</span>
+                </div>
+                <div class="mt-1 flex items-baseline justify-between">
+                  <span class="font-black text-xs sm:text-[13px] text-slate-900">Rp 665.000</span>
+                  <span class="text-[9.5px] font-bold text-[#0070D2] bg-white px-1.5 py-0.5 rounded shadow-xs">+ Pilih</span>
+                </div>
+              </div>
+              <div onclick="selectBulananSpecificItem('bulanan-lengkap-70-express')" class="p-2.5 rounded-lg border border-amber-200 bg-amber-50/40 hover:bg-amber-50 active:scale-[0.98] cursor-pointer transition text-left flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10.5px] font-bold text-amber-900">Express</span>
+                  <span class="text-[9px] text-amber-700 font-semibold">⚡ Cepat</span>
+                </div>
+                <div class="mt-1 flex items-baseline justify-between">
+                  <span class="font-black text-xs sm:text-[13px] text-slate-900">Rp 980.000</span>
+                  <span class="text-[9.5px] font-bold text-amber-800 bg-white px-1.5 py-0.5 rounded shadow-xs">+ Pilih</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paket Lengkap 100 kg -->
+          <div class="py-2.5">
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-1.5">
+                <span class="font-black text-slate-900 text-xs sm:text-sm">Paket 100 kg</span>
+                <span class="text-[9.5px] font-bold text-amber-700 bg-amber-50 border border-amber-200 px-1.5 py-0.2 rounded">Keluarga Besar / Kos</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-medium">Aktif 30 Hari</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2 mt-1">
+              <div onclick="selectBulananSpecificItem('bulanan-lengkap-100-reguler')" class="p-2.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-sky-50 active:scale-[0.98] cursor-pointer transition text-left flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10.5px] font-bold text-slate-700">Regular</span>
+                  <span class="text-[9px] text-emerald-600 font-semibold">Hemat</span>
+                </div>
+                <div class="mt-1 flex items-baseline justify-between">
+                  <span class="font-black text-xs sm:text-[13px] text-slate-900">Rp 950.000</span>
+                  <span class="text-[9.5px] font-bold text-[#0070D2] bg-white px-1.5 py-0.5 rounded shadow-xs">+ Pilih</span>
+                </div>
+              </div>
+              <div onclick="selectBulananSpecificItem('bulanan-lengkap-100-express')" class="p-2.5 rounded-lg border border-amber-200 bg-amber-50/40 hover:bg-amber-50 active:scale-[0.98] cursor-pointer transition text-left flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10.5px] font-bold text-amber-900">Express</span>
+                  <span class="text-[9px] text-amber-700 font-semibold">⚡ Cepat</span>
+                </div>
+                <div class="mt-1 flex items-baseline justify-between">
+                  <span class="font-black text-xs sm:text-[13px] text-slate-900">Rp 1.350.000</span>
+                  <span class="text-[9.5px] font-bold text-amber-800 bg-white px-1.5 py-0.5 rounded shadow-xs">+ Pilih</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 2. PAKET SETRIKA SAJA ACCORDION -->
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200/80 overflow-hidden text-left transition">
+        <!-- Accordion Header -->
+        <button type="button" onclick="toggleBulananAccordion('setrika')" class="w-full px-3.5 py-3 flex items-center justify-between text-left hover:bg-slate-50 active:bg-slate-100 transition select-none gap-2">
+          <div class="flex items-center gap-2.5 min-w-0 flex-1 pr-2">
+            <span class="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center text-sm font-black flex-shrink-0 shadow-xs">♨️</span>
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <h3 class="font-black text-[13px] text-slate-900 leading-tight">Paket Setrika Saja</h3>
+                <span class="text-[9px] font-bold text-amber-800 bg-amber-50 border border-amber-200 px-1.5 py-0.5 rounded-full uppercase tracking-wider">Setrika Uap</span>
+              </div>
+              <p class="text-[10.5px] text-slate-500 font-medium mt-0.5 leading-tight truncate">30kg, 50kg, 70kg, 100kg &bull; Mulai Rp 225.000</p>
+            </div>
+          </div>
+          <div id="acc-arrow-bulanan-setrika" class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 flex-shrink-0 transition-transform duration-200 shadow-xs">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+          </div>
+        </button>
+
+        <!-- Accordion Content (Closed by default) -->
+        <div id="acc-content-bulanan-setrika" class="hidden px-3.5 pb-2 border-t border-slate-100 divide-y divide-slate-100 text-xs">
+          
+          <!-- Paket Setrika 30 kg -->
+          <div class="py-2.5">
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-1.5">
+                <span class="font-black text-slate-900 text-xs sm:text-sm">Paket Setrika 30 kg</span>
+                <span class="text-[9.5px] font-bold text-sky-700 bg-sky-50 border border-sky-200 px-1.5 py-0.2 rounded">1-2 Orang</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-medium">Aktif 30 Hari</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2 mt-1">
+              <div onclick="selectBulananSpecificItem('bulanan-setrika-30-reguler')" class="p-2.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-sky-50 active:scale-[0.98] cursor-pointer transition text-left flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10.5px] font-bold text-slate-700">Regular</span>
+                  <span class="text-[9px] text-emerald-600 font-semibold">Hemat</span>
+                </div>
+                <div class="mt-1 flex items-baseline justify-between">
+                  <span class="font-black text-xs sm:text-[13px] text-slate-900">Rp 225.000</span>
+                  <span class="text-[9.5px] font-bold text-[#0070D2] bg-white px-1.5 py-0.5 rounded shadow-xs">+ Pilih</span>
+                </div>
+              </div>
+              <div onclick="selectBulananSpecificItem('bulanan-setrika-30-express')" class="p-2.5 rounded-lg border border-amber-200 bg-amber-50/40 hover:bg-amber-50 active:scale-[0.98] cursor-pointer transition text-left flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10.5px] font-bold text-amber-900">Express</span>
+                  <span class="text-[9px] text-amber-700 font-semibold">⚡ Cepat</span>
+                </div>
+                <div class="mt-1 flex items-baseline justify-between">
+                  <span class="font-black text-xs sm:text-[13px] text-slate-900">Rp 285.000</span>
+                  <span class="text-[9.5px] font-bold text-amber-800 bg-white px-1.5 py-0.5 rounded shadow-xs">+ Pilih</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paket Setrika 50 kg -->
+          <div class="py-2.5">
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-1.5">
+                <span class="font-black text-slate-900 text-xs sm:text-sm">Paket Setrika 50 kg</span>
+                <span class="text-[9.5px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-1.5 py-0.2 rounded">Keluarga Kecil</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-medium">Aktif 30 Hari</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2 mt-1">
+              <div onclick="selectBulananSpecificItem('bulanan-setrika-50-reguler')" class="p-2.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-sky-50 active:scale-[0.98] cursor-pointer transition text-left flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10.5px] font-bold text-slate-700">Regular</span>
+                  <span class="text-[9px] text-emerald-600 font-semibold">Hemat</span>
+                </div>
+                <div class="mt-1 flex items-baseline justify-between">
+                  <span class="font-black text-xs sm:text-[13px] text-slate-900">Rp 375.000</span>
+                  <span class="text-[9.5px] font-bold text-[#0070D2] bg-white px-1.5 py-0.5 rounded shadow-xs">+ Pilih</span>
+                </div>
+              </div>
+              <div onclick="selectBulananSpecificItem('bulanan-setrika-50-express')" class="p-2.5 rounded-lg border border-amber-200 bg-amber-50/40 hover:bg-amber-50 active:scale-[0.98] cursor-pointer transition text-left flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10.5px] font-bold text-amber-900">Express</span>
+                  <span class="text-[9px] text-amber-700 font-semibold">⚡ Cepat</span>
+                </div>
+                <div class="mt-1 flex items-baseline justify-between">
+                  <span class="font-black text-xs sm:text-[13px] text-slate-900">Rp 475.000</span>
+                  <span class="text-[9.5px] font-bold text-amber-800 bg-white px-1.5 py-0.5 rounded shadow-xs">+ Pilih</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paket Setrika 70 kg -->
+          <div class="py-2.5">
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-1.5">
+                <span class="font-black text-slate-900 text-xs sm:text-sm">Paket Setrika 70 kg</span>
+                <span class="text-[9.5px] font-bold text-purple-700 bg-purple-50 border border-purple-200 px-1.5 py-0.2 rounded">Keluarga Sedang</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-medium">Aktif 30 Hari</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2 mt-1">
+              <div onclick="selectBulananSpecificItem('bulanan-setrika-70-reguler')" class="p-2.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-sky-50 active:scale-[0.98] cursor-pointer transition text-left flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10.5px] font-bold text-slate-700">Regular</span>
+                  <span class="text-[9px] text-emerald-600 font-semibold">Hemat</span>
+                </div>
+                <div class="mt-1 flex items-baseline justify-between">
+                  <span class="font-black text-xs sm:text-[13px] text-slate-900">Rp 525.000</span>
+                  <span class="text-[9.5px] font-bold text-[#0070D2] bg-white px-1.5 py-0.5 rounded shadow-xs">+ Pilih</span>
+                </div>
+              </div>
+              <div onclick="selectBulananSpecificItem('bulanan-setrika-70-express')" class="p-2.5 rounded-lg border border-amber-200 bg-amber-50/40 hover:bg-amber-50 active:scale-[0.98] cursor-pointer transition text-left flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10.5px] font-bold text-amber-900">Express</span>
+                  <span class="text-[9px] text-amber-700 font-semibold">⚡ Cepat</span>
+                </div>
+                <div class="mt-1 flex items-baseline justify-between">
+                  <span class="font-black text-xs sm:text-[13px] text-slate-900">Rp 665.000</span>
+                  <span class="text-[9.5px] font-bold text-amber-800 bg-white px-1.5 py-0.5 rounded shadow-xs">+ Pilih</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paket Setrika 100 kg -->
+          <div class="py-2.5">
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-1.5">
+                <span class="font-black text-slate-900 text-xs sm:text-sm">Paket Setrika 100 kg</span>
+                <span class="text-[9.5px] font-bold text-amber-700 bg-amber-50 border border-amber-200 px-1.5 py-0.2 rounded">Keluarga Besar / Kos</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-medium">Aktif 30 Hari</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2 mt-1">
+              <div onclick="selectBulananSpecificItem('bulanan-setrika-100-reguler')" class="p-2.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-sky-50 active:scale-[0.98] cursor-pointer transition text-left flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10.5px] font-bold text-slate-700">Regular</span>
+                  <span class="text-[9px] text-emerald-600 font-semibold">Hemat</span>
+                </div>
+                <div class="mt-1 flex items-baseline justify-between">
+                  <span class="font-black text-xs sm:text-[13px] text-slate-900">Rp 700.000</span>
+                  <span class="text-[9.5px] font-bold text-[#0070D2] bg-white px-1.5 py-0.5 rounded shadow-xs">+ Pilih</span>
+                </div>
+              </div>
+              <div onclick="selectBulananSpecificItem('bulanan-setrika-100-express')" class="p-2.5 rounded-lg border border-amber-200 bg-amber-50/40 hover:bg-amber-50 active:scale-[0.98] cursor-pointer transition text-left flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10.5px] font-bold text-amber-900">Express</span>
+                  <span class="text-[9px] text-amber-700 font-semibold">⚡ Cepat</span>
+                </div>
+                <div class="mt-1 flex items-baseline justify-between">
+                  <span class="font-black text-xs sm:text-[13px] text-slate-900">Rp 900.000</span>
+                  <span class="text-[9.5px] font-bold text-amber-800 bg-white px-1.5 py-0.5 rounded shadow-xs">+ Pilih</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Action Bar Sticky -->
+    <div class="fixed bottom-0 left-0 right-0 max-w-[414px] mx-auto bg-white/95 backdrop-blur-sm border-t border-slate-200 px-4 py-3 flex items-center justify-between shadow-lg z-40">
+      <div class="text-left">
+        <span class="text-[10px] text-slate-500 block leading-tight">Tarif Mulai Dari</span>
+        <div class="text-sm font-black text-[#0070D2] leading-tight">
+          Rp 225.000 <span class="text-[10.5px] font-normal text-slate-500">/paket</span>
+        </div>
+        <span class="text-[10px] text-emerald-600 font-semibold block">Bisa Antar-Jemput</span>
+      </div>
+      <button type="button" onclick="selectBulananSpecificItem('bulanan-lengkap-30-reguler')" class="bg-[#0070D2] hover:bg-[#005BB5] active:scale-[0.98] text-white px-5 py-2.5 rounded-lg font-black text-xs sm:text-sm flex items-center gap-1.5 shadow-md transition">
+        <span>+ Masukkan Pesanan</span>
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+      </button>
+    </div>
+
+  </div>
+
   <div id="checkout-view" class="hidden fixed inset-0 z-50 bg-[#F6F6F6] text-slate-800 overflow-y-auto w-full max-w-[414px] mx-auto min-h-screen">
     
     <!-- Top Bar Sticky -->
@@ -1887,6 +2279,188 @@
         duration: 'Selesai 1x24 Jam',
         img: 'assets/images/cat_mascot.png'
       },
+      
+      // --- PAKET BULANAN (SESUAI BROSUR RESMI HOMIE) ---
+      // Paket Lengkap (Cuci + Kering + Setrika)
+      'bulanan-lengkap-30-reguler': {
+        id: 'bulanan-lengkap-30-reguler',
+        category: 'KILOAN',
+        name: 'Paket Lengkap 30 kg - Regular',
+        unit: 'Paket',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: 'Aktif 30 Hari',
+        priceLabel: 'Rp 285.000 / paket',
+        img: 'assets/images/cat_mascot.png'
+      },
+      'bulanan-lengkap-30-express': {
+        id: 'bulanan-lengkap-30-express',
+        category: 'KILOAN',
+        name: 'Paket Lengkap 30 kg - Express',
+        unit: 'Paket',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: 'Aktif 30 Hari',
+        priceLabel: 'Rp 420.000 / paket',
+        img: 'assets/images/cat_mascot.png'
+      },
+      'bulanan-lengkap-50-reguler': {
+        id: 'bulanan-lengkap-50-reguler',
+        category: 'KILOAN',
+        name: 'Paket Lengkap 50 kg - Regular',
+        unit: 'Paket',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: 'Aktif 30 Hari',
+        priceLabel: 'Rp 475.000 / paket',
+        img: 'assets/images/cat_mascot.png'
+      },
+      'bulanan-lengkap-50-express': {
+        id: 'bulanan-lengkap-50-express',
+        category: 'KILOAN',
+        name: 'Paket Lengkap 50 kg - Express',
+        unit: 'Paket',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: 'Aktif 30 Hari',
+        priceLabel: 'Rp 700.000 / paket',
+        img: 'assets/images/cat_mascot.png'
+      },
+      'bulanan-lengkap-70-reguler': {
+        id: 'bulanan-lengkap-70-reguler',
+        category: 'KILOAN',
+        name: 'Paket Lengkap 70 kg - Regular',
+        unit: 'Paket',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: 'Aktif 30 Hari',
+        priceLabel: 'Rp 665.000 / paket',
+        img: 'assets/images/cat_mascot.png'
+      },
+      'bulanan-lengkap-70-express': {
+        id: 'bulanan-lengkap-70-express',
+        category: 'KILOAN',
+        name: 'Paket Lengkap 70 kg - Express',
+        unit: 'Paket',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: 'Aktif 30 Hari',
+        priceLabel: 'Rp 980.000 / paket',
+        img: 'assets/images/cat_mascot.png'
+      },
+      'bulanan-lengkap-100-reguler': {
+        id: 'bulanan-lengkap-100-reguler',
+        category: 'KILOAN',
+        name: 'Paket Lengkap 100 kg - Regular',
+        unit: 'Paket',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: 'Aktif 30 Hari',
+        priceLabel: 'Rp 950.000 / paket',
+        img: 'assets/images/cat_mascot.png'
+      },
+      'bulanan-lengkap-100-express': {
+        id: 'bulanan-lengkap-100-express',
+        category: 'KILOAN',
+        name: 'Paket Lengkap 100 kg - Express',
+        unit: 'Paket',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: 'Aktif 30 Hari',
+        priceLabel: 'Rp 1.350.000 / paket',
+        img: 'assets/images/cat_mascot.png'
+      },
+
+      // Paket Setrika Saja
+      'bulanan-setrika-30-reguler': {
+        id: 'bulanan-setrika-30-reguler',
+        category: 'KILOAN',
+        name: 'Paket Setrika Saja 30 kg - Regular',
+        unit: 'Paket',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: 'Aktif 30 Hari',
+        priceLabel: 'Rp 225.000 / paket',
+        img: 'assets/images/cat_mascot.png'
+      },
+      'bulanan-setrika-30-express': {
+        id: 'bulanan-setrika-30-express',
+        category: 'KILOAN',
+        name: 'Paket Setrika Saja 30 kg - Express',
+        unit: 'Paket',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: 'Aktif 30 Hari',
+        priceLabel: 'Rp 285.000 / paket',
+        img: 'assets/images/cat_mascot.png'
+      },
+      'bulanan-setrika-50-reguler': {
+        id: 'bulanan-setrika-50-reguler',
+        category: 'KILOAN',
+        name: 'Paket Setrika Saja 50 kg - Regular',
+        unit: 'Paket',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: 'Aktif 30 Hari',
+        priceLabel: 'Rp 375.000 / paket',
+        img: 'assets/images/cat_mascot.png'
+      },
+      'bulanan-setrika-50-express': {
+        id: 'bulanan-setrika-50-express',
+        category: 'KILOAN',
+        name: 'Paket Setrika Saja 50 kg - Express',
+        unit: 'Paket',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: 'Aktif 30 Hari',
+        priceLabel: 'Rp 475.000 / paket',
+        img: 'assets/images/cat_mascot.png'
+      },
+      'bulanan-setrika-70-reguler': {
+        id: 'bulanan-setrika-70-reguler',
+        category: 'KILOAN',
+        name: 'Paket Setrika Saja 70 kg - Regular',
+        unit: 'Paket',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: 'Aktif 30 Hari',
+        priceLabel: 'Rp 525.000 / paket',
+        img: 'assets/images/cat_mascot.png'
+      },
+      'bulanan-setrika-70-express': {
+        id: 'bulanan-setrika-70-express',
+        category: 'KILOAN',
+        name: 'Paket Setrika Saja 70 kg - Express',
+        unit: 'Paket',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: 'Aktif 30 Hari',
+        priceLabel: 'Rp 665.000 / paket',
+        img: 'assets/images/cat_mascot.png'
+      },
+      'bulanan-setrika-100-reguler': {
+        id: 'bulanan-setrika-100-reguler',
+        category: 'KILOAN',
+        name: 'Paket Setrika Saja 100 kg - Regular',
+        unit: 'Paket',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: 'Aktif 30 Hari',
+        priceLabel: 'Rp 700.000 / paket',
+        img: 'assets/images/cat_mascot.png'
+      },
+      'bulanan-setrika-100-express': {
+        id: 'bulanan-setrika-100-express',
+        category: 'KILOAN',
+        name: 'Paket Setrika Saja 100 kg - Express',
+        unit: 'Paket',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: 'Aktif 30 Hari',
+        priceLabel: 'Rp 900.000 / paket',
+        img: 'assets/images/cat_mascot.png'
+      },
+
       'kiloan-bulanan': {
         id: 'kiloan-bulanan',
         category: 'KILOAN',
@@ -2677,6 +3251,53 @@
       }
     }
 
+    
+    function toggleBulananAccordion(id) {
+      const content = document.getElementById('acc-content-bulanan-' + id);
+      const arrow = document.getElementById('acc-arrow-bulanan-' + id);
+      if (!content || !arrow) return;
+      const isHidden = content.classList.contains('hidden');
+      if (isHidden) {
+        content.classList.remove('hidden');
+        arrow.classList.add('rotate-180');
+      } else {
+        content.classList.add('hidden');
+        arrow.classList.remove('rotate-180');
+      }
+    }
+
+    function selectBulananSpecificItem(itemId) {
+      const s = services[itemId] || services['bulanan-lengkap-30-reguler'];
+      if (!s) return;
+
+      const existingItem = orderItems.find(it => it.id === s.id);
+      if (existingItem) {
+        existingItem.qty += 1;
+        showToast(`Jumlah ${s.name} ditambah jadi ${existingItem.qty} ${s.unit}`, '✓');
+      } else {
+        orderItems.push({
+          id: s.id,
+          category: s.category,
+          name: s.name,
+          unit: s.unit,
+          qty: s.defaultQty || 1,
+          isKiloan: false,
+          hasSpeedOption: false,
+          duration: s.duration,
+          priceLabel: s.priceLabel || '',
+          img: s.img
+        });
+        showToast(`${s.name} berhasil ditambahkan! 🎉`, '✓');
+      }
+
+      const bulananView = document.getElementById('bulanan-detail-view');
+      if (bulananView) bulananView.classList.add('hidden');
+      renderOrderItems();
+      loadSavedAddress();
+      document.getElementById('checkout-view').classList.remove('hidden');
+      window.scrollTo(0, 0);
+    }
+
     function selectSatuanSpecificItem(itemId) {
       const s = services[itemId] || services['stroller-small'];
       if (!s) return;
@@ -3336,6 +3957,11 @@
 
       msg += `⚖️ *Keterangan Biaya:*\n`;
       
+      
+      const hasBulanan = orderItems.some(it => it.id && it.id.startsWith('bulanan-'));
+      if (hasBulanan) {
+        msg += `\n📌 *Catatan Paket Bulanan:*\n_• Kuota kiloan aktif 30 hari sejak tanggal pembelian_\n_• Layanan antar-jemput terjadwal langsung ke rumah_\n`;
+      }
       const hasGorden = orderItems.some(it => it.id && it.id.startsWith('gorden-'));
       if (hasGorden) {
         msg += `\n📌 *Catatan Khusus Cuci Gorden:*\n_• Luas dihitung per m² (akurat di lokasi)_\n_• Ongkir bongkar pasang: Rp 150.000_\n_• Biaya cancel dikenakan charge pengukuran: Rp 50.000_\n`;
