@@ -251,14 +251,14 @@
             </span>
           </div>
           <p class="text-[11px] sm:text-xs text-slate-300 font-medium mt-1 leading-tight">
-            Baby Stroller, Jas, Bedcover, Boneka, Selimut, dll...
+            Baby Stroller, Boneka, Gorden, Bedcover, Jas, dll...
           </p>
           <div class="flex items-center gap-2 mt-1">
             <span class="text-[9.5px] text-teal-300 bg-teal-900/40 border border-teal-500/30 px-2 py-0.5 rounded-full font-medium">
               👶 Stroller Bebas Kuman
             </span>
             <span class="text-[10px] text-slate-400 font-medium">
-              Mulai Rp 25.000 &rarr;
+              Mulai Rp 8.000 &rarr;
             </span>
           </div>
         </div>
@@ -1109,26 +1109,32 @@
       </div>
     </div>
 
+        <!-- DAFTAR KATEGORI SATUAN ACCORDION -->
     <div class="px-3 space-y-3">
 
-      <!-- 1. KATEGORI UTAMA: BABY STROLLER -->
-      <div class="bg-white rounded-xl p-3.5 shadow-sm border border-slate-200/80 text-left">
-        <div class="flex items-center justify-between pb-2 mb-1.5 border-b border-slate-100">
-          <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-lg bg-teal-100 text-teal-800 flex items-center justify-center text-xs font-bold">👶</span>
-            <div>
-              <h3 class="font-black text-xs text-slate-900 leading-tight">Paket Cuci Baby Stroller</h3>
-              <p class="text-[10px] text-slate-500">Pembersihan mendalam, desinfeksi &amp; sabun aman bayi</p>
+      <!-- 1. BABY STROLLER ACCORDION -->
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200/80 overflow-hidden text-left transition">
+        <!-- Accordion Header -->
+        <button type="button" onclick="toggleSatuanAccordion('stroller')" class="w-full px-3.5 py-3 flex items-center justify-between text-left hover:bg-slate-50 active:bg-slate-100 transition select-none gap-2">
+          <div class="flex items-center gap-2.5 min-w-0 flex-1 pr-2">
+            <span class="w-8 h-8 rounded-lg bg-teal-100 text-teal-800 flex items-center justify-center text-sm font-black flex-shrink-0 shadow-xs">👶</span>
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <h3 class="font-black text-[13px] text-slate-900 leading-tight">Baby Stroller</h3>
+                <span class="text-[9px] font-bold text-teal-800 bg-teal-50 border border-teal-200 px-1.5 py-0.5 rounded-full uppercase tracking-wider">Bebas Kuman</span>
+              </div>
+              <p class="text-[10.5px] text-slate-500 font-medium mt-0.5 leading-tight truncate">3 Pilihan Ukuran &bull; Mulai Rp 150.000</p>
             </div>
           </div>
-          <span class="text-[10px] font-bold text-teal-700 bg-teal-50 border border-teal-200 px-2 py-0.5 rounded-full">
-            Unggulan
-          </span>
-        </div>
+          <div id="acc-arrow-satuan-stroller" class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 flex-shrink-0 transition-transform duration-200 rotate-180 shadow-xs">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+          </div>
+        </button>
 
-        <div class="divide-y divide-slate-100 text-xs">
+        <!-- Accordion Content (Open by default) -->
+        <div id="acc-content-satuan-stroller" class="px-3.5 pb-2 border-t border-slate-100 divide-y divide-slate-100 text-xs">
           <!-- Stroller Small -->
-          <div onclick="selectSatuanSpecificItem('stroller-small')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-slate-50 active:bg-slate-100 cursor-pointer transition group">
+          <div onclick="selectSatuanSpecificItem('stroller-small')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-teal-50/50 active:bg-teal-100/60 cursor-pointer transition group">
             <div>
               <span class="font-bold text-slate-800 text-xs group-hover:text-teal-700">Small (Cabin Size / Lipat)</span>
               <span class="text-[10px] text-slate-500 block">Stroller travel lipat kecil &bull; 2-3 Hari</span>
@@ -1140,7 +1146,7 @@
           </div>
 
           <!-- Stroller Large -->
-          <div onclick="selectSatuanSpecificItem('stroller-large')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-slate-50 active:bg-slate-100 cursor-pointer transition group">
+          <div onclick="selectSatuanSpecificItem('stroller-large')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-teal-50/50 active:bg-teal-100/60 cursor-pointer transition group">
             <div>
               <span class="font-bold text-slate-800 text-xs group-hover:text-teal-700">Large (Ukuran Standar)</span>
               <span class="text-[10px] text-emerald-600 font-semibold block">Paling umum (1 anak) &bull; 2-3 Hari</span>
@@ -1151,11 +1157,11 @@
             </div>
           </div>
 
-          <!-- Stroller Extra Large -->
-          <div onclick="selectSatuanSpecificItem('stroller-xl')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-slate-50 active:bg-slate-100 cursor-pointer transition group">
+          <!-- Stroller XL -->
+          <div onclick="selectSatuanSpecificItem('stroller-xl')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-teal-50/50 active:bg-teal-100/60 cursor-pointer transition group">
             <div>
-              <span class="font-bold text-slate-800 text-xs group-hover:text-teal-700">Extra Large (Twin / Kereta Besar)</span>
-              <span class="text-[10px] text-amber-600 font-semibold block">Stroller kembar / rangka besar &bull; 3-4 Hari</span>
+              <span class="font-bold text-slate-800 text-xs group-hover:text-teal-700">Extra Large (Twin / Kembar)</span>
+              <span class="text-[10px] text-teal-600 font-semibold block">Stroller ganda / ukuran besar &bull; 3-4 Hari</span>
             </div>
             <div class="flex items-center gap-2 flex-shrink-0">
               <span class="font-black text-slate-900 text-sm">Rp 220.000 <span class="text-[10px] font-normal text-slate-500">/unit</span></span>
@@ -1165,24 +1171,245 @@
         </div>
       </div>
 
-      <!-- 2. KATEGORI CUCI SATUAN ESSENTIALS -->
-      <div class="bg-white rounded-xl p-3.5 shadow-sm border border-slate-200/80 text-left">
-        <div class="flex items-center justify-between pb-2 mb-1.5 border-b border-slate-100">
-          <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-lg bg-indigo-100 text-indigo-800 flex items-center justify-center text-xs font-bold">👔</span>
+      <!-- 2. LAUNDRY BONEKA ACCORDION (SESUAI BROSUR RESMI HOMIE) -->
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200/80 overflow-hidden text-left transition">
+        <!-- Accordion Header -->
+        <button type="button" onclick="toggleSatuanAccordion('boneka')" class="w-full px-3.5 py-3 flex items-center justify-between text-left hover:bg-slate-50 active:bg-slate-100 transition select-none gap-2">
+          <div class="flex items-center gap-2.5 min-w-0 flex-1 pr-2">
+            <span class="w-8 h-8 rounded-lg bg-rose-100 text-rose-700 flex items-center justify-center text-sm font-black flex-shrink-0 shadow-xs">🧸</span>
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <h3 class="font-black text-[13px] text-slate-900 leading-tight">Laundry Boneka</h3>
+                <span class="text-[9px] font-bold text-rose-700 bg-rose-50 border border-rose-200 px-1.5 py-0.5 rounded-full uppercase tracking-wider">7 Ukuran</span>
+              </div>
+              <p class="text-[10.5px] text-slate-500 font-medium mt-0.5 leading-tight truncate">Extra Small s/d Jumbo &bull; Mulai Rp 10.000</p>
+            </div>
+          </div>
+          <div id="acc-arrow-satuan-boneka" class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 flex-shrink-0 transition-transform duration-200 shadow-xs">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+          </div>
+        </button>
+
+        <!-- Accordion Content (Closed by default) -->
+        <div id="acc-content-satuan-boneka" class="hidden px-3.5 pb-2 border-t border-slate-100 divide-y divide-slate-100 text-xs">
+          <!-- Extra Small -->
+          <div onclick="selectSatuanSpecificItem('boneka-xs')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-rose-50/50 active:bg-rose-100/60 cursor-pointer transition group">
             <div>
-              <h3 class="font-black text-xs text-slate-900 leading-tight">Cuci Satuan Pakaian &amp; Rumah Tangga</h3>
-              <p class="text-[10px] text-slate-500">Jas, Bedcover, Boneka, Selimut &amp; Sprei</p>
+              <span class="font-bold text-slate-800 text-xs group-hover:text-rose-700">Extra Small</span>
+              <span class="text-[10px] text-slate-500 block">Boneka gantungan / mini &bull; 2-3 Hari</span>
+            </div>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900 text-sm">Rp 10.000 <span class="text-[10px] font-normal text-slate-500">/pcs</span></span>
+              <span class="bg-[#1A263C] group-hover:bg-[#2B3E60] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+
+          <!-- Small -->
+          <div onclick="selectSatuanSpecificItem('boneka-small')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-rose-50/50 active:bg-rose-100/60 cursor-pointer transition group">
+            <div>
+              <span class="font-bold text-slate-800 text-xs group-hover:text-rose-700">Small</span>
+              <span class="text-[10px] text-slate-500 block">Boneka kecil (&lt; 30 cm) &bull; 2-3 Hari</span>
+            </div>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900 text-sm">Rp 15.000 <span class="text-[10px] font-normal text-slate-500">/pcs</span></span>
+              <span class="bg-[#1A263C] group-hover:bg-[#2B3E60] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+
+          <!-- Medium -->
+          <div onclick="selectSatuanSpecificItem('boneka-medium')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-rose-50/50 active:bg-rose-100/60 cursor-pointer transition group">
+            <div>
+              <span class="font-bold text-slate-800 text-xs group-hover:text-rose-700">Medium</span>
+              <span class="text-[10px] text-slate-500 block">Boneka ukuran sedang (30-50 cm) &bull; 2-3 Hari</span>
+            </div>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900 text-sm">Rp 30.000 <span class="text-[10px] font-normal text-slate-500">/pcs</span></span>
+              <span class="bg-[#1A263C] group-hover:bg-[#2B3E60] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+
+          <!-- Large -->
+          <div onclick="selectSatuanSpecificItem('boneka-large')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-rose-50/50 active:bg-rose-100/60 cursor-pointer transition group">
+            <div>
+              <span class="font-bold text-slate-800 text-xs group-hover:text-rose-700">Large</span>
+              <span class="text-[10px] text-emerald-600 font-semibold block">Boneka besar (50-70 cm) &bull; 2-3 Hari</span>
+            </div>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900 text-sm">Rp 50.000 <span class="text-[10px] font-normal text-slate-500">/pcs</span></span>
+              <span class="bg-[#1A263C] group-hover:bg-[#2B3E60] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+
+          <!-- Extra Large -->
+          <div onclick="selectSatuanSpecificItem('boneka-xl')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-rose-50/50 active:bg-rose-100/60 cursor-pointer transition group">
+            <div>
+              <span class="font-bold text-slate-800 text-xs group-hover:text-rose-700">Extra Large</span>
+              <span class="text-[10px] text-slate-500 block">Boneka sangat besar (70-90 cm) &bull; 3-4 Hari</span>
+            </div>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900 text-sm">Rp 100.000 <span class="text-[10px] font-normal text-slate-500">/pcs</span></span>
+              <span class="bg-[#1A263C] group-hover:bg-[#2B3E60] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+
+          <!-- XXL -->
+          <div onclick="selectSatuanSpecificItem('boneka-xxl')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-rose-50/50 active:bg-rose-100/60 cursor-pointer transition group">
+            <div>
+              <span class="font-bold text-slate-800 text-xs group-hover:text-rose-700">XXL</span>
+              <span class="text-[10px] text-rose-600 font-semibold block">Boneka peluk tinggi manusia (1 meter) &bull; 3-4 Hari</span>
+            </div>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900 text-sm">Rp 180.000 <span class="text-[10px] font-normal text-slate-500">/pcs</span></span>
+              <span class="bg-[#1A263C] group-hover:bg-[#2B3E60] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+
+          <!-- JUMBO -->
+          <div onclick="selectSatuanSpecificItem('boneka-jumbo')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-rose-50/50 active:bg-rose-100/60 cursor-pointer transition group">
+            <div>
+              <span class="font-bold text-slate-800 text-xs group-hover:text-rose-700">JUMBO</span>
+              <span class="text-[10px] text-amber-600 font-semibold block">Boneka raksasa super besar (&gt; 1 meter) &bull; 3-4 Hari</span>
+            </div>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900 text-sm">Rp 230.000 <span class="text-[10px] font-normal text-slate-500">/pcs</span></span>
+              <span class="bg-[#1A263C] group-hover:bg-[#2B3E60] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="divide-y divide-slate-100 text-xs">
-          <!-- Jas / Blazer -->
+      <!-- 3. CUCI GORDEN ACCORDION (SESUAI BROSUR RESMI HOMIE) -->
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200/80 overflow-hidden text-left transition">
+        <!-- Accordion Header -->
+        <button type="button" onclick="toggleSatuanAccordion('gorden')" class="w-full px-3.5 py-3 flex items-center justify-between text-left hover:bg-slate-50 active:bg-slate-100 transition select-none gap-2">
+          <div class="flex items-center gap-2.5 min-w-0 flex-1 pr-2">
+            <span class="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center text-sm font-black flex-shrink-0 shadow-xs">🪟</span>
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <h3 class="font-black text-[13px] text-slate-900 leading-tight">Cuci Gorden</h3>
+                <span class="text-[9px] font-bold text-amber-800 bg-amber-50 border border-amber-200 px-1.5 py-0.5 rounded-full uppercase tracking-wider">Bisa Pasang</span>
+              </div>
+              <p class="text-[10.5px] text-slate-500 font-medium mt-0.5 leading-tight truncate">Tipis, Tebal &amp; Blackout &bull; Mulai Rp 8.000 /m²</p>
+            </div>
+          </div>
+          <div id="acc-arrow-satuan-gorden" class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 flex-shrink-0 transition-transform duration-200 shadow-xs">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+          </div>
+        </button>
+
+        <!-- Accordion Content (Closed by default) -->
+        <div id="acc-content-satuan-gorden" class="hidden px-3.5 pb-2 border-t border-slate-100 divide-y divide-slate-100 text-xs">
+          
+          <!-- Notes Gorden (Bongkar Pasang & Cancel) -->
+          <div class="py-2.5 my-1 px-3 bg-amber-50/80 rounded-lg border border-amber-200/80 text-[10.5px] text-amber-950 space-y-1">
+            <div class="font-bold flex items-center gap-1 text-amber-900">
+              <span>📋</span>
+              <span>Ketentuan Tambahan Gorden:</span>
+            </div>
+            <p>• <b>Ongkir bongkar pasang:</b> Rp 150.000</p>
+            <p>• <b>Biaya cancel:</b> Dikenakan charge pengukuran Rp 50.000</p>
+          </div>
+
+          <!-- Gorden Tipis - Reguler -->
+          <div onclick="selectSatuanSpecificItem('gorden-tipis-reguler')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-amber-50/50 active:bg-amber-100/60 cursor-pointer transition group">
+            <div>
+              <span class="font-bold text-slate-800 text-xs group-hover:text-amber-800">Gorden Tipis - Regular</span>
+              <span class="text-[10px] text-slate-500 block">Bahan vitrase tipis &bull; 7-10 Hari</span>
+            </div>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900 text-sm">Rp 8.000 <span class="text-[10px] font-normal text-slate-500">/m²</span></span>
+              <span class="bg-[#1A263C] group-hover:bg-[#2B3E60] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+
+          <!-- Gorden Tipis - Express -->
+          <div onclick="selectSatuanSpecificItem('gorden-tipis-express')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-amber-50/50 active:bg-amber-100/60 cursor-pointer transition group">
+            <div>
+              <span class="font-bold text-slate-800 text-xs group-hover:text-amber-800">Gorden Tipis - Express</span>
+              <span class="text-[10px] text-emerald-600 font-semibold block">Cepat bersih &bull; 3-4 Hari</span>
+            </div>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900 text-sm">Rp 10.000 <span class="text-[10px] font-normal text-slate-500">/m²</span></span>
+              <span class="bg-[#1A263C] group-hover:bg-[#2B3E60] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+
+          <!-- Gorden Tebal - Reguler -->
+          <div onclick="selectSatuanSpecificItem('gorden-tebal-reguler')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-amber-50/50 active:bg-amber-100/60 cursor-pointer transition group">
+            <div>
+              <span class="font-bold text-slate-800 text-xs group-hover:text-amber-800">Gorden Tebal - Regular</span>
+              <span class="text-[10px] text-slate-500 block">Kain tebal &amp; beludru &bull; 7-10 Hari</span>
+            </div>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900 text-sm">Rp 15.000 <span class="text-[10px] font-normal text-slate-500">/m²</span></span>
+              <span class="bg-[#1A263C] group-hover:bg-[#2B3E60] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+
+          <!-- Gorden Tebal - Express -->
+          <div onclick="selectSatuanSpecificItem('gorden-tebal-express')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-amber-50/50 active:bg-amber-100/60 cursor-pointer transition group">
+            <div>
+              <span class="font-bold text-slate-800 text-xs group-hover:text-amber-800">Gorden Tebal - Express</span>
+              <span class="text-[10px] text-emerald-600 font-semibold block">Prioritas express &bull; 3-4 Hari</span>
+            </div>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900 text-sm">Rp 20.000 <span class="text-[10px] font-normal text-slate-500">/m²</span></span>
+              <span class="bg-[#1A263C] group-hover:bg-[#2B3E60] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+
+          <!-- BlackOut - Reguler -->
+          <div onclick="selectSatuanSpecificItem('gorden-blackout-reguler')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-amber-50/50 active:bg-amber-100/60 cursor-pointer transition group">
+            <div>
+              <span class="font-bold text-slate-800 text-xs group-hover:text-amber-800">Gorden BlackOut - Regular</span>
+              <span class="text-[10px] text-slate-500 block">Lapisan anti-tembus cahaya &bull; 7-10 Hari</span>
+            </div>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900 text-sm">Rp 25.000 <span class="text-[10px] font-normal text-slate-500">/m²</span></span>
+              <span class="bg-[#1A263C] group-hover:bg-[#2B3E60] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+
+          <!-- BlackOut - Express -->
+          <div onclick="selectSatuanSpecificItem('gorden-blackout-express')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-amber-50/50 active:bg-amber-100/60 cursor-pointer transition group">
+            <div>
+              <span class="font-bold text-slate-800 text-xs group-hover:text-amber-800">Gorden BlackOut - Express</span>
+              <span class="text-[10px] text-amber-600 font-semibold block">Selesai cepat &amp; rapi &bull; 3-4 Hari</span>
+            </div>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <span class="font-black text-slate-900 text-sm">Rp 30.000 <span class="text-[10px] font-normal text-slate-500">/m²</span></span>
+              <span class="bg-[#1A263C] group-hover:bg-[#2B3E60] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. BEDDING & PAKAIAN FORMAL ACCORDION -->
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200/80 overflow-hidden text-left transition">
+        <!-- Accordion Header -->
+        <button type="button" onclick="toggleSatuanAccordion('bedding')" class="w-full px-3.5 py-3 flex items-center justify-between text-left hover:bg-slate-50 active:bg-slate-100 transition select-none gap-2">
+          <div class="flex items-center gap-2.5 min-w-0 flex-1 pr-2">
+            <span class="w-8 h-8 rounded-lg bg-blue-100 text-[#0070D2] flex items-center justify-center text-sm font-black flex-shrink-0 shadow-xs">👔</span>
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <h3 class="font-black text-[13px] text-slate-900 leading-tight">Bedding &amp; Jas Formal</h3>
+                <span class="text-[9px] font-bold text-[#0070D2] bg-blue-50 border border-blue-200 px-1.5 py-0.5 rounded-full uppercase tracking-wider">Satuan</span>
+              </div>
+              <p class="text-[10.5px] text-slate-500 font-medium mt-0.5 leading-tight truncate">Jas, Bedcover, Selimut, Sprei &bull; Mulai Rp 25.000</p>
+            </div>
+          </div>
+          <div id="acc-arrow-satuan-bedding" class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 flex-shrink-0 transition-transform duration-200 shadow-xs">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+          </div>
+        </button>
+
+        <!-- Accordion Content (Closed by default) -->
+        <div id="acc-content-satuan-bedding" class="hidden px-3.5 pb-2 border-t border-slate-100 divide-y divide-slate-100 text-xs">
+          <!-- Jas Formal -->
           <div onclick="selectSatuanSpecificItem('satuan-jas')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-slate-50 active:bg-slate-100 cursor-pointer transition group">
             <div>
-              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Jas / Blazer Pria &amp; Wanita</span>
-              <span class="text-[10px] text-slate-500 block">Dry/Wet Clean halus &amp; setrika uap presisi &bull; 2-3 Hari</span>
+              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Jas Formal / Blazer Pria &amp; Wanita</span>
+              <span class="text-[10px] text-slate-500 block">Dry clean khusus, wangi &amp; rapi &bull; 2-3 Hari</span>
             </div>
             <div class="flex items-center gap-2 flex-shrink-0">
               <span class="font-black text-slate-900 text-sm">Rp 40.000 <span class="text-[10px] font-normal text-slate-500">/pcs</span></span>
@@ -1194,7 +1421,7 @@
           <div onclick="selectSatuanSpecificItem('satuan-bedcover-besar')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-slate-50 active:bg-slate-100 cursor-pointer transition group">
             <div>
               <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Bedcover Besar (King / Queen)</span>
-              <span class="text-[10px] text-slate-500 block">Deterjen lembut + pelembut aromatik &bull; 2-3 Hari</span>
+              <span class="text-[10px] text-slate-500 block">Dicuci bersih, wangi &amp; bebas tungau &bull; 2-3 Hari</span>
             </div>
             <div class="flex items-center gap-2 flex-shrink-0">
               <span class="font-black text-slate-900 text-sm">Rp 45.000 <span class="text-[10px] font-normal text-slate-500">/pcs</span></span>
@@ -1206,34 +1433,10 @@
           <div onclick="selectSatuanSpecificItem('satuan-bedcover-kecil')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-slate-50 active:bg-slate-100 cursor-pointer transition group">
             <div>
               <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Bedcover Kecil (Single)</span>
-              <span class="text-[10px] text-slate-500 block">Ukuran single bed &bull; 2-3 Hari</span>
+              <span class="text-[10px] text-slate-500 block">Dicuci bersih &amp; lembut &bull; 2-3 Hari</span>
             </div>
             <div class="flex items-center gap-2 flex-shrink-0">
               <span class="font-black text-slate-900 text-sm">Rp 35.000 <span class="text-[10px] font-normal text-slate-500">/pcs</span></span>
-              <span class="bg-[#1A263C] group-hover:bg-[#2B3E60] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
-            </div>
-          </div>
-
-          <!-- Boneka Sedang -->
-          <div onclick="selectSatuanSpecificItem('satuan-boneka-sedang')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-slate-50 active:bg-slate-100 cursor-pointer transition group">
-            <div>
-              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Boneka Sedang (30-60 cm)</span>
-              <span class="text-[10px] text-slate-500 block">Pencucian lembut bebas kutu debu &bull; 2-3 Hari</span>
-            </div>
-            <div class="flex items-center gap-2 flex-shrink-0">
-              <span class="font-black text-slate-900 text-sm">Rp 25.000 <span class="text-[10px] font-normal text-slate-500">/pcs</span></span>
-              <span class="bg-[#1A263C] group-hover:bg-[#2B3E60] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
-            </div>
-          </div>
-
-          <!-- Boneka Besar -->
-          <div onclick="selectSatuanSpecificItem('satuan-boneka-besar')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-slate-50 active:bg-slate-100 cursor-pointer transition group">
-            <div>
-              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Boneka Besar (Jumbo > 60 cm)</span>
-              <span class="text-[10px] text-slate-500 block">Boneka beruang / karakter besar &bull; 3-4 Hari</span>
-            </div>
-            <div class="flex items-center gap-2 flex-shrink-0">
-              <span class="font-black text-slate-900 text-sm">Rp 50.000 <span class="text-[10px] font-normal text-slate-500">/pcs</span></span>
               <span class="bg-[#1A263C] group-hover:bg-[#2B3E60] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
             </div>
           </div>
@@ -1271,7 +1474,7 @@
       <div class="text-left">
         <span class="text-[10px] text-slate-500 block leading-tight">Tarif Mulai Dari</span>
         <div class="text-sm font-black text-[#1A263C] leading-tight">
-          Rp 25.000 <span class="text-[10.5px] font-normal text-slate-500">/item</span>
+          Rp 8.000 <span class="text-[10.5px] font-normal text-slate-500">/item</span>
         </div>
         <span class="text-[10px] text-teal-800 font-semibold block">Bisa Antar-Jemput</span>
       </div>
@@ -2101,6 +2304,152 @@
         priceLabel: 'Rp 150.000 / unit',
         img: 'assets/images/stroller_clean.png'
       },
+            // --- BONEKA (7 UKURAN SESUAI BROSUR RESMI) ---
+      'boneka-xs': {
+        id: 'boneka-xs',
+        category: 'SATUAN',
+        name: 'Laundry Boneka Extra Small',
+        unit: 'Pcs',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '2-3 Hari',
+        priceLabel: 'Rp 10.000 / pcs',
+        img: 'assets/images/cat_mascot.png'
+      },
+      'boneka-small': {
+        id: 'boneka-small',
+        category: 'SATUAN',
+        name: 'Laundry Boneka Small',
+        unit: 'Pcs',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '2-3 Hari',
+        priceLabel: 'Rp 15.000 / pcs',
+        img: 'assets/images/cat_mascot.png'
+      },
+      'boneka-medium': {
+        id: 'boneka-medium',
+        category: 'SATUAN',
+        name: 'Laundry Boneka Medium',
+        unit: 'Pcs',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '2-3 Hari',
+        priceLabel: 'Rp 30.000 / pcs',
+        img: 'assets/images/cat_mascot.png'
+      },
+      'boneka-large': {
+        id: 'boneka-large',
+        category: 'SATUAN',
+        name: 'Laundry Boneka Large',
+        unit: 'Pcs',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '2-3 Hari',
+        priceLabel: 'Rp 50.000 / pcs',
+        img: 'assets/images/cat_mascot.png'
+      },
+      'boneka-xl': {
+        id: 'boneka-xl',
+        category: 'SATUAN',
+        name: 'Laundry Boneka Extra Large',
+        unit: 'Pcs',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '3-4 Hari',
+        priceLabel: 'Rp 100.000 / pcs',
+        img: 'assets/images/cat_mascot.png'
+      },
+      'boneka-xxl': {
+        id: 'boneka-xxl',
+        category: 'SATUAN',
+        name: 'Laundry Boneka XXL',
+        unit: 'Pcs',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '3-4 Hari',
+        priceLabel: 'Rp 180.000 / pcs',
+        img: 'assets/images/cat_mascot.png'
+      },
+      'boneka-jumbo': {
+        id: 'boneka-jumbo',
+        category: 'SATUAN',
+        name: 'Laundry Boneka JUMBO',
+        unit: 'Pcs',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '3-4 Hari',
+        priceLabel: 'Rp 230.000 / pcs',
+        img: 'assets/images/cat_mascot.png'
+      },
+
+      // --- GORDEN (3 JENIS SESUAI BROSUR RESMI) ---
+      'gorden-tipis-reguler': {
+        id: 'gorden-tipis-reguler',
+        category: 'SATUAN',
+        name: 'Cuci Gorden Tipis - Regular',
+        unit: 'm²',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '7-10 Hari',
+        priceLabel: 'Rp 8.000 / m²',
+        img: 'assets/images/cat_mascot.png'
+      },
+      'gorden-tipis-express': {
+        id: 'gorden-tipis-express',
+        category: 'SATUAN',
+        name: 'Cuci Gorden Tipis - Express',
+        unit: 'm²',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '3-4 Hari',
+        priceLabel: 'Rp 10.000 / m²',
+        img: 'assets/images/cat_mascot.png'
+      },
+      'gorden-tebal-reguler': {
+        id: 'gorden-tebal-reguler',
+        category: 'SATUAN',
+        name: 'Cuci Gorden Tebal - Regular',
+        unit: 'm²',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '7-10 Hari',
+        priceLabel: 'Rp 15.000 / m²',
+        img: 'assets/images/cat_mascot.png'
+      },
+      'gorden-tebal-express': {
+        id: 'gorden-tebal-express',
+        category: 'SATUAN',
+        name: 'Cuci Gorden Tebal - Express',
+        unit: 'm²',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '3-4 Hari',
+        priceLabel: 'Rp 20.000 / m²',
+        img: 'assets/images/cat_mascot.png'
+      },
+      'gorden-blackout-reguler': {
+        id: 'gorden-blackout-reguler',
+        category: 'SATUAN',
+        name: 'Cuci Gorden BlackOut - Regular',
+        unit: 'm²',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '7-10 Hari',
+        priceLabel: 'Rp 25.000 / m²',
+        img: 'assets/images/cat_mascot.png'
+      },
+      'gorden-blackout-express': {
+        id: 'gorden-blackout-express',
+        category: 'SATUAN',
+        name: 'Cuci Gorden BlackOut - Express',
+        unit: 'm²',
+        defaultQty: 1,
+        isKiloan: false,
+        duration: '3-4 Hari',
+        priceLabel: 'Rp 30.000 / m²',
+        img: 'assets/images/cat_mascot.png'
+      },
       'stroller-small': {
         id: 'stroller-small',
         category: 'SATUAN',
@@ -2345,6 +2694,20 @@
       loadSavedAddress();
       document.getElementById('checkout-view').classList.remove('hidden');
       window.scrollTo(0, 0);
+    }
+
+    function toggleSatuanAccordion(id) {
+      const content = document.getElementById('acc-content-satuan-' + id);
+      const arrow = document.getElementById('acc-arrow-satuan-' + id);
+      if (!content || !arrow) return;
+      const isHidden = content.classList.contains('hidden');
+      if (isHidden) {
+        content.classList.remove('hidden');
+        arrow.classList.add('rotate-180');
+      } else {
+        content.classList.add('hidden');
+        arrow.classList.remove('rotate-180');
+      }
     }
 
     function selectSatuanSpecificItem(itemId) {
@@ -3005,6 +3368,11 @@
       }
 
       msg += `⚖️ *Keterangan Biaya:*\n`;
+      
+      const hasGorden = orderItems.some(it => it.id && it.id.startsWith('gorden-'));
+      if (hasGorden) {
+        msg += `\n📌 *Catatan Khusus Cuci Gorden:*\n_• Luas dihitung per m² (akurat di lokasi)_\n_• Ongkir bongkar pasang: Rp 150.000_\n_• Biaya cancel dikenakan charge pengukuran: Rp 50.000_\n`;
+      }
       const hasAmbal = orderItems.some(it => it.category === 'AMBAL');
       msg += `- Baju kiloan dicuci terpisah 1 mesin 1 pelanggan (min. 3 kg).\n`;
       if (hasAmbal) {
