@@ -2096,431 +2096,865 @@
           </svg>
         </button>
         <div class="text-left">
-          <h2 class="font-black text-slate-900 text-sm leading-tight">Daftar Tarif Cuci Kiloan</h2>
-          <p class="text-[10.5px] text-slate-500 font-medium">7 Pilihan Durasi &amp; 3 Layanan</p>
+          <h2 id="kiloan-header-title" class="font-black text-slate-900 text-sm leading-tight">Cuci Kiloan 2 Jam</h2>
+          <p id="kiloan-header-sub" class="text-[10.5px] text-slate-500 font-medium">Instant Super Kilat</p>
         </div>
       </div>
-      <span class="text-[10px] font-bold text-sky-800 bg-sky-50 border border-sky-300 px-2 py-0.5 rounded-full">
-        1 Mesin 1 Pelanggan
+      <span id="kiloan-header-badge" class="text-[10px] font-bold text-rose-700 bg-rose-50 border border-rose-300 px-2 py-0.5 rounded-full">
+        2 Jam Selesai
       </span>
     </div>
 
-    <!-- Hero Banner Card (Homie Blue) -->
-    <div class="p-4 bg-gradient-to-r from-[#005BAC] via-[#0070D2] to-[#0091FF] text-white relative overflow-hidden shadow-sm">
-      <div class="relative z-10 flex items-center justify-between gap-3">
-        <div class="flex-1 text-left">
-          <span class="inline-block bg-white text-[#0070D2] font-black text-[9.5px] px-2 py-0.5 rounded tracking-wider uppercase shadow-sm">
-            Higienis &amp; Terpisah
-          </span>
-          <h1 class="text-base font-black leading-tight mt-1">Cuci Kiloan Homie Samarinda</h1>
-          <p class="text-xs text-blue-100 mt-1 leading-snug">
-            1 Mesin 1 Pelanggan (tidak dicampur). Minimal 3 kg ditimbang akurat di lokasi saat penjemputan.
-          </p>
-        </div>
-        <div class="w-16 h-16 rounded-xl bg-white/15 p-1 flex-shrink-0 flex items-center justify-center backdrop-blur-sm shadow-inner">
-          <img src="assets/images/cat_mascot.png" alt="Homie Kiloan" class="w-full h-full object-contain" />
-        </div>
-      </div>
-    </div>
-
-    <!-- DAFTAR 7 DURASI KILOAN ACCORDION -->
-    <div class="px-3 space-y-3 mt-3">
-
-      <!-- 1. INSTANT 2 JAM -->
-      <div class="bg-white rounded-xl shadow-sm border border-slate-200/80 overflow-hidden text-left transition">
-        <button type="button" onclick="toggleKiloanAccordion('2jam')" class="w-full px-3.5 py-3 flex items-center justify-between text-left hover:bg-slate-50 active:bg-slate-100 transition select-none gap-2">
-          <div class="flex items-center gap-2.5 min-w-0 flex-1 pr-2">
-            <span class="w-8 h-8 rounded-lg bg-rose-100 text-rose-700 flex items-center justify-center text-sm font-black flex-shrink-0 shadow-xs">⚡</span>
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-1.5 flex-wrap">
-                <h3 class="font-black text-[13px] text-slate-900 leading-tight">Instant 2 Jam</h3>
-                <span class="text-[9px] font-bold text-rose-700 bg-rose-50 border border-rose-200 px-1.5 py-0.5 rounded-full uppercase tracking-wider">Super Kilat</span>
-              </div>
-              <p class="text-[10.5px] text-slate-500 font-medium mt-0.5 leading-tight truncate">Selesai dalam 2 Jam &bull; Mulai Rp 48.000 /kg</p>
-            </div>
-          </div>
-          <div id="acc-arrow-kiloan-2jam" class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 flex-shrink-0 transition-transform duration-200 shadow-xs">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
-          </div>
-        </button>
-
-        <div id="acc-content-kiloan-2jam" class="hidden px-3.5 pb-2 border-t border-slate-100 divide-y divide-slate-100 text-xs">
-          <!-- Cuci Setrika -->
-          <div onclick="selectKiloanSpecificItem('kiloan-2-setrika')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-sky-50/50 active:bg-sky-100/60 cursor-pointer transition group">
-            <div>
-              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Cuci Setrika (Lengkap)</span>
-              <span class="text-[10px] text-slate-500 block">Cuci + Kering + Setrika Uap Rapi &bull; 2 Jam</span>
-            </div>
-            <div class="flex items-center gap-2 flex-shrink-0">
-              <span class="font-black text-slate-900 text-sm">Rp 50.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
-              <span class="bg-[#0070D2] group-hover:bg-[#005BAC] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
-            </div>
-          </div>
-
-          <!-- Cuci Lipat -->
-          <div onclick="selectKiloanSpecificItem('kiloan-2-lipat')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-sky-50/50 active:bg-sky-100/60 cursor-pointer transition group">
-            <div>
-              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Cuci Lipat</span>
-              <span class="text-[10px] text-slate-500 block">Cuci + Kering + Lipat Rapi &bull; 2 Jam</span>
-            </div>
-            <div class="flex items-center gap-2 flex-shrink-0">
-              <span class="font-black text-slate-900 text-sm">Rp 48.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
-              <span class="bg-[#0070D2] group-hover:bg-[#005BAC] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 2. FLASH EXPRESS 3 JAM -->
-      <div class="bg-white rounded-xl shadow-sm border border-slate-200/80 overflow-hidden text-left transition">
-        <button type="button" onclick="toggleKiloanAccordion('3jam')" class="w-full px-3.5 py-3 flex items-center justify-between text-left hover:bg-slate-50 active:bg-slate-100 transition select-none gap-2">
-          <div class="flex items-center gap-2.5 min-w-0 flex-1 pr-2">
-            <span class="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center text-sm font-black flex-shrink-0 shadow-xs">🚀</span>
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-1.5 flex-wrap">
-                <h3 class="font-black text-[13px] text-slate-900 leading-tight">Flash Express 3 Jam</h3>
-                <span class="text-[9px] font-bold text-amber-700 bg-amber-50 border border-amber-200 px-1.5 py-0.5 rounded-full uppercase tracking-wider">Flash 3 Jam</span>
-              </div>
-              <p class="text-[10.5px] text-slate-500 font-medium mt-0.5 leading-tight truncate">Selesai dalam 3 Jam &bull; Mulai Rp 33.000 /kg</p>
-            </div>
-          </div>
-          <div id="acc-arrow-kiloan-3jam" class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 flex-shrink-0 transition-transform duration-200 shadow-xs">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
-          </div>
-        </button>
-
-        <div id="acc-content-kiloan-3jam" class="hidden px-3.5 pb-2 border-t border-slate-100 divide-y divide-slate-100 text-xs">
-          <!-- Cuci Setrika -->
-          <div onclick="selectKiloanSpecificItem('kiloan-3-setrika')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-sky-50/50 active:bg-sky-100/60 cursor-pointer transition group">
-            <div>
-              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Cuci Setrika (Lengkap)</span>
-              <span class="text-[10px] text-slate-500 block">Cuci + Kering + Setrika Uap Rapi &bull; 3 Jam</span>
-            </div>
-            <div class="flex items-center gap-2 flex-shrink-0">
-              <span class="font-black text-slate-900 text-sm">Rp 35.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
-              <span class="bg-[#0070D2] group-hover:bg-[#005BAC] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
-            </div>
-          </div>
-
-          <!-- Cuci Lipat -->
-          <div onclick="selectKiloanSpecificItem('kiloan-3-lipat')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-sky-50/50 active:bg-sky-100/60 cursor-pointer transition group">
-            <div>
-              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Cuci Lipat</span>
-              <span class="text-[10px] text-slate-500 block">Cuci + Kering + Lipat Rapi &bull; 3 Jam</span>
-            </div>
-            <div class="flex items-center gap-2 flex-shrink-0">
-              <span class="font-black text-slate-900 text-sm">Rp 33.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
-              <span class="bg-[#0070D2] group-hover:bg-[#005BAC] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3. SUPER EXPRESS 5 JAM -->
-      <div class="bg-white rounded-xl shadow-sm border border-slate-200/80 overflow-hidden text-left transition">
-        <button type="button" onclick="toggleKiloanAccordion('5jam')" class="w-full px-3.5 py-3 flex items-center justify-between text-left hover:bg-slate-50 active:bg-slate-100 transition select-none gap-2">
-          <div class="flex items-center gap-2.5 min-w-0 flex-1 pr-2">
-            <span class="w-8 h-8 rounded-lg bg-sky-100 text-[#0070D2] flex items-center justify-center text-sm font-black flex-shrink-0 shadow-xs">🔥</span>
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-1.5 flex-wrap">
-                <h3 class="font-black text-[13px] text-slate-900 leading-tight">Super Express 5 Jam</h3>
-                <span class="text-[9px] font-bold text-[#0070D2] bg-sky-50 border border-sky-200 px-1.5 py-0.5 rounded-full uppercase tracking-wider">Favorit</span>
-              </div>
-              <p class="text-[10.5px] text-slate-500 font-medium mt-0.5 leading-tight truncate">Selesai dalam 5 Jam &bull; Mulai Rp 23.000 /kg</p>
-            </div>
-          </div>
-          <div id="acc-arrow-kiloan-5jam" class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 flex-shrink-0 transition-transform duration-200 rotate-180 shadow-xs">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
-          </div>
-        </button>
-
-        <div id="acc-content-kiloan-5jam" class="px-3.5 pb-2 border-t border-slate-100 divide-y divide-slate-100 text-xs">
-          <!-- Cuci Setrika -->
-          <div onclick="selectKiloanSpecificItem('kiloan-5-setrika')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-sky-50/50 active:bg-sky-100/60 cursor-pointer transition group">
-            <div>
-              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Cuci Setrika (Lengkap)</span>
-              <span class="text-[10px] text-slate-500 block">Cuci + Kering + Setrika Uap Rapi &bull; 5 Jam</span>
-            </div>
-            <div class="flex items-center gap-2 flex-shrink-0">
-              <span class="font-black text-slate-900 text-sm">Rp 25.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
-              <span class="bg-[#0070D2] group-hover:bg-[#005BAC] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
-            </div>
-          </div>
-
-          <!-- Cuci Lipat -->
-          <div onclick="selectKiloanSpecificItem('kiloan-5-lipat')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-sky-50/50 active:bg-sky-100/60 cursor-pointer transition group">
-            <div>
-              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Cuci Lipat</span>
-              <span class="text-[10px] text-slate-500 block">Cuci + Kering + Lipat Rapi &bull; 5 Jam</span>
-            </div>
-            <div class="flex items-center gap-2 flex-shrink-0">
-              <span class="font-black text-slate-900 text-sm">Rp 23.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
-              <span class="bg-[#0070D2] group-hover:bg-[#005BAC] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4. SAME DAY SERVICE -->
-      <div class="bg-white rounded-xl shadow-sm border border-slate-200/80 overflow-hidden text-left transition">
-        <button type="button" onclick="toggleKiloanAccordion('sameday')" class="w-full px-3.5 py-3 flex items-center justify-between text-left hover:bg-slate-50 active:bg-slate-100 transition select-none gap-2">
-          <div class="flex items-center gap-2.5 min-w-0 flex-1 pr-2">
-            <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-sm font-black flex-shrink-0 shadow-xs">☀️</span>
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-1.5 flex-wrap">
-                <h3 class="font-black text-[13px] text-slate-900 leading-tight">Same Day Service</h3>
-                <span class="text-[9px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 rounded-full uppercase tracking-wider">Hari Ini Selesai</span>
-              </div>
-              <p class="text-[10.5px] text-slate-500 font-medium mt-0.5 leading-tight truncate">Antar pagi, sore/malam selesai &bull; Mulai Rp 15.000 /kg</p>
-            </div>
-          </div>
-          <div id="acc-arrow-kiloan-sameday" class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 flex-shrink-0 transition-transform duration-200 shadow-xs">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
-          </div>
-        </button>
-
-        <div id="acc-content-kiloan-sameday" class="hidden px-3.5 pb-2 border-t border-slate-100 divide-y divide-slate-100 text-xs">
-          <!-- Cuci Setrika -->
-          <div onclick="selectKiloanSpecificItem('kiloan-sameday-setrika')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-sky-50/50 active:bg-sky-100/60 cursor-pointer transition group">
-            <div>
-              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Cuci Setrika (Lengkap)</span>
-              <span class="text-[10px] text-slate-500 block">Cuci + Kering + Setrika Uap Rapi &bull; Same Day</span>
-            </div>
-            <div class="flex items-center gap-2 flex-shrink-0">
-              <span class="font-black text-slate-900 text-sm">Rp 20.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
-              <span class="bg-[#0070D2] group-hover:bg-[#005BAC] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
-            </div>
-          </div>
-
-          <!-- Cuci Lipat -->
-          <div onclick="selectKiloanSpecificItem('kiloan-sameday-lipat')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-sky-50/50 active:bg-sky-100/60 cursor-pointer transition group">
-            <div>
-              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Cuci Lipat</span>
-              <span class="text-[10px] text-slate-500 block">Cuci + Kering + Lipat Rapi &bull; Same Day</span>
-            </div>
-            <div class="flex items-center gap-2 flex-shrink-0">
-              <span class="font-black text-slate-900 text-sm">Rp 18.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
-              <span class="bg-[#0070D2] group-hover:bg-[#005BAC] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
-            </div>
-          </div>
-
-          <!-- Setrika Saja -->
-          <div onclick="selectKiloanSpecificItem('kiloan-sameday-setrika-only')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-sky-50/50 active:bg-sky-100/60 cursor-pointer transition group">
-            <div>
-              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Setrika Saja</span>
-              <span class="text-[10px] text-slate-500 block">Setrika Uap Rapi &bull; Same Day</span>
-            </div>
-            <div class="flex items-center gap-2 flex-shrink-0">
-              <span class="font-black text-slate-900 text-sm">Rp 15.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
-              <span class="bg-[#0070D2] group-hover:bg-[#005BAC] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 5. EXPRESS 1 X 24 JAM -->
-      <div class="bg-white rounded-xl shadow-sm border border-slate-200/80 overflow-hidden text-left transition">
-        <button type="button" onclick="toggleKiloanAccordion('1x24')" class="w-full px-3.5 py-3 flex items-center justify-between text-left hover:bg-slate-50 active:bg-slate-100 transition select-none gap-2">
-          <div class="flex items-center gap-2.5 min-w-0 flex-1 pr-2">
-            <span class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center text-sm font-black flex-shrink-0 shadow-xs">⏱️</span>
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-1.5 flex-wrap">
-                <h3 class="font-black text-[13px] text-slate-900 leading-tight">Express 1 x 24 Jam</h3>
-                <span class="text-[9px] font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 px-1.5 py-0.5 rounded-full uppercase tracking-wider">1 Hari Selesai</span>
-              </div>
-              <p class="text-[10.5px] text-slate-500 font-medium mt-0.5 leading-tight truncate">Selesai 1x24 Jam &bull; Mulai Rp 10.000 /kg</p>
-            </div>
-          </div>
-          <div id="acc-arrow-kiloan-1x24" class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 flex-shrink-0 transition-transform duration-200 shadow-xs">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
-          </div>
-        </button>
-
-        <div id="acc-content-kiloan-1x24" class="hidden px-3.5 pb-2 border-t border-slate-100 divide-y divide-slate-100 text-xs">
-          <!-- Cuci Setrika -->
-          <div onclick="selectKiloanSpecificItem('kiloan-1x24-setrika')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-sky-50/50 active:bg-sky-100/60 cursor-pointer transition group">
-            <div>
-              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Cuci Setrika (Lengkap)</span>
-              <span class="text-[10px] text-slate-500 block">Cuci + Kering + Setrika Uap Rapi &bull; 1 Hari</span>
-            </div>
-            <div class="flex items-center gap-2 flex-shrink-0">
-              <span class="font-black text-slate-900 text-sm">Rp 15.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
-              <span class="bg-[#0070D2] group-hover:bg-[#005BAC] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
-            </div>
-          </div>
-
-          <!-- Cuci Lipat -->
-          <div onclick="selectKiloanSpecificItem('kiloan-1x24-lipat')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-sky-50/50 active:bg-sky-100/60 cursor-pointer transition group">
-            <div>
-              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Cuci Lipat</span>
-              <span class="text-[10px] text-slate-500 block">Cuci + Kering + Lipat Rapi &bull; 1 Hari</span>
-            </div>
-            <div class="flex items-center gap-2 flex-shrink-0">
-              <span class="font-black text-slate-900 text-sm">Rp 13.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
-              <span class="bg-[#0070D2] group-hover:bg-[#005BAC] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
-            </div>
-          </div>
-
-          <!-- Setrika Saja -->
-          <div onclick="selectKiloanSpecificItem('kiloan-1x24-setrika-only')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-sky-50/50 active:bg-sky-100/60 cursor-pointer transition group">
-            <div>
-              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Setrika Saja</span>
-              <span class="text-[10px] text-slate-500 block">Setrika Uap Rapi &bull; 1 Hari</span>
-            </div>
-            <div class="flex items-center gap-2 flex-shrink-0">
-              <span class="font-black text-slate-900 text-sm">Rp 10.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
-              <span class="bg-[#0070D2] group-hover:bg-[#005BAC] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 6. EXPRESS 2 X 24 JAM -->
-      <div class="bg-white rounded-xl shadow-sm border border-slate-200/80 overflow-hidden text-left transition">
-        <button type="button" onclick="toggleKiloanAccordion('2x24')" class="w-full px-3.5 py-3 flex items-center justify-between text-left hover:bg-slate-50 active:bg-slate-100 transition select-none gap-2">
-          <div class="flex items-center gap-2.5 min-w-0 flex-1 pr-2">
-            <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center text-sm font-black flex-shrink-0 shadow-xs">📦</span>
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-1.5 flex-wrap">
-                <h3 class="font-black text-[13px] text-slate-900 leading-tight">Express 2 x 24 Jam</h3>
-                <span class="text-[9px] font-bold text-purple-700 bg-purple-50 border border-purple-200 px-1.5 py-0.5 rounded-full uppercase tracking-wider">2 Hari Selesai</span>
-              </div>
-              <p class="text-[10.5px] text-slate-500 font-medium mt-0.5 leading-tight truncate">Selesai 2x24 Jam &bull; Mulai Rp 9.000 /kg</p>
-            </div>
-          </div>
-          <div id="acc-arrow-kiloan-2x24" class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 flex-shrink-0 transition-transform duration-200 shadow-xs">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
-          </div>
-        </button>
-
-        <div id="acc-content-kiloan-2x24" class="hidden px-3.5 pb-2 border-t border-slate-100 divide-y divide-slate-100 text-xs">
-          <!-- Cuci Setrika -->
-          <div onclick="selectKiloanSpecificItem('kiloan-2x24-setrika')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-sky-50/50 active:bg-sky-100/60 cursor-pointer transition group">
-            <div>
-              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Cuci Setrika (Lengkap)</span>
-              <span class="text-[10px] text-slate-500 block">Cuci + Kering + Setrika Uap Rapi &bull; 2 Hari</span>
-            </div>
-            <div class="flex items-center gap-2 flex-shrink-0">
-              <span class="font-black text-slate-900 text-sm">Rp 12.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
-              <span class="bg-[#0070D2] group-hover:bg-[#005BAC] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
-            </div>
-          </div>
-
-          <!-- Cuci Lipat -->
-          <div onclick="selectKiloanSpecificItem('kiloan-2x24-lipat')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-sky-50/50 active:bg-sky-100/60 cursor-pointer transition group">
-            <div>
-              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Cuci Lipat</span>
-              <span class="text-[10px] text-slate-500 block">Cuci + Kering + Lipat Rapi &bull; 2 Hari</span>
-            </div>
-            <div class="flex items-center gap-2 flex-shrink-0">
-              <span class="font-black text-slate-900 text-sm">Rp 11.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
-              <span class="bg-[#0070D2] group-hover:bg-[#005BAC] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
-            </div>
-          </div>
-
-          <!-- Setrika Saja -->
-          <div onclick="selectKiloanSpecificItem('kiloan-2x24-setrika-only')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-sky-50/50 active:bg-sky-100/60 cursor-pointer transition group">
-            <div>
-              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Setrika Saja</span>
-              <span class="text-[10px] text-slate-500 block">Setrika Uap Rapi &bull; 2 Hari</span>
-            </div>
-            <div class="flex items-center gap-2 flex-shrink-0">
-              <span class="font-black text-slate-900 text-sm">Rp 9.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
-              <span class="bg-[#0070D2] group-hover:bg-[#005BAC] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 7. REGULAR 3 X 24 JAM -->
-      <div class="bg-white rounded-xl shadow-sm border border-slate-200/80 overflow-hidden text-left transition">
-        <button type="button" onclick="toggleKiloanAccordion('3x24')" class="w-full px-3.5 py-3 flex items-center justify-between text-left hover:bg-slate-50 active:bg-slate-100 transition select-none gap-2">
-          <div class="flex items-center gap-2.5 min-w-0 flex-1 pr-2">
-            <span class="w-8 h-8 rounded-lg bg-teal-100 text-teal-700 flex items-center justify-center text-sm font-black flex-shrink-0 shadow-xs">🧺</span>
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-1.5 flex-wrap">
-                <h3 class="font-black text-[13px] text-slate-900 leading-tight">Regular 3 x 24 Jam</h3>
-                <span class="text-[9px] font-bold text-teal-700 bg-teal-50 border border-teal-200 px-1.5 py-0.5 rounded-full uppercase tracking-wider">Paling Hemat</span>
-              </div>
-              <p class="text-[10.5px] text-slate-500 font-medium mt-0.5 leading-tight truncate">Selesai 3x24 Jam &bull; Mulai Rp 8.000 /kg</p>
-            </div>
-          </div>
-          <div id="acc-arrow-kiloan-3x24" class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 flex-shrink-0 transition-transform duration-200 shadow-xs">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
-          </div>
-        </button>
-
-        <div id="acc-content-kiloan-3x24" class="hidden px-3.5 pb-2 border-t border-slate-100 divide-y divide-slate-100 text-xs">
-          <!-- Cuci Setrika -->
-          <div onclick="selectKiloanSpecificItem('kiloan-3x24-setrika')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-sky-50/50 active:bg-sky-100/60 cursor-pointer transition group">
-            <div>
-              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Cuci Setrika (Lengkap)</span>
-              <span class="text-[10px] text-slate-500 block">Cuci + Kering + Setrika Uap Rapi &bull; 3 Hari</span>
-            </div>
-            <div class="flex items-center gap-2 flex-shrink-0">
-              <span class="font-black text-slate-900 text-sm">Rp 10.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
-              <span class="bg-[#0070D2] group-hover:bg-[#005BAC] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
-            </div>
-          </div>
-
-          <!-- Cuci Lipat -->
-          <div onclick="selectKiloanSpecificItem('kiloan-3x24-lipat')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-sky-50/50 active:bg-sky-100/60 cursor-pointer transition group">
-            <div>
-              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Cuci Lipat</span>
-              <span class="text-[10px] text-slate-500 block">Cuci + Kering + Lipat Rapi &bull; 3 Hari</span>
-            </div>
-            <div class="flex items-center gap-2 flex-shrink-0">
-              <span class="font-black text-slate-900 text-sm">Rp 8.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
-              <span class="bg-[#0070D2] group-hover:bg-[#005BAC] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
-            </div>
-          </div>
-
-          <!-- Setrika Saja -->
-          <div onclick="selectKiloanSpecificItem('kiloan-3x24-setrika-only')" class="py-2.5 px-2 -mx-2 rounded-lg flex items-center justify-between hover:bg-sky-50/50 active:bg-sky-100/60 cursor-pointer transition group">
-            <div>
-              <span class="font-bold text-slate-800 text-xs group-hover:text-[#0070D2]">Setrika Saja</span>
-              <span class="text-[10px] text-slate-500 block">Setrika Uap Rapi &bull; 3 Hari</span>
-            </div>
-            <div class="flex items-center gap-2 flex-shrink-0">
-              <span class="font-black text-slate-900 text-sm">Rp 8.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
-              <span class="bg-[#0070D2] group-hover:bg-[#005BAC] text-white text-[10.5px] font-bold px-2.5 py-1 rounded-md shadow-sm transition">+ Pilih</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Kiloan Info Card -->
-      <div class="p-3 bg-sky-50 rounded-xl border border-sky-200/80 text-[11px] text-sky-950 space-y-1.5 text-left">
-        <div class="font-bold flex items-center gap-1.5 text-[#0070D2]">
-          <span>💡</span>
-          <span>Keunggulan Cuci Kiloan Homie:</span>
-        </div>
-        <p>• <b>1 Mesin 1 Pelanggan:</b> Pakaian Anda diproses terpisah secara higienis, tidak pernah dicampur pakaian orang lain.</p>
-        <p>• <b>Minimal Order:</b> 3 kg per penimbangan di lokasi jemput.</p>
-        <p>• <b>Deterjen &amp; Parfum:</b> Lembut untuk serat kain, ramah kulit, dan wangi tahan lama.</p>
-      </div>
-
-    </div>
-
-    <!-- Bottom Action Bar Sticky -->
-    <div class="fixed bottom-0 left-0 right-0 max-w-[414px] mx-auto bg-white/95 backdrop-blur-sm border-t border-slate-200 px-4 py-3 flex items-center justify-between shadow-lg z-40">
-      <div class="text-left">
-        <span class="text-[10px] text-slate-500 block leading-tight">Tarif Mulai Dari</span>
-        <div class="text-sm font-black text-[#0070D2] leading-tight">
-          Rp 8.000 <span class="text-[10.5px] font-normal text-slate-500">/kg</span>
-        </div>
-        <span class="text-[10px] text-emerald-600 font-semibold block">Min. 3 kg di Lokasi</span>
-      </div>
-      <button type="button" onclick="selectKiloanSpecificItem('kiloan-5-setrika')" class="bg-[#0070D2] hover:bg-[#005BAC] active:scale-[0.98] text-white px-5 py-2.5 rounded-lg font-black text-xs sm:text-sm flex items-center gap-1.5 shadow-md transition">
-        <span>+ Pilih Express 5 Jam</span>
-        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+    <!-- Duration Pill Tabs (Switcher Langsung) -->
+    <div class="bg-white border-b border-slate-200 px-3 py-2 flex items-center gap-1.5 overflow-x-auto no-scrollbar select-none sticky top-[49px] z-30">
+      <button type="button" onclick="showKiloanDuration('2jam')" id="tab-kiloan-2jam" class="kiloan-tab-btn px-3 py-1 rounded-full text-xs font-bold transition flex items-center gap-1 flex-shrink-0 bg-[#0070D2] text-white shadow-sm">
+        <span>⚡ 2 Jam</span>
       </button>
+      <button type="button" onclick="showKiloanDuration('3jam')" id="tab-kiloan-3jam" class="kiloan-tab-btn px-3 py-1 rounded-full text-xs font-bold transition flex items-center gap-1 flex-shrink-0 bg-slate-100 text-slate-700 hover:bg-slate-200">
+        <span>🚀 3 Jam</span>
+      </button>
+      <button type="button" onclick="showKiloanDuration('5jam')" id="tab-kiloan-5jam" class="kiloan-tab-btn px-3 py-1 rounded-full text-xs font-bold transition flex items-center gap-1 flex-shrink-0 bg-slate-100 text-slate-700 hover:bg-slate-200">
+        <span>🔥 5 Jam</span>
+      </button>
+      <button type="button" onclick="showKiloanDuration('sameday')" id="tab-kiloan-sameday" class="kiloan-tab-btn px-3 py-1 rounded-full text-xs font-bold transition flex items-center gap-1 flex-shrink-0 bg-slate-100 text-slate-700 hover:bg-slate-200">
+        <span>☀️ Same Day</span>
+      </button>
+      <button type="button" onclick="showKiloanDuration('1x24')" id="tab-kiloan-1x24" class="kiloan-tab-btn px-3 py-1 rounded-full text-xs font-bold transition flex items-center gap-1 flex-shrink-0 bg-slate-100 text-slate-700 hover:bg-slate-200">
+        <span>⏱️ 1x24 Jam</span>
+      </button>
+      <button type="button" onclick="showKiloanDuration('2x24')" id="tab-kiloan-2x24" class="kiloan-tab-btn px-3 py-1 rounded-full text-xs font-bold transition flex items-center gap-1 flex-shrink-0 bg-slate-100 text-slate-700 hover:bg-slate-200">
+        <span>📦 2x24 Jam</span>
+      </button>
+      <button type="button" onclick="showKiloanDuration('3x24')" id="tab-kiloan-3x24" class="kiloan-tab-btn px-3 py-1 rounded-full text-xs font-bold transition flex items-center gap-1 flex-shrink-0 bg-slate-100 text-slate-700 hover:bg-slate-200">
+        <span>🧺 3x24 Jam</span>
+      </button>
+    </div>
+
+    <!-- ================================================= -->
+    <!-- 1. PANEL 2 JAM (INSTANT)                          -->
+    <!-- ================================================= -->
+    <div id="kiloan-panel-2jam" class="kiloan-duration-panel">
+      <!-- Hero Banner -->
+      <div class="p-4 bg-gradient-to-r from-[#D9381E] via-[#E65100] to-[#FF6D00] text-white relative overflow-hidden shadow-sm">
+        <div class="relative z-10 flex items-center justify-between gap-3">
+          <div class="flex-1 text-left">
+            <span class="inline-block bg-white text-[#D9381E] font-black text-[9.5px] px-2 py-0.5 rounded tracking-wider uppercase shadow-sm">
+              ⚡ Prioritas Super Kilat
+            </span>
+            <h1 class="text-base font-black leading-tight mt-1">Cuci Kiloan Instant 2 Jam</h1>
+            <p class="text-xs text-orange-100 mt-1 leading-snug">
+              Selesai kilat dalam 2 jam! 1 Mesin 1 Pelanggan (terpisah, tidak dicampur). Timbang akurat minimal 3 kg.
+            </p>
+          </div>
+          <div class="w-16 h-16 rounded-xl bg-white/15 p-1 flex-shrink-0 flex items-center justify-center backdrop-blur-sm shadow-inner">
+            <img src="assets/images/cat_mascot.png" alt="Instant 2 Jam" class="w-full h-full object-contain" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Options Container -->
+      <div class="px-3 space-y-3 mt-3">
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200/80 p-3.5 text-left space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+            <div>
+              <h3 class="font-black text-sm text-slate-900 leading-tight">Pilihan Layanan Instant 2 Jam</h3>
+              <p class="text-[10.5px] text-slate-500 font-medium">Tarif Resmi Brosur Homie Laundry</p>
+            </div>
+            <span class="text-[10px] font-bold text-rose-700 bg-rose-50 border border-rose-200 px-2 py-0.5 rounded-full">
+              2 Pilihan
+            </span>
+          </div>
+
+          <!-- Cuci Setrika 2 Jam -->
+          <div onclick="selectKiloanSpecificItem('kiloan-2-setrika')" class="p-3 rounded-xl border border-sky-200 bg-sky-50/40 hover:bg-sky-50/80 cursor-pointer transition flex items-center justify-between gap-3 group">
+            <div class="flex items-start gap-2.5 min-w-0 flex-1">
+              <span class="w-9 h-9 rounded-lg bg-[#0070D2] text-white flex items-center justify-center text-base flex-shrink-0 shadow-xs">👔</span>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <h4 class="font-black text-xs sm:text-[13px] text-slate-900 leading-tight group-hover:text-[#0070D2]">Cuci Setrika (Lengkap)</h4>
+                  <span class="text-[8.5px] font-bold text-sky-700 bg-sky-100 px-1.5 py-0.2 rounded uppercase">Paling Lengkap</span>
+                </div>
+                <p class="text-[10.5px] text-slate-500 mt-0.5 leading-snug">Cuci bersih + Kering tuntas + Setrika uap rapi &amp; wangi tahan lama</p>
+                <div class="mt-1 flex items-center gap-1 text-[10px] font-bold text-[#0070D2]">
+                  <span>⏱️ Selesai dalam 2 Jam</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right flex-shrink-0 flex flex-col items-end gap-1">
+              <span class="text-xs sm:text-sm font-black text-slate-900">Rp 50.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
+              <span class="bg-[#0070D2] group-hover:bg-[#005BAC] active:scale-95 text-white text-[10.5px] font-bold px-3 py-1.5 rounded-lg shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+
+          <!-- Cuci Lipat 2 Jam -->
+          <div onclick="selectKiloanSpecificItem('kiloan-2-lipat')" class="p-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 cursor-pointer transition flex items-center justify-between gap-3 group">
+            <div class="flex items-start gap-2.5 min-w-0 flex-1">
+              <span class="w-9 h-9 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center text-base flex-shrink-0 shadow-xs">🧺</span>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <h4 class="font-black text-xs sm:text-[13px] text-slate-900 leading-tight group-hover:text-[#0070D2]">Cuci Lipat</h4>
+                  <span class="text-[8.5px] font-bold text-slate-600 bg-slate-100 px-1.5 py-0.2 rounded uppercase">Praktis</span>
+                </div>
+                <p class="text-[10.5px] text-slate-500 mt-0.5 leading-snug">Cuci bersih + Kering tuntas + Dilipat rapi &amp; wangi siap simpan</p>
+                <div class="mt-1 flex items-center gap-1 text-[10px] font-bold text-slate-600">
+                  <span>⏱️ Selesai dalam 2 Jam</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right flex-shrink-0 flex flex-col items-end gap-1">
+              <span class="text-xs sm:text-sm font-black text-slate-900">Rp 48.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
+              <span class="bg-slate-800 group-hover:bg-slate-900 active:scale-95 text-white text-[10.5px] font-bold px-3 py-1.5 rounded-lg shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info Card -->
+        <div class="p-3 bg-rose-50 rounded-xl border border-rose-200/80 text-[11px] text-rose-950 space-y-1.5 text-left">
+          <div class="font-bold flex items-center gap-1.5 text-rose-700">
+            <span>⚡</span>
+            <span>Catatan Khusus Instant 2 Jam:</span>
+          </div>
+          <p>• Prioritas mesin langsung diproses begitu pakaian tiba di outlet.</p>
+          <p>• <b>1 Mesin 1 Pelanggan:</b> Higienis, terpisah dan tidak dicampur dengan cucian orang lain.</p>
+          <p>• <b>Minimal order:</b> 3 kg per penimbangan di lokasi.</p>
+        </div>
+      </div>
+
+      <!-- Bottom Sticky Action Bar -->
+      <div class="fixed bottom-0 left-0 right-0 max-w-[414px] mx-auto bg-white/95 backdrop-blur-sm border-t border-slate-200 px-4 py-3 flex items-center justify-between shadow-lg z-40">
+        <div class="text-left">
+          <span class="text-[10px] text-slate-500 block leading-tight">Tarif Instant 2 Jam</span>
+          <div class="text-sm font-black text-[#D9381E] leading-tight">
+            Mulai Rp 48.000 <span class="text-[10.5px] font-normal text-slate-500">/kg</span>
+          </div>
+          <span class="text-[10px] text-rose-700 font-semibold block">Min. 3 kg Timbang di Lokasi</span>
+        </div>
+        <button type="button" onclick="selectKiloanSpecificItem('kiloan-2-setrika')" class="bg-[#D9381E] hover:bg-[#B72B15] active:scale-[0.98] text-white px-5 py-2.5 rounded-lg font-black text-xs sm:text-sm flex items-center gap-1.5 shadow-md transition">
+          <span>+ Pilih Cuci Setrika 2 Jam</span>
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ================================================= -->
+    <!-- 2. PANEL 3 JAM (FLASH EXPRESS)                    -->
+    <!-- ================================================= -->
+    <div id="kiloan-panel-3jam" class="kiloan-duration-panel hidden">
+      <!-- Hero Banner -->
+      <div class="p-4 bg-gradient-to-r from-[#D97706] via-[#F59E0B] to-[#FBBF24] text-white relative overflow-hidden shadow-sm">
+        <div class="relative z-10 flex items-center justify-between gap-3">
+          <div class="flex-1 text-left">
+            <span class="inline-block bg-white text-[#D97706] font-black text-[9.5px] px-2 py-0.5 rounded tracking-wider uppercase shadow-sm">
+              🚀 Flash Express 3 Jam
+            </span>
+            <h1 class="text-base font-black leading-tight mt-1">Cuci Kiloan Flash 3 Jam</h1>
+            <p class="text-xs text-amber-100 mt-1 leading-snug">
+              Selesai dalam 3 jam! Pakaian bersih, harum, dan rapi prima tanpa antre lama.
+            </p>
+          </div>
+          <div class="w-16 h-16 rounded-xl bg-white/15 p-1 flex-shrink-0 flex items-center justify-center backdrop-blur-sm shadow-inner">
+            <img src="assets/images/cat_mascot.png" alt="Flash 3 Jam" class="w-full h-full object-contain" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Options Container -->
+      <div class="px-3 space-y-3 mt-3">
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200/80 p-3.5 text-left space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+            <div>
+              <h3 class="font-black text-sm text-slate-900 leading-tight">Pilihan Layanan Flash 3 Jam</h3>
+              <p class="text-[10.5px] text-slate-500 font-medium">Tarif Resmi Brosur Homie Laundry</p>
+            </div>
+            <span class="text-[10px] font-bold text-amber-800 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-full">
+              2 Pilihan
+            </span>
+          </div>
+
+          <!-- Cuci Setrika 3 Jam -->
+          <div onclick="selectKiloanSpecificItem('kiloan-3-setrika')" class="p-3 rounded-xl border border-sky-200 bg-sky-50/40 hover:bg-sky-50/80 cursor-pointer transition flex items-center justify-between gap-3 group">
+            <div class="flex items-start gap-2.5 min-w-0 flex-1">
+              <span class="w-9 h-9 rounded-lg bg-[#0070D2] text-white flex items-center justify-center text-base flex-shrink-0 shadow-xs">👔</span>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <h4 class="font-black text-xs sm:text-[13px] text-slate-900 leading-tight group-hover:text-[#0070D2]">Cuci Setrika (Lengkap)</h4>
+                  <span class="text-[8.5px] font-bold text-sky-700 bg-sky-100 px-1.5 py-0.2 rounded uppercase">Paling Lengkap</span>
+                </div>
+                <p class="text-[10.5px] text-slate-500 mt-0.5 leading-snug">Cuci bersih + Kering tuntas + Setrika uap rapi &amp; wangi tahan lama</p>
+                <div class="mt-1 flex items-center gap-1 text-[10px] font-bold text-[#0070D2]">
+                  <span>⏱️ Selesai dalam 3 Jam</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right flex-shrink-0 flex flex-col items-end gap-1">
+              <span class="text-xs sm:text-sm font-black text-slate-900">Rp 35.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
+              <span class="bg-[#0070D2] group-hover:bg-[#005BAC] active:scale-95 text-white text-[10.5px] font-bold px-3 py-1.5 rounded-lg shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+
+          <!-- Cuci Lipat 3 Jam -->
+          <div onclick="selectKiloanSpecificItem('kiloan-3-lipat')" class="p-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 cursor-pointer transition flex items-center justify-between gap-3 group">
+            <div class="flex items-start gap-2.5 min-w-0 flex-1">
+              <span class="w-9 h-9 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center text-base flex-shrink-0 shadow-xs">🧺</span>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <h4 class="font-black text-xs sm:text-[13px] text-slate-900 leading-tight group-hover:text-[#0070D2]">Cuci Lipat</h4>
+                  <span class="text-[8.5px] font-bold text-slate-600 bg-slate-100 px-1.5 py-0.2 rounded uppercase">Praktis</span>
+                </div>
+                <p class="text-[10.5px] text-slate-500 mt-0.5 leading-snug">Cuci bersih + Kering tuntas + Dilipat rapi &amp; wangi siap simpan</p>
+                <div class="mt-1 flex items-center gap-1 text-[10px] font-bold text-slate-600">
+                  <span>⏱️ Selesai dalam 3 Jam</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right flex-shrink-0 flex flex-col items-end gap-1">
+              <span class="text-xs sm:text-sm font-black text-slate-900">Rp 33.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
+              <span class="bg-slate-800 group-hover:bg-slate-900 active:scale-95 text-white text-[10.5px] font-bold px-3 py-1.5 rounded-lg shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info Card -->
+        <div class="p-3 bg-amber-50 rounded-xl border border-amber-200/80 text-[11px] text-amber-950 space-y-1.5 text-left">
+          <div class="font-bold flex items-center gap-1.5 text-amber-800">
+            <span>🚀</span>
+            <span>Keunggulan Flash 3 Jam:</span>
+          </div>
+          <p>• Dicuci terpisah 1 mesin 1 pelanggan (dijamin higienis &amp; tidak tercampur).</p>
+          <p>• Minimal order 3 kg per penimbangan di lokasi.</p>
+        </div>
+      </div>
+
+      <!-- Bottom Sticky Action Bar -->
+      <div class="fixed bottom-0 left-0 right-0 max-w-[414px] mx-auto bg-white/95 backdrop-blur-sm border-t border-slate-200 px-4 py-3 flex items-center justify-between shadow-lg z-40">
+        <div class="text-left">
+          <span class="text-[10px] text-slate-500 block leading-tight">Tarif Flash 3 Jam</span>
+          <div class="text-sm font-black text-amber-600 leading-tight">
+            Mulai Rp 33.000 <span class="text-[10.5px] font-normal text-slate-500">/kg</span>
+          </div>
+          <span class="text-[10px] text-amber-800 font-semibold block">Min. 3 kg Timbang di Lokasi</span>
+        </div>
+        <button type="button" onclick="selectKiloanSpecificItem('kiloan-3-setrika')" class="bg-amber-600 hover:bg-amber-700 active:scale-[0.98] text-white px-5 py-2.5 rounded-lg font-black text-xs sm:text-sm flex items-center gap-1.5 shadow-md transition">
+          <span>+ Pilih Cuci Setrika 3 Jam</span>
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ================================================= -->
+    <!-- 3. PANEL 5 JAM (SUPER EXPRESS - PALING FAVORIT)   -->
+    <!-- ================================================= -->
+    <div id="kiloan-panel-5jam" class="kiloan-duration-panel hidden">
+      <!-- Hero Banner -->
+      <div class="p-4 bg-gradient-to-r from-[#005BAC] via-[#0070D2] to-[#0091FF] text-white relative overflow-hidden shadow-sm">
+        <div class="relative z-10 flex items-center justify-between gap-3">
+          <div class="flex-1 text-left">
+            <span class="inline-block bg-white text-[#0070D2] font-black text-[9.5px] px-2 py-0.5 rounded tracking-wider uppercase shadow-sm">
+              🔥 Paling Favorit Samarinda
+            </span>
+            <h1 class="text-base font-black leading-tight mt-1">Cuci Kiloan Super Express 5 Jam</h1>
+            <p class="text-xs text-blue-100 mt-1 leading-snug">
+              Pilihan paling laris! Selesai dalam 5 jam. Cepat, bersih maksimal, wangi tahan lama, dan harga sangat terjangkau.
+            </p>
+          </div>
+          <div class="w-16 h-16 rounded-xl bg-white/15 p-1 flex-shrink-0 flex items-center justify-center backdrop-blur-sm shadow-inner">
+            <img src="assets/images/cat_mascot.png" alt="Super Express 5 Jam" class="w-full h-full object-contain" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Options Container -->
+      <div class="px-3 space-y-3 mt-3">
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200/80 p-3.5 text-left space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+            <div>
+              <h3 class="font-black text-sm text-slate-900 leading-tight">Pilihan Layanan Super Express 5 Jam</h3>
+              <p class="text-[10.5px] text-slate-500 font-medium">Tarif Resmi Brosur Homie Laundry</p>
+            </div>
+            <span class="text-[10px] font-bold text-[#0070D2] bg-sky-50 border border-sky-200 px-2 py-0.5 rounded-full">
+              Best Seller
+            </span>
+          </div>
+
+          <!-- Cuci Setrika 5 Jam -->
+          <div onclick="selectKiloanSpecificItem('kiloan-5-setrika')" class="p-3 rounded-xl border border-sky-300 bg-sky-50/60 hover:bg-sky-50 cursor-pointer transition flex items-center justify-between gap-3 group">
+            <div class="flex items-start gap-2.5 min-w-0 flex-1">
+              <span class="w-9 h-9 rounded-lg bg-[#0070D2] text-white flex items-center justify-center text-base flex-shrink-0 shadow-xs">👔</span>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <h4 class="font-black text-xs sm:text-[13px] text-slate-900 leading-tight group-hover:text-[#0070D2]">Cuci Setrika (Lengkap)</h4>
+                  <span class="text-[8.5px] font-bold text-white bg-emerald-600 px-1.5 py-0.2 rounded uppercase">Paling Favorit</span>
+                </div>
+                <p class="text-[10.5px] text-slate-500 mt-0.5 leading-snug">Cuci bersih + Kering tuntas + Setrika uap rapi &amp; wangi tahan lama</p>
+                <div class="mt-1 flex items-center gap-1 text-[10px] font-bold text-[#0070D2]">
+                  <span>⏱️ Selesai dalam 5 Jam</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right flex-shrink-0 flex flex-col items-end gap-1">
+              <span class="text-xs sm:text-sm font-black text-slate-900">Rp 25.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
+              <span class="bg-[#0070D2] group-hover:bg-[#005BAC] active:scale-95 text-white text-[10.5px] font-bold px-3 py-1.5 rounded-lg shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+
+          <!-- Cuci Lipat 5 Jam -->
+          <div onclick="selectKiloanSpecificItem('kiloan-5-lipat')" class="p-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 cursor-pointer transition flex items-center justify-between gap-3 group">
+            <div class="flex items-start gap-2.5 min-w-0 flex-1">
+              <span class="w-9 h-9 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center text-base flex-shrink-0 shadow-xs">🧺</span>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <h4 class="font-black text-xs sm:text-[13px] text-slate-900 leading-tight group-hover:text-[#0070D2]">Cuci Lipat</h4>
+                  <span class="text-[8.5px] font-bold text-slate-600 bg-slate-100 px-1.5 py-0.2 rounded uppercase">Praktis</span>
+                </div>
+                <p class="text-[10.5px] text-slate-500 mt-0.5 leading-snug">Cuci bersih + Kering tuntas + Dilipat rapi &amp; wangi siap simpan</p>
+                <div class="mt-1 flex items-center gap-1 text-[10px] font-bold text-slate-600">
+                  <span>⏱️ Selesai dalam 5 Jam</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right flex-shrink-0 flex flex-col items-end gap-1">
+              <span class="text-xs sm:text-sm font-black text-slate-900">Rp 23.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
+              <span class="bg-slate-800 group-hover:bg-slate-900 active:scale-95 text-white text-[10.5px] font-bold px-3 py-1.5 rounded-lg shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info Card -->
+        <div class="p-3 bg-sky-50 rounded-xl border border-sky-200/80 text-[11px] text-sky-950 space-y-1.5 text-left">
+          <div class="font-bold flex items-center gap-1.5 text-[#0070D2]">
+            <span>💡</span>
+            <span>Keunggulan Layanan 5 Jam Homie:</span>
+          </div>
+          <p>• Paling direkomendasikan untuk Anda yang butuh baju bersih rapi di hari yang sama.</p>
+          <p>• Dicuci terpisah 1 mesin 1 pelanggan.</p>
+          <p>• Minimal order 3 kg per penimbangan di lokasi.</p>
+        </div>
+      </div>
+
+      <!-- Bottom Sticky Action Bar -->
+      <div class="fixed bottom-0 left-0 right-0 max-w-[414px] mx-auto bg-white/95 backdrop-blur-sm border-t border-slate-200 px-4 py-3 flex items-center justify-between shadow-lg z-40">
+        <div class="text-left">
+          <span class="text-[10px] text-slate-500 block leading-tight">Tarif Super Express 5 Jam</span>
+          <div class="text-sm font-black text-[#0070D2] leading-tight">
+            Mulai Rp 23.000 <span class="text-[10.5px] font-normal text-slate-500">/kg</span>
+          </div>
+          <span class="text-[10px] text-emerald-600 font-semibold block">Min. 3 kg Timbang di Lokasi</span>
+        </div>
+        <button type="button" onclick="selectKiloanSpecificItem('kiloan-5-setrika')" class="bg-[#0070D2] hover:bg-[#005BAC] active:scale-[0.98] text-white px-5 py-2.5 rounded-lg font-black text-xs sm:text-sm flex items-center gap-1.5 shadow-md transition">
+          <span>+ Pilih Cuci Setrika 5 Jam</span>
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ================================================= -->
+    <!-- 4. PANEL SAME DAY (HARI INI SELESAI)              -->
+    <!-- ================================================= -->
+    <div id="kiloan-panel-sameday" class="kiloan-duration-panel hidden">
+      <!-- Hero Banner -->
+      <div class="p-4 bg-gradient-to-r from-[#059669] via-[#10B981] to-[#34D399] text-white relative overflow-hidden shadow-sm">
+        <div class="relative z-10 flex items-center justify-between gap-3">
+          <div class="flex-1 text-left">
+            <span class="inline-block bg-white text-[#059669] font-black text-[9.5px] px-2 py-0.5 rounded tracking-wider uppercase shadow-sm">
+              ☀️ Same Day Service
+            </span>
+            <h1 class="text-base font-black leading-tight mt-1">Cuci Kiloan Same Day</h1>
+            <p class="text-xs text-emerald-100 mt-1 leading-snug">
+              Antar-jemput pagi hari, sore atau malam sudah selesai siap diantar ke rumah!
+            </p>
+          </div>
+          <div class="w-16 h-16 rounded-xl bg-white/15 p-1 flex-shrink-0 flex items-center justify-center backdrop-blur-sm shadow-inner">
+            <img src="assets/images/cat_mascot.png" alt="Same Day" class="w-full h-full object-contain" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Options Container -->
+      <div class="px-3 space-y-3 mt-3">
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200/80 p-3.5 text-left space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+            <div>
+              <h3 class="font-black text-sm text-slate-900 leading-tight">Pilihan Layanan Same Day</h3>
+              <p class="text-[10.5px] text-slate-500 font-medium">Tarif Resmi Brosur Homie Laundry</p>
+            </div>
+            <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full">
+              3 Pilihan
+            </span>
+          </div>
+
+          <!-- Cuci Setrika Same Day -->
+          <div onclick="selectKiloanSpecificItem('kiloan-sameday-setrika')" class="p-3 rounded-xl border border-sky-200 bg-sky-50/40 hover:bg-sky-50/80 cursor-pointer transition flex items-center justify-between gap-3 group">
+            <div class="flex items-start gap-2.5 min-w-0 flex-1">
+              <span class="w-9 h-9 rounded-lg bg-[#0070D2] text-white flex items-center justify-center text-base flex-shrink-0 shadow-xs">👔</span>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <h4 class="font-black text-xs sm:text-[13px] text-slate-900 leading-tight group-hover:text-[#0070D2]">Cuci Setrika (Lengkap)</h4>
+                  <span class="text-[8.5px] font-bold text-sky-700 bg-sky-100 px-1.5 py-0.2 rounded uppercase">Paling Lengkap</span>
+                </div>
+                <p class="text-[10.5px] text-slate-500 mt-0.5 leading-snug">Cuci bersih + Kering tuntas + Setrika uap rapi &amp; wangi tahan lama</p>
+                <div class="mt-1 flex items-center gap-1 text-[10px] font-bold text-emerald-700">
+                  <span>☀️ Hari Ini Selesai</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right flex-shrink-0 flex flex-col items-end gap-1">
+              <span class="text-xs sm:text-sm font-black text-slate-900">Rp 20.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
+              <span class="bg-[#0070D2] group-hover:bg-[#005BAC] active:scale-95 text-white text-[10.5px] font-bold px-3 py-1.5 rounded-lg shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+
+          <!-- Cuci Lipat Same Day -->
+          <div onclick="selectKiloanSpecificItem('kiloan-sameday-lipat')" class="p-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 cursor-pointer transition flex items-center justify-between gap-3 group">
+            <div class="flex items-start gap-2.5 min-w-0 flex-1">
+              <span class="w-9 h-9 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center text-base flex-shrink-0 shadow-xs">🧺</span>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <h4 class="font-black text-xs sm:text-[13px] text-slate-900 leading-tight group-hover:text-[#0070D2]">Cuci Lipat</h4>
+                  <span class="text-[8.5px] font-bold text-slate-600 bg-slate-100 px-1.5 py-0.2 rounded uppercase">Praktis</span>
+                </div>
+                <p class="text-[10.5px] text-slate-500 mt-0.5 leading-snug">Cuci bersih + Kering tuntas + Dilipat rapi &amp; wangi siap simpan</p>
+                <div class="mt-1 flex items-center gap-1 text-[10px] font-bold text-slate-600">
+                  <span>☀️ Hari Ini Selesai</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right flex-shrink-0 flex flex-col items-end gap-1">
+              <span class="text-xs sm:text-sm font-black text-slate-900">Rp 18.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
+              <span class="bg-slate-800 group-hover:bg-slate-900 active:scale-95 text-white text-[10.5px] font-bold px-3 py-1.5 rounded-lg shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+
+          <!-- Setrika Saja Same Day -->
+          <div onclick="selectKiloanSpecificItem('kiloan-sameday-setrika-only')" class="p-3 rounded-xl border border-amber-200 bg-amber-50/40 hover:bg-amber-50/80 cursor-pointer transition flex items-center justify-between gap-3 group">
+            <div class="flex items-start gap-2.5 min-w-0 flex-1">
+              <span class="w-9 h-9 rounded-lg bg-amber-500 text-white flex items-center justify-center text-base flex-shrink-0 shadow-xs">⚡</span>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <h4 class="font-black text-xs sm:text-[13px] text-slate-900 leading-tight group-hover:text-amber-800">Setrika Saja</h4>
+                  <span class="text-[8.5px] font-bold text-amber-800 bg-amber-100 px-1.5 py-0.2 rounded uppercase">Hanya Setrika</span>
+                </div>
+                <p class="text-[10.5px] text-slate-500 mt-0.5 leading-snug">Setrika uap rapi bergaris tajam &amp; wangi segar siap pakai</p>
+                <div class="mt-1 flex items-center gap-1 text-[10px] font-bold text-amber-700">
+                  <span>☀️ Hari Ini Selesai</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right flex-shrink-0 flex flex-col items-end gap-1">
+              <span class="text-xs sm:text-sm font-black text-slate-900">Rp 15.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
+              <span class="bg-amber-600 group-hover:bg-amber-700 active:scale-95 text-white text-[10.5px] font-bold px-3 py-1.5 rounded-lg shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info Card -->
+        <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-200/80 text-[11px] text-emerald-950 space-y-1.5 text-left">
+          <div class="font-bold flex items-center gap-1.5 text-emerald-800">
+            <span>☀️</span>
+            <span>Ketentuan Same Day Service:</span>
+          </div>
+          <p>• Rekomendasi jemput pagi agar dapat dikembalikan sore/malam hari.</p>
+          <p>• 1 Mesin 1 Pelanggan &bull; Minimal order 3 kg.</p>
+        </div>
+      </div>
+
+      <!-- Bottom Sticky Action Bar -->
+      <div class="fixed bottom-0 left-0 right-0 max-w-[414px] mx-auto bg-white/95 backdrop-blur-sm border-t border-slate-200 px-4 py-3 flex items-center justify-between shadow-lg z-40">
+        <div class="text-left">
+          <span class="text-[10px] text-slate-500 block leading-tight">Tarif Same Day</span>
+          <div class="text-sm font-black text-emerald-700 leading-tight">
+            Mulai Rp 15.000 <span class="text-[10.5px] font-normal text-slate-500">/kg</span>
+          </div>
+          <span class="text-[10px] text-emerald-800 font-semibold block">Min. 3 kg Timbang di Lokasi</span>
+        </div>
+        <button type="button" onclick="selectKiloanSpecificItem('kiloan-sameday-setrika')" class="bg-emerald-600 hover:bg-emerald-700 active:scale-[0.98] text-white px-5 py-2.5 rounded-lg font-black text-xs sm:text-sm flex items-center gap-1.5 shadow-md transition">
+          <span>+ Pilih Cuci Setrika Same Day</span>
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ================================================= -->
+    <!-- 5. PANEL 1X24 JAM (EXPRESS 1 HARI)                -->
+    <!-- ================================================= -->
+    <div id="kiloan-panel-1x24" class="kiloan-duration-panel hidden">
+      <!-- Hero Banner -->
+      <div class="p-4 bg-gradient-to-r from-[#4F46E5] via-[#6366F1] to-[#818CF8] text-white relative overflow-hidden shadow-sm">
+        <div class="relative z-10 flex items-center justify-between gap-3">
+          <div class="flex-1 text-left">
+            <span class="inline-block bg-white text-[#4F46E5] font-black text-[9.5px] px-2 py-0.5 rounded tracking-wider uppercase shadow-sm">
+              ⏱️ Express 1 x 24 Jam
+            </span>
+            <h1 class="text-base font-black leading-tight mt-1">Cuci Kiloan Express 1x24 Jam</h1>
+            <p class="text-xs text-indigo-100 mt-1 leading-snug">
+              Layanan standar express 1 hari. Pas untuk pakaian kerja dan aktivitas harian dengan hasil rapi sempurna.
+            </p>
+          </div>
+          <div class="w-16 h-16 rounded-xl bg-white/15 p-1 flex-shrink-0 flex items-center justify-center backdrop-blur-sm shadow-inner">
+            <img src="assets/images/cat_mascot.png" alt="1x24 Jam" class="w-full h-full object-contain" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Options Container -->
+      <div class="px-3 space-y-3 mt-3">
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200/80 p-3.5 text-left space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+            <div>
+              <h3 class="font-black text-sm text-slate-900 leading-tight">Pilihan Layanan Express 1x24 Jam</h3>
+              <p class="text-[10.5px] text-slate-500 font-medium">Tarif Resmi Brosur Homie Laundry</p>
+            </div>
+            <span class="text-[10px] font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 px-2 py-0.5 rounded-full">
+              3 Pilihan
+            </span>
+          </div>
+
+          <!-- Cuci Setrika 1x24 Jam -->
+          <div onclick="selectKiloanSpecificItem('kiloan-1x24-setrika')" class="p-3 rounded-xl border border-sky-200 bg-sky-50/40 hover:bg-sky-50/80 cursor-pointer transition flex items-center justify-between gap-3 group">
+            <div class="flex items-start gap-2.5 min-w-0 flex-1">
+              <span class="w-9 h-9 rounded-lg bg-[#0070D2] text-white flex items-center justify-center text-base flex-shrink-0 shadow-xs">👔</span>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <h4 class="font-black text-xs sm:text-[13px] text-slate-900 leading-tight group-hover:text-[#0070D2]">Cuci Setrika (Lengkap)</h4>
+                  <span class="text-[8.5px] font-bold text-sky-700 bg-sky-100 px-1.5 py-0.2 rounded uppercase">Paling Lengkap</span>
+                </div>
+                <p class="text-[10.5px] text-slate-500 mt-0.5 leading-snug">Cuci bersih + Kering tuntas + Setrika uap rapi &amp; wangi tahan lama</p>
+                <div class="mt-1 flex items-center gap-1 text-[10px] font-bold text-indigo-700">
+                  <span>⏱️ Selesai dalam 1x24 Jam</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right flex-shrink-0 flex flex-col items-end gap-1">
+              <span class="text-xs sm:text-sm font-black text-slate-900">Rp 15.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
+              <span class="bg-[#0070D2] group-hover:bg-[#005BAC] active:scale-95 text-white text-[10.5px] font-bold px-3 py-1.5 rounded-lg shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+
+          <!-- Cuci Lipat 1x24 Jam -->
+          <div onclick="selectKiloanSpecificItem('kiloan-1x24-lipat')" class="p-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 cursor-pointer transition flex items-center justify-between gap-3 group">
+            <div class="flex items-start gap-2.5 min-w-0 flex-1">
+              <span class="w-9 h-9 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center text-base flex-shrink-0 shadow-xs">🧺</span>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <h4 class="font-black text-xs sm:text-[13px] text-slate-900 leading-tight group-hover:text-[#0070D2]">Cuci Lipat</h4>
+                  <span class="text-[8.5px] font-bold text-slate-600 bg-slate-100 px-1.5 py-0.2 rounded uppercase">Praktis</span>
+                </div>
+                <p class="text-[10.5px] text-slate-500 mt-0.5 leading-snug">Cuci bersih + Kering tuntas + Dilipat rapi &amp; wangi siap simpan</p>
+                <div class="mt-1 flex items-center gap-1 text-[10px] font-bold text-slate-600">
+                  <span>⏱️ Selesai dalam 1x24 Jam</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right flex-shrink-0 flex flex-col items-end gap-1">
+              <span class="text-xs sm:text-sm font-black text-slate-900">Rp 13.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
+              <span class="bg-slate-800 group-hover:bg-slate-900 active:scale-95 text-white text-[10.5px] font-bold px-3 py-1.5 rounded-lg shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+
+          <!-- Setrika Saja 1x24 Jam -->
+          <div onclick="selectKiloanSpecificItem('kiloan-1x24-setrika-only')" class="p-3 rounded-xl border border-indigo-200 bg-indigo-50/40 hover:bg-indigo-50/80 cursor-pointer transition flex items-center justify-between gap-3 group">
+            <div class="flex items-start gap-2.5 min-w-0 flex-1">
+              <span class="w-9 h-9 rounded-lg bg-indigo-600 text-white flex items-center justify-center text-base flex-shrink-0 shadow-xs">⚡</span>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <h4 class="font-black text-xs sm:text-[13px] text-slate-900 leading-tight group-hover:text-indigo-800">Setrika Saja</h4>
+                  <span class="text-[8.5px] font-bold text-indigo-800 bg-indigo-100 px-1.5 py-0.2 rounded uppercase">Hanya Setrika</span>
+                </div>
+                <p class="text-[10.5px] text-slate-500 mt-0.5 leading-snug">Setrika uap rapi bergaris tajam &amp; wangi segar siap pakai</p>
+                <div class="mt-1 flex items-center gap-1 text-[10px] font-bold text-indigo-700">
+                  <span>⏱️ Selesai dalam 1x24 Jam</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right flex-shrink-0 flex flex-col items-end gap-1">
+              <span class="text-xs sm:text-sm font-black text-slate-900">Rp 10.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
+              <span class="bg-indigo-600 group-hover:bg-indigo-700 active:scale-95 text-white text-[10.5px] font-bold px-3 py-1.5 rounded-lg shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info Card -->
+        <div class="p-3 bg-indigo-50 rounded-xl border border-indigo-200/80 text-[11px] text-indigo-950 space-y-1.5 text-left">
+          <div class="font-bold flex items-center gap-1.5 text-indigo-800">
+            <span>⏱️</span>
+            <span>Ketentuan 1x24 Jam:</span>
+          </div>
+          <p>• Dicuci 1 mesin 1 pelanggan (terpisah tidak dicampur).</p>
+          <p>• Minimal order 3 kg timbang di lokasi jemput.</p>
+        </div>
+      </div>
+
+      <!-- Bottom Sticky Action Bar -->
+      <div class="fixed bottom-0 left-0 right-0 max-w-[414px] mx-auto bg-white/95 backdrop-blur-sm border-t border-slate-200 px-4 py-3 flex items-center justify-between shadow-lg z-40">
+        <div class="text-left">
+          <span class="text-[10px] text-slate-500 block leading-tight">Tarif Express 1x24 Jam</span>
+          <div class="text-sm font-black text-indigo-700 leading-tight">
+            Mulai Rp 10.000 <span class="text-[10.5px] font-normal text-slate-500">/kg</span>
+          </div>
+          <span class="text-[10px] text-indigo-800 font-semibold block">Min. 3 kg Timbang di Lokasi</span>
+        </div>
+        <button type="button" onclick="selectKiloanSpecificItem('kiloan-1x24-setrika')" class="bg-indigo-600 hover:bg-indigo-700 active:scale-[0.98] text-white px-5 py-2.5 rounded-lg font-black text-xs sm:text-sm flex items-center gap-1.5 shadow-md transition">
+          <span>+ Pilih Cuci Setrika 1x24 Jam</span>
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ================================================= -->
+    <!-- 6. PANEL 2X24 JAM (EXPRESS 2 HARI)                -->
+    <!-- ================================================= -->
+    <div id="kiloan-panel-2x24" class="kiloan-duration-panel hidden">
+      <!-- Hero Banner -->
+      <div class="p-4 bg-gradient-to-r from-[#7C3AED] via-[#8B5CF6] to-[#A78BFA] text-white relative overflow-hidden shadow-sm">
+        <div class="relative z-10 flex items-center justify-between gap-3">
+          <div class="flex-1 text-left">
+            <span class="inline-block bg-white text-[#7C3AED] font-black text-[9.5px] px-2 py-0.5 rounded tracking-wider uppercase shadow-sm">
+              📦 Express 2 x 24 Jam
+            </span>
+            <h1 class="text-base font-black leading-tight mt-1">Cuci Kiloan Express 2 Hari</h1>
+            <p class="text-xs text-purple-100 mt-1 leading-snug">
+              Hemat dan efisien selesai dalam 2x24 jam. Ideal untuk pakaian santai dan harian keluarga.
+            </p>
+          </div>
+          <div class="w-16 h-16 rounded-xl bg-white/15 p-1 flex-shrink-0 flex items-center justify-center backdrop-blur-sm shadow-inner">
+            <img src="assets/images/cat_mascot.png" alt="2x24 Jam" class="w-full h-full object-contain" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Options Container -->
+      <div class="px-3 space-y-3 mt-3">
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200/80 p-3.5 text-left space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+            <div>
+              <h3 class="font-black text-sm text-slate-900 leading-tight">Pilihan Layanan Express 2x24 Jam</h3>
+              <p class="text-[10.5px] text-slate-500 font-medium">Tarif Resmi Brosur Homie Laundry</p>
+            </div>
+            <span class="text-[10px] font-bold text-purple-700 bg-purple-50 border border-purple-200 px-2 py-0.5 rounded-full">
+              3 Pilihan
+            </span>
+          </div>
+
+          <!-- Cuci Setrika 2x24 Jam -->
+          <div onclick="selectKiloanSpecificItem('kiloan-2x24-setrika')" class="p-3 rounded-xl border border-sky-200 bg-sky-50/40 hover:bg-sky-50/80 cursor-pointer transition flex items-center justify-between gap-3 group">
+            <div class="flex items-start gap-2.5 min-w-0 flex-1">
+              <span class="w-9 h-9 rounded-lg bg-[#0070D2] text-white flex items-center justify-center text-base flex-shrink-0 shadow-xs">👔</span>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <h4 class="font-black text-xs sm:text-[13px] text-slate-900 leading-tight group-hover:text-[#0070D2]">Cuci Setrika (Lengkap)</h4>
+                  <span class="text-[8.5px] font-bold text-sky-700 bg-sky-100 px-1.5 py-0.2 rounded uppercase">Paling Lengkap</span>
+                </div>
+                <p class="text-[10.5px] text-slate-500 mt-0.5 leading-snug">Cuci bersih + Kering tuntas + Setrika uap rapi &amp; wangi tahan lama</p>
+                <div class="mt-1 flex items-center gap-1 text-[10px] font-bold text-purple-700">
+                  <span>📦 Selesai 2 Hari (2x24 Jam)</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right flex-shrink-0 flex flex-col items-end gap-1">
+              <span class="text-xs sm:text-sm font-black text-slate-900">Rp 12.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
+              <span class="bg-[#0070D2] group-hover:bg-[#005BAC] active:scale-95 text-white text-[10.5px] font-bold px-3 py-1.5 rounded-lg shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+
+          <!-- Cuci Lipat 2x24 Jam -->
+          <div onclick="selectKiloanSpecificItem('kiloan-2x24-lipat')" class="p-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 cursor-pointer transition flex items-center justify-between gap-3 group">
+            <div class="flex items-start gap-2.5 min-w-0 flex-1">
+              <span class="w-9 h-9 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center text-base flex-shrink-0 shadow-xs">🧺</span>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <h4 class="font-black text-xs sm:text-[13px] text-slate-900 leading-tight group-hover:text-[#0070D2]">Cuci Lipat</h4>
+                  <span class="text-[8.5px] font-bold text-slate-600 bg-slate-100 px-1.5 py-0.2 rounded uppercase">Praktis</span>
+                </div>
+                <p class="text-[10.5px] text-slate-500 mt-0.5 leading-snug">Cuci bersih + Kering tuntas + Dilipat rapi &amp; wangi siap simpan</p>
+                <div class="mt-1 flex items-center gap-1 text-[10px] font-bold text-slate-600">
+                  <span>📦 Selesai 2 Hari (2x24 Jam)</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right flex-shrink-0 flex flex-col items-end gap-1">
+              <span class="text-xs sm:text-sm font-black text-slate-900">Rp 11.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
+              <span class="bg-slate-800 group-hover:bg-slate-900 active:scale-95 text-white text-[10.5px] font-bold px-3 py-1.5 rounded-lg shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+
+          <!-- Setrika Saja 2x24 Jam -->
+          <div onclick="selectKiloanSpecificItem('kiloan-2x24-setrika-only')" class="p-3 rounded-xl border border-purple-200 bg-purple-50/40 hover:bg-purple-50/80 cursor-pointer transition flex items-center justify-between gap-3 group">
+            <div class="flex items-start gap-2.5 min-w-0 flex-1">
+              <span class="w-9 h-9 rounded-lg bg-purple-600 text-white flex items-center justify-center text-base flex-shrink-0 shadow-xs">⚡</span>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <h4 class="font-black text-xs sm:text-[13px] text-slate-900 leading-tight group-hover:text-purple-800">Setrika Saja</h4>
+                  <span class="text-[8.5px] font-bold text-purple-800 bg-purple-100 px-1.5 py-0.2 rounded uppercase">Hanya Setrika</span>
+                </div>
+                <p class="text-[10.5px] text-slate-500 mt-0.5 leading-snug">Setrika uap rapi bergaris tajam &amp; wangi segar siap pakai</p>
+                <div class="mt-1 flex items-center gap-1 text-[10px] font-bold text-purple-700">
+                  <span>📦 Selesai 2 Hari (2x24 Jam)</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right flex-shrink-0 flex flex-col items-end gap-1">
+              <span class="text-xs sm:text-sm font-black text-slate-900">Rp 9.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
+              <span class="bg-purple-600 group-hover:bg-purple-700 active:scale-95 text-white text-[10.5px] font-bold px-3 py-1.5 rounded-lg shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info Card -->
+        <div class="p-3 bg-purple-50 rounded-xl border border-purple-200/80 text-[11px] text-purple-950 space-y-1.5 text-left">
+          <div class="font-bold flex items-center gap-1.5 text-purple-800">
+            <span>📦</span>
+            <span>Ketentuan 2x24 Jam:</span>
+          </div>
+          <p>• 1 Mesin 1 Pelanggan (terpisah tidak dicampur).</p>
+          <p>• Minimal order 3 kg per penimbangan.</p>
+        </div>
+      </div>
+
+      <!-- Bottom Sticky Action Bar -->
+      <div class="fixed bottom-0 left-0 right-0 max-w-[414px] mx-auto bg-white/95 backdrop-blur-sm border-t border-slate-200 px-4 py-3 flex items-center justify-between shadow-lg z-40">
+        <div class="text-left">
+          <span class="text-[10px] text-slate-500 block leading-tight">Tarif Express 2x24 Jam</span>
+          <div class="text-sm font-black text-purple-700 leading-tight">
+            Mulai Rp 9.000 <span class="text-[10.5px] font-normal text-slate-500">/kg</span>
+          </div>
+          <span class="text-[10px] text-purple-800 font-semibold block">Min. 3 kg Timbang di Lokasi</span>
+        </div>
+        <button type="button" onclick="selectKiloanSpecificItem('kiloan-2x24-setrika')" class="bg-purple-600 hover:bg-purple-700 active:scale-[0.98] text-white px-5 py-2.5 rounded-lg font-black text-xs sm:text-sm flex items-center gap-1.5 shadow-md transition">
+          <span>+ Pilih Cuci Setrika 2x24 Jam</span>
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ================================================= -->
+    <!-- 7. PANEL 3X24 JAM (REGULAR 3 HARI - PALING HEMAT) -->
+    <!-- ================================================= -->
+    <div id="kiloan-panel-3x24" class="kiloan-duration-panel hidden">
+      <!-- Hero Banner -->
+      <div class="p-4 bg-gradient-to-r from-[#0D9488] via-[#14B8A6] to-[#2DD4BF] text-white relative overflow-hidden shadow-sm">
+        <div class="relative z-10 flex items-center justify-between gap-3">
+          <div class="flex-1 text-left">
+            <span class="inline-block bg-white text-[#0D9488] font-black text-[9.5px] px-2 py-0.5 rounded tracking-wider uppercase shadow-sm">
+              🧺 Regular 3 x 24 Jam
+            </span>
+            <h1 class="text-base font-black leading-tight mt-1">Cuci Kiloan Regular 3 Hari</h1>
+            <p class="text-xs text-teal-100 mt-1 leading-snug">
+              Tarif super hemat mulai Rp 8.000/kg. Tetap dicuci terpisah 1 mesin 1 pelanggan dengan deterjen premium.
+            </p>
+          </div>
+          <div class="w-16 h-16 rounded-xl bg-white/15 p-1 flex-shrink-0 flex items-center justify-center backdrop-blur-sm shadow-inner">
+            <img src="assets/images/cat_mascot.png" alt="Regular 3x24 Jam" class="w-full h-full object-contain" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Options Container -->
+      <div class="px-3 space-y-3 mt-3">
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200/80 p-3.5 text-left space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+            <div>
+              <h3 class="font-black text-sm text-slate-900 leading-tight">Pilihan Layanan Regular 3x24 Jam</h3>
+              <p class="text-[10.5px] text-slate-500 font-medium">Tarif Resmi Brosur Homie Laundry</p>
+            </div>
+            <span class="text-[10px] font-bold text-teal-800 bg-teal-50 border border-teal-200 px-2 py-0.5 rounded-full">
+              Paling Hemat
+            </span>
+          </div>
+
+          <!-- Cuci Setrika 3x24 Jam -->
+          <div onclick="selectKiloanSpecificItem('kiloan-3x24-setrika')" class="p-3 rounded-xl border border-sky-200 bg-sky-50/40 hover:bg-sky-50/80 cursor-pointer transition flex items-center justify-between gap-3 group">
+            <div class="flex items-start gap-2.5 min-w-0 flex-1">
+              <span class="w-9 h-9 rounded-lg bg-[#0070D2] text-white flex items-center justify-center text-base flex-shrink-0 shadow-xs">👔</span>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <h4 class="font-black text-xs sm:text-[13px] text-slate-900 leading-tight group-hover:text-[#0070D2]">Cuci Setrika (Lengkap)</h4>
+                  <span class="text-[8.5px] font-bold text-sky-700 bg-sky-100 px-1.5 py-0.2 rounded uppercase">Paling Lengkap</span>
+                </div>
+                <p class="text-[10.5px] text-slate-500 mt-0.5 leading-snug">Cuci bersih + Kering tuntas + Setrika uap rapi &amp; wangi tahan lama</p>
+                <div class="mt-1 flex items-center gap-1 text-[10px] font-bold text-teal-700">
+                  <span>🧺 Selesai 3 Hari (3x24 Jam)</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right flex-shrink-0 flex flex-col items-end gap-1">
+              <span class="text-xs sm:text-sm font-black text-slate-900">Rp 10.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
+              <span class="bg-[#0070D2] group-hover:bg-[#005BAC] active:scale-95 text-white text-[10.5px] font-bold px-3 py-1.5 rounded-lg shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+
+          <!-- Cuci Lipat 3x24 Jam -->
+          <div onclick="selectKiloanSpecificItem('kiloan-3x24-lipat')" class="p-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 cursor-pointer transition flex items-center justify-between gap-3 group">
+            <div class="flex items-start gap-2.5 min-w-0 flex-1">
+              <span class="w-9 h-9 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center text-base flex-shrink-0 shadow-xs">🧺</span>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <h4 class="font-black text-xs sm:text-[13px] text-slate-900 leading-tight group-hover:text-[#0070D2]">Cuci Lipat</h4>
+                  <span class="text-[8.5px] font-bold text-slate-600 bg-slate-100 px-1.5 py-0.2 rounded uppercase">Praktis</span>
+                </div>
+                <p class="text-[10.5px] text-slate-500 mt-0.5 leading-snug">Cuci bersih + Kering tuntas + Dilipat rapi &amp; wangi siap simpan</p>
+                <div class="mt-1 flex items-center gap-1 text-[10px] font-bold text-slate-600">
+                  <span>🧺 Selesai 3 Hari (3x24 Jam)</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right flex-shrink-0 flex flex-col items-end gap-1">
+              <span class="text-xs sm:text-sm font-black text-slate-900">Rp 8.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
+              <span class="bg-slate-800 group-hover:bg-slate-900 active:scale-95 text-white text-[10.5px] font-bold px-3 py-1.5 rounded-lg shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+
+          <!-- Setrika Saja 3x24 Jam -->
+          <div onclick="selectKiloanSpecificItem('kiloan-3x24-setrika-only')" class="p-3 rounded-xl border border-teal-200 bg-teal-50/40 hover:bg-teal-50/80 cursor-pointer transition flex items-center justify-between gap-3 group">
+            <div class="flex items-start gap-2.5 min-w-0 flex-1">
+              <span class="w-9 h-9 rounded-lg bg-teal-600 text-white flex items-center justify-center text-base flex-shrink-0 shadow-xs">⚡</span>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <h4 class="font-black text-xs sm:text-[13px] text-slate-900 leading-tight group-hover:text-teal-800">Setrika Saja</h4>
+                  <span class="text-[8.5px] font-bold text-teal-800 bg-teal-100 px-1.5 py-0.2 rounded uppercase">Hanya Setrika</span>
+                </div>
+                <p class="text-[10.5px] text-slate-500 mt-0.5 leading-snug">Setrika uap rapi bergaris tajam &amp; wangi segar siap pakai</p>
+                <div class="mt-1 flex items-center gap-1 text-[10px] font-bold text-teal-700">
+                  <span>🧺 Selesai 3 Hari (3x24 Jam)</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right flex-shrink-0 flex flex-col items-end gap-1">
+              <span class="text-xs sm:text-sm font-black text-slate-900">Rp 8.000 <span class="text-[10px] font-normal text-slate-500">/kg</span></span>
+              <span class="bg-teal-600 group-hover:bg-teal-700 active:scale-95 text-white text-[10.5px] font-bold px-3 py-1.5 rounded-lg shadow-sm transition">+ Pilih</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info Card -->
+        <div class="p-3 bg-teal-50 rounded-xl border border-teal-200/80 text-[11px] text-teal-950 space-y-1.5 text-left">
+          <div class="font-bold flex items-center gap-1.5 text-teal-800">
+            <span>🧺</span>
+            <span>Ketentuan 3x24 Jam:</span>
+          </div>
+          <p>• Tarif paling ramah di kantong.</p>
+          <p>• Tetap 1 Mesin 1 Pelanggan (terpisah, tidak dicampur).</p>
+          <p>• Minimal order 3 kg per penimbangan.</p>
+        </div>
+      </div>
+
+      <!-- Bottom Sticky Action Bar -->
+      <div class="fixed bottom-0 left-0 right-0 max-w-[414px] mx-auto bg-white/95 backdrop-blur-sm border-t border-slate-200 px-4 py-3 flex items-center justify-between shadow-lg z-40">
+        <div class="text-left">
+          <span class="text-[10px] text-slate-500 block leading-tight">Tarif Regular 3x24 Jam</span>
+          <div class="text-sm font-black text-teal-700 leading-tight">
+            Mulai Rp 8.000 <span class="text-[10.5px] font-normal text-slate-500">/kg</span>
+          </div>
+          <span class="text-[10px] text-teal-800 font-semibold block">Min. 3 kg Timbang di Lokasi</span>
+        </div>
+        <button type="button" onclick="selectKiloanSpecificItem('kiloan-3x24-setrika')" class="bg-teal-600 hover:bg-teal-700 active:scale-[0.98] text-white px-5 py-2.5 rounded-lg font-black text-xs sm:text-sm flex items-center gap-1.5 shadow-md transition">
+          <span>+ Pilih Cuci Setrika 3x24 Jam</span>
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+        </button>
+      </div>
     </div>
 
   </div>
 
-
-  <div id="checkout-view" class="hidden fixed inset-0 z-50 bg-[#F6F6F6] text-slate-800 overflow-y-auto w-full max-w-[414px] mx-auto min-h-screen">
+<div id="checkout-view" class="hidden fixed inset-0 z-50 bg-[#F6F6F6] text-slate-800 overflow-y-auto w-full max-w-[414px] mx-auto min-h-screen">
     
     <!-- Top Bar Sticky -->
     <div class="bg-white border-b border-slate-200 sticky top-0 z-40 px-4 py-3.5 flex items-center gap-3 shadow-sm">
@@ -4010,9 +4444,7 @@
       } else if (serviceId === 'kiloan') {
         if (kiloanView) {
           kiloanView.classList.remove('hidden');
-          if (subId) {
-            openKiloanAccordion(subId);
-          }
+          showKiloanDuration(subId || '5jam');
         }
       } else {
         openCheckout(serviceId);
@@ -4035,32 +4467,52 @@
       window.scrollTo(0, 0);
     }
 
-    // --- KILOAN ACCORDION HELPERS ---
-    function toggleKiloanAccordion(id) {
-      const content = document.getElementById('acc-content-kiloan-' + id);
-      const arrow = document.getElementById('acc-arrow-kiloan-' + id);
-      if (!content || !arrow) return;
-      const isHidden = content.classList.contains('hidden');
-      if (isHidden) {
-        content.classList.remove('hidden');
-        arrow.classList.add('rotate-180');
-      } else {
-        content.classList.add('hidden');
-        arrow.classList.remove('rotate-180');
-      }
-    }
+    // --- KILOAN DEDICATED DURATION HELPER ---
+    function showKiloanDuration(durationId) {
+      const allDurations = ['2jam', '3jam', '5jam', 'sameday', '1x24', '2x24', '3x24'];
+      const targetId = allDurations.includes(durationId) ? durationId : '5jam';
 
-    function openKiloanAccordion(id) {
-      ['2jam', '3jam', '5jam', 'sameday', '1x24', '2x24', '3x24'].forEach(k => {
-        const c = document.getElementById('acc-content-kiloan-' + k);
-        const a = document.getElementById('acc-arrow-kiloan-' + k);
-        if (c) c.classList.add('hidden');
-        if (a) a.classList.remove('rotate-180');
+      allDurations.forEach(id => {
+        const panel = document.getElementById('kiloan-panel-' + id);
+        const tab = document.getElementById('tab-kiloan-' + id);
+        if (panel) {
+          if (id === targetId) {
+            panel.classList.remove('hidden');
+          } else {
+            panel.classList.add('hidden');
+          }
+        }
+        if (tab) {
+          if (id === targetId) {
+            tab.className = "kiloan-tab-btn px-3 py-1 rounded-full text-xs font-bold transition flex items-center gap-1 flex-shrink-0 bg-[#0070D2] text-white shadow-sm";
+          } else {
+            tab.className = "kiloan-tab-btn px-3 py-1 rounded-full text-xs font-bold transition flex items-center gap-1 flex-shrink-0 bg-slate-100 text-slate-700 hover:bg-slate-200";
+          }
+        }
       });
-      const targetC = document.getElementById('acc-content-kiloan-' + id);
-      const targetA = document.getElementById('acc-arrow-kiloan-' + id);
-      if (targetC) targetC.classList.remove('hidden');
-      if (targetA) targetA.classList.add('rotate-180');
+
+      const headerMeta = {
+        '2jam': { title: 'Cuci Kiloan 2 Jam', sub: 'Instant Super Kilat', badge: '2 Jam Selesai', badgeClass: 'text-rose-700 bg-rose-50 border-rose-300' },
+        '3jam': { title: 'Cuci Kiloan 3 Jam', sub: 'Flash Express', badge: '3 Jam Selesai', badgeClass: 'text-amber-800 bg-amber-50 border-amber-300' },
+        '5jam': { title: 'Cuci Kiloan 5 Jam', sub: 'Super Express', badge: '5 Jam Selesai', badgeClass: 'text-[#0070D2] bg-sky-50 border-sky-300' },
+        'sameday': { title: 'Cuci Kiloan Same Day', sub: 'Hari Ini Selesai', badge: 'Pagi - Sore', badgeClass: 'text-emerald-700 bg-emerald-50 border-emerald-300' },
+        '1x24': { title: 'Cuci Kiloan 1x24 Jam', sub: 'Express 1 Hari', badge: '1x24 Jam', badgeClass: 'text-indigo-700 bg-indigo-50 border-indigo-300' },
+        '2x24': { title: 'Cuci Kiloan 2x24 Jam', sub: 'Express 2 Hari', badge: '2x24 Jam', badgeClass: 'text-purple-700 bg-purple-50 border-purple-300' },
+        '3x24': { title: 'Cuci Kiloan 3x24 Jam', sub: 'Regular 3 Hari', badge: 'Paling Hemat', badgeClass: 'text-teal-700 bg-teal-50 border-teal-300' }
+      };
+
+      const m = headerMeta[targetId] || headerMeta['5jam'];
+      const titleEl = document.getElementById('kiloan-header-title');
+      const subEl = document.getElementById('kiloan-header-sub');
+      const badgeEl = document.getElementById('kiloan-header-badge');
+      if (titleEl) titleEl.innerText = m.title;
+      if (subEl) subEl.innerText = m.sub;
+      if (badgeEl) {
+        badgeEl.innerText = m.badge;
+        badgeEl.className = "text-[10px] font-bold border px-2 py-0.5 rounded-full " + m.badgeClass;
+      }
+
+      window.scrollTo(0, 0);
     }
 
     function selectKiloanSpecificItem(itemId) {
