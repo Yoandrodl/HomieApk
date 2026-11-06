@@ -3163,8 +3163,10 @@
       document.getElementById('sepatu-detail-view').classList.add('hidden');
       const ambalView = document.getElementById('ambal-detail-view');
       const satuanView = document.getElementById('satuan-detail-view');
+      const bulananView = document.getElementById('bulanan-detail-view');
       if (ambalView) ambalView.classList.add('hidden');
       if (satuanView) satuanView.classList.add('hidden');
+      if (bulananView) bulananView.classList.add('hidden');
 
       if (serviceId === 'sepatu') {
         document.getElementById('sepatu-detail-view').classList.remove('hidden');
@@ -3172,6 +3174,8 @@
         if (ambalView) ambalView.classList.remove('hidden');
       } else if (serviceId === 'satuan') {
         if (satuanView) satuanView.classList.remove('hidden');
+      } else if (serviceId === 'bulanan') {
+        if (bulananView) bulananView.classList.remove('hidden');
       } else {
         openCheckout(serviceId);
         return;
@@ -3183,11 +3187,11 @@
       document.getElementById('sepatu-detail-view').classList.add('hidden');
       const ambalView = document.getElementById('ambal-detail-view');
       const satuanView = document.getElementById('satuan-detail-view');
+      const bulananView = document.getElementById('bulanan-detail-view');
       if (ambalView) ambalView.classList.add('hidden');
       if (satuanView) satuanView.classList.add('hidden');
-
+      if (bulananView) bulananView.classList.add('hidden');
       document.getElementById('home-view').classList.remove('hidden');
-      updateHomeFloatingCart();
       window.scrollTo(0, 0);
     }
 
@@ -3480,8 +3484,13 @@
     }
 
     function openActiveHeroCheckout() {
-      const activeMap = ['kiloan-2', 'kiloan-3', 'kiloan-5', 'kiloan-sameday', 'kiloan-1x24', 'kiloan-bulanan'];
-      openCheckout(activeMap[activeIndex] || 'kiloan-5');
+      const activeMap = ['kiloan-2', 'kiloan-3', 'kiloan-5', 'kiloan-sameday', 'kiloan-1x24', 'bulanan'];
+      const target = activeMap[activeIndex] || 'kiloan-5';
+      if (target === 'bulanan') {
+        openServiceDetail('bulanan');
+      } else {
+        openCheckout(target);
+      }
     }
 
     // ==========================================
